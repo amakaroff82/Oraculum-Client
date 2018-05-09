@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TableHeader /> renders snapshot correctly with required props 1`] = `
+<withStyles(GridWrapper)
+  alignItems="center"
+  container={true}
+  wrap="nowrap"
+>
+  <withStyles(GridWrapper)
+    item={true}
+    xs={6}
+  >
+    <withStyles(Toolbar)>
+      <withStyles(Typography)
+        type="title"
+      >
+        Test
+      </withStyles(Typography)>
+      <pure(ChevronRight)
+        viewBox="0 0 120 120"
+      />
+      <withStyles(Toolbar)>
+        <div>
+          TestLButton
+        </div>
+      </withStyles(Toolbar)>
+    </withStyles(Toolbar)>
+  </withStyles(GridWrapper)>
+  <withStyles(GridWrapper)
+    item={true}
+    xs={6}
+  >
+    <withStyles(GridWrapper)
+      container={true}
+      justify="flex-end"
+    >
+      <withStyles(GridWrapper)
+        item={true}
+      >
+        <withStyles(Toolbar)>
+          <div>
+            TestRButton1
+          </div>
+          <div>
+            TestRButton2
+          </div>
+        </withStyles(Toolbar)>
+      </withStyles(GridWrapper)>
+    </withStyles(GridWrapper)>
+  </withStyles(GridWrapper)>
+</withStyles(GridWrapper)>
+`;

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectMenu /> component renders correctly with number item values 1`] = `
+<withStyles(Select)
+  input={
+    <withStyles(Input)
+      id="select-input"
+    />
+  }
+  value={0}
+>
+  <withStyles(MenuItem)
+    value={0}
+  >
+    label1
+  </withStyles(MenuItem)>
+  <withStyles(MenuItem)
+    value={1}
+  >
+    label2
+  </withStyles(MenuItem)>
+  <withStyles(MenuItem)
+    value={2}
+  >
+    label3
+  </withStyles(MenuItem)>
+</withStyles(Select)>
+`;
+
+exports[`<SelectMenu /> component renders correctly with string item values 1`] = `
+<withStyles(Select)
+  input={
+    <withStyles(Input)
+      id="select-input"
+    />
+  }
+  value="value1"
+>
+  <withStyles(MenuItem)
+    value="value1"
+  >
+    label1
+  </withStyles(MenuItem)>
+  <withStyles(MenuItem)
+    value="value2"
+  >
+    label2
+  </withStyles(MenuItem)>
+  <withStyles(MenuItem)
+    value="value3"
+  >
+    label3
+  </withStyles(MenuItem)>
+</withStyles(Select)>
+`;

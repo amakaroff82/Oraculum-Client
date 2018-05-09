@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Autocomplete /> component renders error correctly 1`] = `
+<withStyles(FormControl)
+  error={true}
+  fullWidth={true}
+  margin="normal"
+>
+  <ThemedAutocomplete
+    allowCreate={false}
+    className=""
+    composeTheme="deeply"
+    direction="auto"
+    keepFocusOnChange={false}
+    mapThemrProps={[Function]}
+    multiple={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    selectedPosition="below"
+    showSelectedWhenNotInSource={false}
+    showSuggestionsWhenValueIsSet={false}
+    source={Object {}}
+    suggestionMatch="start"
+    value={
+      Array [
+        "foo",
+        "bar",
+      ]
+    }
+  />
+  <withStyles(FormHelperText)>
+    sad
+  </withStyles(FormHelperText)>
+</withStyles(FormControl)>
+`;
+
+exports[`<Autocomplete /> component renders error, concat with helperText if present 1`] = `
+<withStyles(FormControl)
+  error={true}
+  fullWidth={true}
+  margin="normal"
+>
+  <ThemedAutocomplete
+    allowCreate={false}
+    className=""
+    composeTheme="deeply"
+    direction="auto"
+    keepFocusOnChange={false}
+    mapThemrProps={[Function]}
+    multiple={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    selectedPosition="below"
+    showSelectedWhenNotInSource={false}
+    showSuggestionsWhenValueIsSet={false}
+    source={Object {}}
+    suggestionMatch="start"
+    value={
+      Array [
+        "foo",
+        "bar",
+      ]
+    }
+  />
+  <withStyles(FormHelperText)>
+    sad
+     | 
+    bar
+  </withStyles(FormHelperText)>
+</withStyles(FormControl)>
+`;
+
+exports[`<Autocomplete /> component renders with default props correctly 1`] = `
+<withStyles(FormControl)
+  error={false}
+  fullWidth={true}
+  margin="normal"
+>
+  <ThemedAutocomplete
+    allowCreate={false}
+    className=""
+    composeTheme="deeply"
+    direction="auto"
+    keepFocusOnChange={false}
+    mapThemrProps={[Function]}
+    multiple={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    selectedPosition="below"
+    showSelectedWhenNotInSource={false}
+    showSuggestionsWhenValueIsSet={false}
+    source={Object {}}
+    suggestionMatch="start"
+    value={
+      Array [
+        "foo",
+        "bar",
+      ]
+    }
+  />
+</withStyles(FormControl)>
+`;
+
+exports[`<Autocomplete /> component renders with helperText correctly 1`] = `
+<withStyles(FormControl)
+  error={false}
+  fullWidth={true}
+  margin="normal"
+>
+  <ThemedAutocomplete
+    allowCreate={false}
+    className=""
+    composeTheme="deeply"
+    direction="auto"
+    keepFocusOnChange={false}
+    mapThemrProps={[Function]}
+    multiple={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    selectedPosition="below"
+    showSelectedWhenNotInSource={false}
+    showSuggestionsWhenValueIsSet={false}
+    source={Object {}}
+    suggestionMatch="start"
+    value={
+      Array [
+        "foo",
+        "bar",
+      ]
+    }
+  />
+  <withStyles(FormHelperText)>
+    bar
+  </withStyles(FormHelperText)>
+</withStyles(FormControl)>
+`;
+
+exports[`<Autocomplete /> component renders with label correctly 1`] = `
+<withStyles(FormControl)
+  error={false}
+  fullWidth={true}
+  margin="normal"
+>
+  <ThemedAutocomplete
+    allowCreate={false}
+    className=""
+    composeTheme="deeply"
+    direction="auto"
+    keepFocusOnChange={false}
+    label="foo"
+    mapThemrProps={[Function]}
+    multiple={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    selectedPosition="below"
+    showSelectedWhenNotInSource={false}
+    showSuggestionsWhenValueIsSet={false}
+    source={Object {}}
+    suggestionMatch="start"
+    value={
+      Array [
+        "foo",
+        "bar",
+      ]
+    }
+  />
+</withStyles(FormControl)>
+`;

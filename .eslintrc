@@ -1,0 +1,19 @@
+{
+  "extends": "react-app",
+  "plugins": [
+    "prettier",
+    "qi-react-intl"
+  ],
+  "rules": {
+    "react/jsx-no-literals": 2,
+    "qi-react-intl/formatted-message-tag-should-not-have-default-message": 2,
+    "qi-react-intl/format-message-method-should-not-have-default-message": 2,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    ]
+  }
+}

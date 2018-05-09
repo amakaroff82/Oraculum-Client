@@ -1,0 +1,43 @@
+ {
+    "name": "Oraculum",
+    "description" : "Oraculum Search Extension",
+    "version": "0.019",
+    "manifest_version": 2,
+    "background": {
+      "scripts": [
+        "js/background.js"
+      ],
+      "persistent": false
+    },
+    "content_scripts": [{
+       "matches":    ["*://*/*"],
+       "js":         [
+         "js/content.js"
+       ],
+       "css":        [
+         "css/content.css"
+       ],
+       "all_frames": true
+    }],
+    "web_accessible_resources": [
+      "/oauth2/*",
+      "assets/logo.png",
+      "content.html",
+      "css/content.css"
+    ],
+    "oauth2": {
+     "client_id": "696698952210-gbd3r631335t0pheksem6g1p41edqs34.apps.googleusercontent.com",
+     "scopes": [
+       "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "permissions": [
+      "identity",
+      "storage",
+      "tabs",
+      "*://*/*"
+    ],
+    "browser_action": {
+      "default_icon": "assets/logo1.png"
+    }
+}

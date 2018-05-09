@@ -1,0 +1,403 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActionButtons /> renders cancel button before primary button 1`] = `
+<div>
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "onClick": [Function],
+        "textId": "cancel",
+      }
+    }
+    raised={true}
+  />
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "textId": "save",
+      }
+    }
+    color="primary"
+    raised={true}
+  />
+</div>
+`;
+
+exports[`<ActionButtons /> renders cancel button without primary button 1`] = `
+<div>
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "onClick": [Function],
+        "textId": "cancel",
+      }
+    }
+    raised={true}
+  />
+  <ConditionalButton
+    buttonProps={Object {}}
+    color="primary"
+    condition={false}
+    raised={true}
+  />
+</div>
+`;
+
+exports[`<ActionButtons /> renders primary button without cancel button 1`] = `
+<div>
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "textId": "cancel",
+      }
+    }
+    condition={false}
+    raised={true}
+  />
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "textId": "save",
+      }
+    }
+    color="primary"
+    raised={true}
+  />
+</div>
+`;
+
+exports[`<ActionButtons /> renders with extraButtons 1`] = `
+<div>
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "onClick": [Function],
+        "textId": "cancel",
+      }
+    }
+    raised={true}
+  />
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "textId": "extra1",
+      }
+    }
+    raised={true}
+  />
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "textId": "extra2",
+      }
+    }
+    raised={true}
+  />
+  <ConditionalButton
+    buttonProps={
+      Object {
+        "textId": "save",
+      }
+    }
+    color="primary"
+    raised={true}
+  />
+</div>
+`;
+
+exports[`<ConditionalButton /> renders expected button 1`] = `
+<ConditionalButton
+  buttonProps={
+    Object {
+      "textId": "save",
+    }
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "textComponent": "span",
+    }
+  }
+>
+  <withStyles(Button)
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": Object {},
+        "now": [Function],
+        "textComponent": "span",
+      }
+    }
+  >
+    <Button
+      classes={
+        Object {
+          ".MuiButton-fab-14:active": "MuiButton-fab-14:active",
+          ".MuiButton-flatAccent-5:hover": "MuiButton-flatAccent-5:hover",
+          ".MuiButton-flatContrast-6:hover": "MuiButton-flatContrast-6:hover",
+          ".MuiButton-flatPrimary-4:hover": "MuiButton-flatPrimary-4:hover",
+          ".MuiButton-raised-8.MuiButton-disabled-13": "MuiButton-raised-8.MuiButton-disabled-13",
+          ".MuiButton-raised-8.MuiButton-keyboardFocused-9": "MuiButton-raised-8.MuiButton-keyboardFocused-9",
+          ".MuiButton-raised-8:active": "MuiButton-raised-8:active",
+          ".MuiButton-raised-8:hover": "MuiButton-raised-8:hover",
+          ".MuiButton-raised-8:hover.MuiButton-disabled-13": "MuiButton-raised-8:hover.MuiButton-disabled-13",
+          ".MuiButton-raisedAccent-11:hover": "MuiButton-raisedAccent-11:hover",
+          ".MuiButton-raisedPrimary-10:hover": "MuiButton-raisedPrimary-10:hover",
+          ".MuiButton-root-1:hover": "MuiButton-root-1:hover",
+          ".MuiButton-root-1:hover.MuiButton-disabled-13": "MuiButton-root-1:hover.MuiButton-disabled-13",
+          "colorInherit": "MuiButton-colorInherit-7",
+          "dense": "MuiButton-dense-2",
+          "disabled": "MuiButton-disabled-13",
+          "fab": "MuiButton-fab-14",
+          "flatAccent": "MuiButton-flatAccent-5",
+          "flatContrast": "MuiButton-flatContrast-6",
+          "flatPrimary": "MuiButton-flatPrimary-4",
+          "keyboardFocused": "MuiButton-keyboardFocused-9",
+          "label": "MuiButton-label-3",
+          "raised": "MuiButton-raised-8",
+          "raisedAccent": "MuiButton-raisedAccent-11",
+          "raisedContrast": "MuiButton-raisedContrast-12",
+          "raisedPrimary": "MuiButton-raisedPrimary-10",
+          "root": "MuiButton-root-1",
+        }
+      }
+      color="default"
+      dense={false}
+      disableFocusRipple={false}
+      disableRipple={false}
+      disabled={false}
+      fab={false}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": Object {},
+          "now": [Function],
+          "textComponent": "span",
+        }
+      }
+      raised={false}
+      type="button"
+    >
+      <withStyles(ButtonBase)
+        className="MuiButton-root-1"
+        disableRipple={false}
+        disabled={false}
+        focusRipple={true}
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": Object {},
+            "now": [Function],
+            "textComponent": "span",
+          }
+        }
+        keyboardFocusedClassName="MuiButton-keyboardFocused-9"
+        type="button"
+      >
+        <ButtonBase
+          centerRipple={false}
+          className="MuiButton-root-1"
+          classes={
+            Object {
+              ".MuiButtonBase-root-15::-moz-focus-inner": "MuiButtonBase-root-15::-moz-focus-inner",
+              "disabled": "MuiButtonBase-disabled-16",
+              "root": "MuiButtonBase-root-15",
+            }
+          }
+          disableRipple={false}
+          disabled={false}
+          focusRipple={true}
+          intl={
+            Object {
+              "defaultFormats": Object {},
+              "defaultLocale": "en",
+              "formatDate": [Function],
+              "formatHTMLMessage": [Function],
+              "formatMessage": [Function],
+              "formatNumber": [Function],
+              "formatPlural": [Function],
+              "formatRelative": [Function],
+              "formatTime": [Function],
+              "formats": Object {},
+              "formatters": Object {
+                "getDateTimeFormat": [Function],
+                "getMessageFormat": [Function],
+                "getNumberFormat": [Function],
+                "getPluralFormat": [Function],
+                "getRelativeFormat": [Function],
+              },
+              "locale": "en",
+              "messages": Object {},
+              "now": [Function],
+              "textComponent": "span",
+            }
+          }
+          keyboardFocusedClassName="MuiButton-keyboardFocused-9"
+          tabIndex={0}
+          type="button"
+        >
+          <button
+            className="MuiButtonBase-root-15 MuiButton-root-1"
+            disabled={false}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": Object {},
+                "now": [Function],
+                "textComponent": "span",
+              }
+            }
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label-3"
+            >
+              <FormattedMessage
+                id="save"
+                values={Object {}}
+              >
+                <span>
+                  save
+                </span>
+              </FormattedMessage>
+            </span>
+            <withStyles(TouchRipple)
+              center={false}
+              innerRef={[Function]}
+            >
+              <TouchRipple
+                center={false}
+                classes={
+                  Object {
+                    "0%": "%",
+                    "100%": "00%",
+                    "50%": "0%",
+                    "ripple": "MuiTouchRipple-ripple-21",
+                    "rippleFast": "MuiTouchRipple-rippleFast-23",
+                    "rippleVisible": "MuiTouchRipple-rippleVisible-22",
+                    "root": "MuiTouchRipple-root-17",
+                    "wrapper": "MuiTouchRipple-wrapper-18",
+                    "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-19",
+                    "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-20",
+                  }
+                }
+              >
+                <TransitionGroup
+                  childFactory={[Function]}
+                  className="MuiTouchRipple-root-17"
+                  component="span"
+                  enter={true}
+                  exit={true}
+                >
+                  <span
+                    className="MuiTouchRipple-root-17"
+                  />
+                </TransitionGroup>
+              </TouchRipple>
+            </withStyles(TouchRipple)>
+          </button>
+        </ButtonBase>
+      </withStyles(ButtonBase)>
+    </Button>
+  </withStyles(Button)>
+</ConditionalButton>
+`;

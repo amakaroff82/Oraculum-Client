@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConfirmNavigationDialog /> renders snapshot correctly with required props 1`] = `
+<withStyles(Dialog)
+  onRequestClose={[Function]}
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Hello World
+  </withStyles(DialogTitle)>
+  <withStyles(DialogActions)>
+    <withStyles(ActionButtons)
+      cancelButtonProps={
+        Object {
+          "onClick": [Function],
+        }
+      }
+      primaryButtonProps={
+        Object {
+          "onClick": [Function],
+          "textId": "confirm",
+        }
+      }
+    />
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;

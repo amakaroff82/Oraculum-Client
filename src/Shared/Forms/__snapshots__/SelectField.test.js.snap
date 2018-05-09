@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectField /> component does not render error if not touched 1`] = `
+<Component
+  classes={
+    Object {
+      "selectInput": "SelectField-selectInput-1",
+    }
+  }
+  input={
+    Object {
+      "value": "value2",
+    }
+  }
+  items={
+    Array [
+      Object {
+        "label": "label1",
+        "value": "value1",
+      },
+      Object {
+        "label": "label2",
+        "value": "value2",
+      },
+      Object {
+        "label": "label3",
+        "value": "value3",
+      },
+    ]
+  }
+  meta={
+    Object {
+      "error": "should not show error",
+      "touched": false,
+    }
+  }
+/>
+`;
+
+exports[`<SelectField /> component renders error if touched, concat with helperText if present 1`] = `
+<Component
+  classes={
+    Object {
+      "selectInput": "SelectField-selectInput-1",
+    }
+  }
+  helperText="bar"
+  input={
+    Object {
+      "value": "value2",
+    }
+  }
+  items={
+    Array [
+      Object {
+        "label": "label1",
+        "value": "value1",
+      },
+      Object {
+        "label": "label2",
+        "value": "value2",
+      },
+      Object {
+        "label": "label3",
+        "value": "value3",
+      },
+    ]
+  }
+  meta={
+    Object {
+      "error": "sad",
+      "touched": true,
+    }
+  }
+/>
+`;
+
+exports[`<SelectField /> component renders with default props correctly 1`] = `
+<Component
+  classes={
+    Object {
+      "selectInput": "SelectField-selectInput-1",
+    }
+  }
+  input={
+    Object {
+      "value": "value2",
+    }
+  }
+  items={
+    Array [
+      Object {
+        "label": "label1",
+        "value": "value1",
+      },
+      Object {
+        "label": "label2",
+        "value": "value2",
+      },
+      Object {
+        "label": "label3",
+        "value": "value3",
+      },
+    ]
+  }
+  meta={Object {}}
+/>
+`;
+
+exports[`<SelectField /> component renders with helperText correctly 1`] = `
+<Component
+  classes={
+    Object {
+      "selectInput": "SelectField-selectInput-1",
+    }
+  }
+  helperText="bar"
+  input={
+    Object {
+      "value": "value2",
+    }
+  }
+  items={
+    Array [
+      Object {
+        "label": "label1",
+        "value": "value1",
+      },
+      Object {
+        "label": "label2",
+        "value": "value2",
+      },
+      Object {
+        "label": "label3",
+        "value": "value3",
+      },
+    ]
+  }
+  meta={Object {}}
+/>
+`;
+
+exports[`<SelectField /> component renders with label correctly 1`] = `
+<Component
+  classes={
+    Object {
+      "selectInput": "SelectField-selectInput-1",
+    }
+  }
+  input={
+    Object {
+      "value": "value2",
+    }
+  }
+  items={
+    Array [
+      Object {
+        "label": "label1",
+        "value": "value1",
+      },
+      Object {
+        "label": "label2",
+        "value": "value2",
+      },
+      Object {
+        "label": "label3",
+        "value": "value3",
+      },
+    ]
+  }
+  label="foo"
+  meta={Object {}}
+/>
+`;
+
+exports[`<SelectField /> component respects custom MenuProps 1`] = `
+<Component
+  MenuProps={
+    Object {
+      "elevation": 4,
+    }
+  }
+  classes={
+    Object {
+      "selectInput": "SelectField-selectInput-1",
+    }
+  }
+  input={
+    Object {
+      "value": "value2",
+    }
+  }
+  items={
+    Array [
+      Object {
+        "label": "label1",
+        "value": "value1",
+      },
+      Object {
+        "label": "label2",
+        "value": "value2",
+      },
+      Object {
+        "label": "label3",
+        "value": "value3",
+      },
+    ]
+  }
+  meta={Object {}}
+/>
+`;

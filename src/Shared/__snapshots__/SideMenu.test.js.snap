@@ -1,0 +1,2415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SideMenu/> component renders snapshot correctly with listItems array 1`] = `
+<MuiThemeProviderWrapper
+  theme={
+    Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 360,
+        },
+        "width": [Function],
+      },
+      "chart": Object {
+        "background": "#fff",
+        "bar": Object {
+          "0": "#94befe",
+          "1": "#1960fc",
+        },
+        "fill": Object {
+          "0": "#297dfd",
+          "1": "#94befe",
+        },
+        "line": Object {
+          "0": "#297dfd",
+          "1": "#F17800",
+          "2": "#7F3BA7",
+          "3": "#E2B627",
+          "4": "#43B649",
+          "5": "#DD4477",
+          "6": "#0099C6",
+        },
+      },
+      "darkChart": Object {
+        "background": "#1b0045",
+        "bar": Object {
+          "0": "#94befe",
+          "1": "#da69ff",
+        },
+        "fill": Object {
+          "0": "#da69ff",
+          "1": "#94befe",
+        },
+        "line": Object {
+          "0": "#f8f9fb",
+          "1": "#F17800",
+          "2": "#7F3BA7",
+          "3": "#E2B627",
+          "4": "#43B649",
+          "5": "#DD4477",
+          "6": "#0099C6",
+        },
+      },
+      "direction": "ltr",
+      "menu": Object {
+        "active": Object {
+          "background": "rgba(255, 255, 255, .27)",
+        },
+      },
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {
+        "MuiAppBar": Object {
+          "colorPrimary": Object {
+            "background": "linear-gradient(to right, #250056, #0076ae)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+          },
+          "root": Object {
+            "boxShadow": "none",
+          },
+        },
+        "MuiButton": Object {
+          "root": Object {
+            "borderRadius": 3,
+            "whiteSpace": "nowrap",
+          },
+        },
+        "MuiDrawer": Object {
+          "paper": Object {
+            "background": "linear-gradient(to bottom, #250056, #0076ae)",
+            "border": 0,
+          },
+        },
+        "MuiFormLabel": Object {
+          "focused": Object {
+            "color": "#297dfd",
+          },
+        },
+        "MuiInput": Object {
+          "inkbar": Object {
+            "&:after": Object {
+              "backgroundColor": "#297dfd",
+            },
+          },
+        },
+        "MuiMenuItem": Object {
+          "root": Object {
+            "&:hover": Object {
+              "backgroundColor": "#297dfd",
+              "boxShadow": "0 5px 5px #d9d9d9",
+              "color": "#fff",
+            },
+            "borderRadius": 4,
+            "color": "#000",
+            "fontSize": 14,
+            "fontWeight": 300,
+            "height": 8,
+            "margin": "0 3px",
+          },
+        },
+        "MuiPaper": Object {
+          "root": Object {
+            "border": ".5px solid rgba(0, 0, 0, 0.075)",
+          },
+          "rounded": Object {
+            "borderRadius": 4,
+          },
+          "shadow8": Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #d9d9d9",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+          },
+        },
+        "MuiTab": Object {
+          "root": Object {
+            "borderBottom": "1px solid #e8e8e8",
+            "lineHeight": 1,
+            "textTransform": "none",
+          },
+          "rootInheritSelected": Object {
+            "borderBottom": "none",
+            "borderLeft": "1px solid #e8e8e8",
+            "borderRight": "1px solid #e8e8e8",
+            "borderTop": "4px solid #297dfd",
+            "borderTopLeftRadius": 4,
+            "borderTopRightRadius": 4,
+          },
+        },
+        "MuiTable": Object {
+          "root": Object {
+            "border": "none",
+          },
+        },
+        "MuiTableBody": Object {
+          "root": Object {
+            "border": "none",
+          },
+        },
+        "MuiTableCell": Object {
+          "head": Object {
+            "color": "#000",
+            "fontWeight": 700,
+          },
+          "root": Object {
+            "borderBottom": "none",
+          },
+        },
+        "MuiTableHead": Object {
+          "root": Object {
+            "backgroundColor": "#f2f2f2",
+            "border": "none",
+          },
+        },
+        "MuiTableRow": Object {
+          "footer": Object {
+            "height": 32,
+          },
+          "head": Object {
+            "height": 32,
+          },
+          "hover": Object {
+            "&:hover": Object {
+              "backgroundColor": "#e5efff",
+            },
+          },
+          "root": Object {
+            "&:first-of-type": Object {
+              "border": "none",
+            },
+            "borderBottom": ".2px solid #d9d9d9",
+            "borderTop": ".2px solid #d9d9d9",
+          },
+          "selected": Object {
+            "backgroundColor": "#e5efff",
+          },
+        },
+      },
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(255, 255, 255, 1)",
+          "disabled": "rgba(255, 255, 255, 0.3)",
+        },
+        "background": Object {
+          "appBar": "#212121",
+          "contentFrame": "#0d002b",
+          "default": "#16003c",
+          "paper": "#1b0045",
+        },
+        "common": Object {
+          "black": "#000",
+          "darkBlack": "rgba(0, 0, 0, 0.87)",
+          "darkWhite": "rgba(255, 255, 255, 0.87)",
+          "faintBlack": "rgba(0, 0, 0, 0.12)",
+          "fullBlack": "rgba(0, 0, 0, 1)",
+          "fullWhite": "rgba(255, 255, 255, 1)",
+          "lightBlack": "rgba(0, 0, 0, 0.54)",
+          "lightWhite": "rgba(255, 255, 255, 0.54)",
+          "minBlack": "rgba(0, 0, 0, 0.26)",
+          "transparent": "rgba(0, 0, 0, 0)",
+          "white": "#fff",
+        },
+        "error": Object {
+          "100": "#f5bebe",
+          "200": "#ee9393",
+          "300": "#e76767",
+          "400": "#e24747",
+          "50": "#fbe5e5",
+          "500": "#dd2626",
+          "600": "#d92222",
+          "700": "#d41c1c",
+          "800": "#cf1717",
+          "900": "#c70d0d",
+          "A100": "#fff3f3",
+          "A200": "#ffc0c0",
+          "A400": "#ff8d8d",
+          "A700": "#ff7474",
+          "contrastDefaultColor": "light",
+        },
+        "getContrastText": [Function],
+        "gradient1": Object {
+          "100": "#beb3cc",
+          "200": "#9280ab",
+          "300": "#664d89",
+          "400": "#46266f",
+          "50": "#e5e0eb",
+          "500": "#250056",
+          "600": "#21004f",
+          "700": "#1b0045",
+          "800": "#16003c",
+          "900": "#0d002b",
+          "A100": "#8065ff",
+          "A200": "#5532ff",
+          "A400": "#5506fb",
+          "A700": "#4800df",
+          "contrastDefaultColor": "light",
+        },
+        "gradient2": Object {
+          "100": "#b3d6e7",
+          "200": "#80bbd7",
+          "300": "#4d9fc6",
+          "400": "#268bba",
+          "50": "#e0eff5",
+          "500": "#0076ae",
+          "600": "#006ea7",
+          "700": "#00639d",
+          "800": "#005994",
+          "900": "#004684",
+          "A100": "#b1d5ff",
+          "A200": "#7eb9ff",
+          "A400": "#4b9dff",
+          "A700": "#318fff",
+          "contrastDefaultColor": "light",
+        },
+        "grey": Object {
+          "100": "#f6f6f6",
+          "200": "#f2f2f2",
+          "300": "#e8e8e8",
+          "400": "#d9d9d9",
+          "50": "#f8f9fb",
+          "500": "#cccccc",
+          "600": "#b2b2b2",
+          "700": "#999999",
+          "800": "#666666",
+          "900": "#333333",
+          "A100": "#e2edf2",
+          "A200": "#a6b2b8",
+          "A400": "#626f74",
+          "A700": "#384145",
+          "contrastDefaultColor": "dark",
+        },
+        "input": Object {
+          "bottomLine": "rgba(255, 255, 255, 0.7)",
+          "disabled": "rgba(255, 255, 255, 0.5)",
+          "helperText": "rgba(255, 255, 255, 0.7)",
+          "inputText": "rgba(255, 255, 255, 1)",
+          "labelText": "rgba(255, 255, 255, 0.7)",
+        },
+        "primary": Object {
+          "100": "#bfd8fe",
+          "200": "#94befe",
+          "300": "#69a4fe",
+          "400": "#4991fd",
+          "50": "#e5efff",
+          "500": "#297dfd",
+          "600": "#2475fd",
+          "700": "#1f6afc",
+          "800": "#1960fc",
+          "900": "#0f4dfc",
+          "A100": "#ecf0fb",
+          "A200": "#dfe5ff",
+          "A400": "#c1cfff",
+          "A700": "#a7bbff",
+          "contrastDefaultColor": "light",
+        },
+        "secondary": Object {
+          "100": "#e3c9e9",
+          "200": "#d1a5db",
+          "300": "#bf81cd",
+          "400": "#b166c2",
+          "50": "#f4e9f6",
+          "500": "#a34bb7",
+          "600": "#9b44b0",
+          "700": "#913ba7",
+          "800": "#88339f",
+          "900": "#772390",
+          "A100": "#f3cfff",
+          "A200": "#e69cff",
+          "A400": "#da69ff",
+          "A700": "#d34fff",
+          "contrastDefaultColor": "light",
+        },
+        "shades": Object {
+          "dark": Object {
+            "action": Object {
+              "active": "rgba(255, 255, 255, 1)",
+              "disabled": "rgba(255, 255, 255, 0.3)",
+            },
+            "background": Object {
+              "appBar": "#212121",
+              "contentFrame": "#0d002b",
+              "default": "#16003c",
+              "paper": "#1b0045",
+            },
+            "input": Object {
+              "bottomLine": "rgba(255, 255, 255, 0.7)",
+              "disabled": "rgba(255, 255, 255, 0.5)",
+              "helperText": "rgba(255, 255, 255, 0.7)",
+              "inputText": "rgba(255, 255, 255, 1)",
+              "labelText": "rgba(255, 255, 255, 0.7)",
+            },
+            "text": Object {
+              "disabled": "rgba(255, 255, 255, 0.5)",
+              "divider": "rgba(255, 255, 255, 0.12)",
+              "hint": "rgba(255, 255, 255, 0.5)",
+              "icon": "rgba(255, 255, 255, 0.5)",
+              "lightDivider": "rgba(255, 255, 255, 0.075)",
+              "primary": "rgba(255, 255, 255, 1)",
+              "secondary": "rgba(255, 255, 255, 0.7)",
+            },
+          },
+          "light": Object {
+            "action": Object {
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+            },
+            "background": Object {
+              "appBar": "#f5f5f5",
+              "contentFrame": "#f2f2f2",
+              "default": "#f6f6f6",
+              "paper": "#fff",
+            },
+            "input": Object {
+              "bottomLine": "rgba(0, 0, 0, 0.42)",
+              "disabled": "rgba(0, 0, 0, 0.42)",
+              "helperText": "rgba(0, 0, 0, 0.54)",
+              "inputText": "rgba(0, 0, 0, 0.87)",
+              "labelText": "rgba(0, 0, 0, 0.54)",
+            },
+            "text": Object {
+              "disabled": "rgba(0, 0, 0, 0.38)",
+              "divider": "#e5efff",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "icon": "rgba(0, 0, 0, 0.38)",
+              "lightDivider": "rgba(0, 0, 0, 0.075)",
+              "primary": "rgba(0, 0, 0, 0.87)",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+          },
+        },
+        "text": Object {
+          "disabled": "rgba(255, 255, 255, 0.5)",
+          "divider": "rgba(255, 255, 255, 0.12)",
+          "hint": "rgba(255, 255, 255, 0.5)",
+          "icon": "rgba(255, 255, 255, 0.5)",
+          "lightDivider": "rgba(255, 255, 255, 0.075)",
+          "primary": "rgba(255, 255, 255, 1)",
+          "secondary": "rgba(255, 255, 255, 0.7)",
+        },
+        "type": "dark",
+      },
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+        "0px 1px 5px 0px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+        "0px 1px 8px 0px rgba(0, 0, 0, 0.2),0px 3px 4px 0px rgba(0, 0, 0, 0.14),0px 3px 3px -2px rgba(0, 0, 0, 0.12)",
+        "0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+        "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 5px 8px 0px rgba(0, 0, 0, 0.14),0px 1px 14px 0px rgba(0, 0, 0, 0.12)",
+        "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)",
+        "0px 4px 5px -2px rgba(0, 0, 0, 0.2),0px 7px 10px 1px rgba(0, 0, 0, 0.14),0px 2px 16px 1px rgba(0, 0, 0, 0.12)",
+        "0px 5px 5px -3px rgba(0, 0, 0, 0.2),0px 8px 10px 1px rgba(0, 0, 0, 0.14),0px 3px 14px 2px rgba(0, 0, 0, 0.12)",
+        "0px 5px 6px -3px rgba(0, 0, 0, 0.2),0px 9px 12px 1px rgba(0, 0, 0, 0.14),0px 3px 16px 2px rgba(0, 0, 0, 0.12)",
+        "0px 6px 6px -3px rgba(0, 0, 0, 0.2),0px 10px 14px 1px rgba(0, 0, 0, 0.14),0px 4px 18px 3px rgba(0, 0, 0, 0.12)",
+        "0px 6px 7px -4px rgba(0, 0, 0, 0.2),0px 11px 15px 1px rgba(0, 0, 0, 0.14),0px 4px 20px 3px rgba(0, 0, 0, 0.12)",
+        "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 12px 17px 2px rgba(0, 0, 0, 0.14),0px 5px 22px 4px rgba(0, 0, 0, 0.12)",
+        "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 13px 19px 2px rgba(0, 0, 0, 0.14),0px 5px 24px 4px rgba(0, 0, 0, 0.12)",
+        "0px 7px 9px -4px rgba(0, 0, 0, 0.2),0px 14px 21px 2px rgba(0, 0, 0, 0.14),0px 5px 26px 4px rgba(0, 0, 0, 0.12)",
+        "0px 8px 9px -5px rgba(0, 0, 0, 0.2),0px 15px 22px 2px rgba(0, 0, 0, 0.14),0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
+        "0px 8px 10px -5px rgba(0, 0, 0, 0.2),0px 16px 24px 2px rgba(0, 0, 0, 0.14),0px 6px 30px 5px rgba(0, 0, 0, 0.12)",
+        "0px 8px 11px -5px rgba(0, 0, 0, 0.2),0px 17px 26px 2px rgba(0, 0, 0, 0.14),0px 6px 32px 5px rgba(0, 0, 0, 0.12)",
+        "0px 9px 11px -5px rgba(0, 0, 0, 0.2),0px 18px 28px 2px rgba(0, 0, 0, 0.14),0px 7px 34px 6px rgba(0, 0, 0, 0.12)",
+        "0px 9px 12px -6px rgba(0, 0, 0, 0.2),0px 19px 29px 2px rgba(0, 0, 0, 0.14),0px 7px 36px 6px rgba(0, 0, 0, 0.12)",
+        "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 20px 31px 3px rgba(0, 0, 0, 0.14),0px 8px 38px 7px rgba(0, 0, 0, 0.12)",
+        "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 21px 33px 3px rgba(0, 0, 0, 0.14),0px 8px 40px 7px rgba(0, 0, 0, 0.12)",
+        "0px 10px 14px -6px rgba(0, 0, 0, 0.2),0px 22px 35px 3px rgba(0, 0, 0, 0.14),0px 8px 42px 7px rgba(0, 0, 0, 0.12)",
+        "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
+        "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
+      ],
+      "spacing": Object {
+        "unit": 8,
+      },
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "lineHeight": "1.46429em",
+        },
+        "body2": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "lineHeight": "1.71429em",
+        },
+        "button": Object {
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.9375rem",
+          "fontWeight": 500,
+          "textTransform": "none",
+        },
+        "caption": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "lineHeight": "1.375em",
+        },
+        "display1": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "lineHeight": "1.20588em",
+          "marginLeft": "-.04em",
+        },
+        "display2": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "2.8125rem",
+          "fontWeight": 400,
+          "lineHeight": "1.06667em",
+          "marginLeft": "-.04em",
+        },
+        "display3": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "3.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "-.02em",
+          "lineHeight": "1.30357em",
+          "marginLeft": "-.04em",
+        },
+        "display4": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "7rem",
+          "fontWeight": 300,
+          "letterSpacing": "-.04em",
+          "lineHeight": "1.14286em",
+          "marginLeft": "-.06em",
+        },
+        "fontFamily": "Nunito Sans, Roboto, sans-serif",
+        "fontSize": 16,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "headline": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "lineHeight": "1.35417em",
+        },
+        "subheading": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "lineHeight": "1.5em",
+        },
+        "title": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1.3125rem",
+          "fontWeight": 500,
+          "lineHeight": "1.16667em",
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "dialog": 1500,
+        "dialogOverlay": 1400,
+        "drawerOverlay": 1200,
+        "layer": 2000,
+        "menu": 1000,
+        "mobileStepper": 900,
+        "navDrawer": 1300,
+        "popover": 2100,
+        "snackbar": 2900,
+        "tooltip": 3000,
+      },
+    }
+  }
+>
+  <withStyles(Drawer)
+    classes={
+      Object {
+        "paper": "drawer",
+      }
+    }
+    type="permanent"
+  >
+    <withStyles(Divider) />
+    <div
+      className="header"
+    >
+      <div>
+        <withStyles(Typography)
+          gutterBottom={true}
+          type="title"
+        >
+          Test Title Id
+        </withStyles(Typography)>
+        <withStyles(Divider) />
+      </div>
+      <div />
+    </div>
+    <withStyles(List)>
+      <withStyles(ListItem) />
+      <withStyles(ListItem) />
+      <withStyles(ListItem)
+        button={true}
+        disableGutters={true}
+      >
+        <withStyles(Button)
+          color="primary"
+          onClick={[Function]}
+          raised={true}
+        >
+          <FormattedMessage
+            id="Test Button Text Id"
+            values={Object {}}
+          />
+        </withStyles(Button)>
+      </withStyles(ListItem)>
+    </withStyles(List)>
+  </withStyles(Drawer)>
+</MuiThemeProviderWrapper>
+`;
+
+exports[`<SideMenu/> component renders successfully when listItems is null 1`] = `
+<MuiThemeProviderWrapper
+  theme={
+    Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 360,
+        },
+        "width": [Function],
+      },
+      "chart": Object {
+        "background": "#fff",
+        "bar": Object {
+          "0": "#94befe",
+          "1": "#1960fc",
+        },
+        "fill": Object {
+          "0": "#297dfd",
+          "1": "#94befe",
+        },
+        "line": Object {
+          "0": "#297dfd",
+          "1": "#F17800",
+          "2": "#7F3BA7",
+          "3": "#E2B627",
+          "4": "#43B649",
+          "5": "#DD4477",
+          "6": "#0099C6",
+        },
+      },
+      "darkChart": Object {
+        "background": "#1b0045",
+        "bar": Object {
+          "0": "#94befe",
+          "1": "#da69ff",
+        },
+        "fill": Object {
+          "0": "#da69ff",
+          "1": "#94befe",
+        },
+        "line": Object {
+          "0": "#f8f9fb",
+          "1": "#F17800",
+          "2": "#7F3BA7",
+          "3": "#E2B627",
+          "4": "#43B649",
+          "5": "#DD4477",
+          "6": "#0099C6",
+        },
+      },
+      "direction": "ltr",
+      "menu": Object {
+        "active": Object {
+          "background": "rgba(255, 255, 255, .27)",
+        },
+      },
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {
+        "MuiAppBar": Object {
+          "colorPrimary": Object {
+            "background": "linear-gradient(to right, #250056, #0076ae)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+          },
+          "root": Object {
+            "boxShadow": "none",
+          },
+        },
+        "MuiButton": Object {
+          "root": Object {
+            "borderRadius": 3,
+            "whiteSpace": "nowrap",
+          },
+        },
+        "MuiDrawer": Object {
+          "paper": Object {
+            "background": "linear-gradient(to bottom, #250056, #0076ae)",
+            "border": 0,
+          },
+        },
+        "MuiFormLabel": Object {
+          "focused": Object {
+            "color": "#297dfd",
+          },
+        },
+        "MuiInput": Object {
+          "inkbar": Object {
+            "&:after": Object {
+              "backgroundColor": "#297dfd",
+            },
+          },
+        },
+        "MuiMenuItem": Object {
+          "root": Object {
+            "&:hover": Object {
+              "backgroundColor": "#297dfd",
+              "boxShadow": "0 5px 5px #d9d9d9",
+              "color": "#fff",
+            },
+            "borderRadius": 4,
+            "color": "#000",
+            "fontSize": 14,
+            "fontWeight": 300,
+            "height": 8,
+            "margin": "0 3px",
+          },
+        },
+        "MuiPaper": Object {
+          "root": Object {
+            "border": ".5px solid rgba(0, 0, 0, 0.075)",
+          },
+          "rounded": Object {
+            "borderRadius": 4,
+          },
+          "shadow8": Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #d9d9d9",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+          },
+        },
+        "MuiTab": Object {
+          "root": Object {
+            "borderBottom": "1px solid #e8e8e8",
+            "lineHeight": 1,
+            "textTransform": "none",
+          },
+          "rootInheritSelected": Object {
+            "borderBottom": "none",
+            "borderLeft": "1px solid #e8e8e8",
+            "borderRight": "1px solid #e8e8e8",
+            "borderTop": "4px solid #297dfd",
+            "borderTopLeftRadius": 4,
+            "borderTopRightRadius": 4,
+          },
+        },
+        "MuiTable": Object {
+          "root": Object {
+            "border": "none",
+          },
+        },
+        "MuiTableBody": Object {
+          "root": Object {
+            "border": "none",
+          },
+        },
+        "MuiTableCell": Object {
+          "head": Object {
+            "color": "#000",
+            "fontWeight": 700,
+          },
+          "root": Object {
+            "borderBottom": "none",
+          },
+        },
+        "MuiTableHead": Object {
+          "root": Object {
+            "backgroundColor": "#f2f2f2",
+            "border": "none",
+          },
+        },
+        "MuiTableRow": Object {
+          "footer": Object {
+            "height": 32,
+          },
+          "head": Object {
+            "height": 32,
+          },
+          "hover": Object {
+            "&:hover": Object {
+              "backgroundColor": "#e5efff",
+            },
+          },
+          "root": Object {
+            "&:first-of-type": Object {
+              "border": "none",
+            },
+            "borderBottom": ".2px solid #d9d9d9",
+            "borderTop": ".2px solid #d9d9d9",
+          },
+          "selected": Object {
+            "backgroundColor": "#e5efff",
+          },
+        },
+      },
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(255, 255, 255, 1)",
+          "disabled": "rgba(255, 255, 255, 0.3)",
+        },
+        "background": Object {
+          "appBar": "#212121",
+          "contentFrame": "#0d002b",
+          "default": "#16003c",
+          "paper": "#1b0045",
+        },
+        "common": Object {
+          "black": "#000",
+          "darkBlack": "rgba(0, 0, 0, 0.87)",
+          "darkWhite": "rgba(255, 255, 255, 0.87)",
+          "faintBlack": "rgba(0, 0, 0, 0.12)",
+          "fullBlack": "rgba(0, 0, 0, 1)",
+          "fullWhite": "rgba(255, 255, 255, 1)",
+          "lightBlack": "rgba(0, 0, 0, 0.54)",
+          "lightWhite": "rgba(255, 255, 255, 0.54)",
+          "minBlack": "rgba(0, 0, 0, 0.26)",
+          "transparent": "rgba(0, 0, 0, 0)",
+          "white": "#fff",
+        },
+        "error": Object {
+          "100": "#f5bebe",
+          "200": "#ee9393",
+          "300": "#e76767",
+          "400": "#e24747",
+          "50": "#fbe5e5",
+          "500": "#dd2626",
+          "600": "#d92222",
+          "700": "#d41c1c",
+          "800": "#cf1717",
+          "900": "#c70d0d",
+          "A100": "#fff3f3",
+          "A200": "#ffc0c0",
+          "A400": "#ff8d8d",
+          "A700": "#ff7474",
+          "contrastDefaultColor": "light",
+        },
+        "getContrastText": [Function],
+        "gradient1": Object {
+          "100": "#beb3cc",
+          "200": "#9280ab",
+          "300": "#664d89",
+          "400": "#46266f",
+          "50": "#e5e0eb",
+          "500": "#250056",
+          "600": "#21004f",
+          "700": "#1b0045",
+          "800": "#16003c",
+          "900": "#0d002b",
+          "A100": "#8065ff",
+          "A200": "#5532ff",
+          "A400": "#5506fb",
+          "A700": "#4800df",
+          "contrastDefaultColor": "light",
+        },
+        "gradient2": Object {
+          "100": "#b3d6e7",
+          "200": "#80bbd7",
+          "300": "#4d9fc6",
+          "400": "#268bba",
+          "50": "#e0eff5",
+          "500": "#0076ae",
+          "600": "#006ea7",
+          "700": "#00639d",
+          "800": "#005994",
+          "900": "#004684",
+          "A100": "#b1d5ff",
+          "A200": "#7eb9ff",
+          "A400": "#4b9dff",
+          "A700": "#318fff",
+          "contrastDefaultColor": "light",
+        },
+        "grey": Object {
+          "100": "#f6f6f6",
+          "200": "#f2f2f2",
+          "300": "#e8e8e8",
+          "400": "#d9d9d9",
+          "50": "#f8f9fb",
+          "500": "#cccccc",
+          "600": "#b2b2b2",
+          "700": "#999999",
+          "800": "#666666",
+          "900": "#333333",
+          "A100": "#e2edf2",
+          "A200": "#a6b2b8",
+          "A400": "#626f74",
+          "A700": "#384145",
+          "contrastDefaultColor": "dark",
+        },
+        "input": Object {
+          "bottomLine": "rgba(255, 255, 255, 0.7)",
+          "disabled": "rgba(255, 255, 255, 0.5)",
+          "helperText": "rgba(255, 255, 255, 0.7)",
+          "inputText": "rgba(255, 255, 255, 1)",
+          "labelText": "rgba(255, 255, 255, 0.7)",
+        },
+        "primary": Object {
+          "100": "#bfd8fe",
+          "200": "#94befe",
+          "300": "#69a4fe",
+          "400": "#4991fd",
+          "50": "#e5efff",
+          "500": "#297dfd",
+          "600": "#2475fd",
+          "700": "#1f6afc",
+          "800": "#1960fc",
+          "900": "#0f4dfc",
+          "A100": "#ecf0fb",
+          "A200": "#dfe5ff",
+          "A400": "#c1cfff",
+          "A700": "#a7bbff",
+          "contrastDefaultColor": "light",
+        },
+        "secondary": Object {
+          "100": "#e3c9e9",
+          "200": "#d1a5db",
+          "300": "#bf81cd",
+          "400": "#b166c2",
+          "50": "#f4e9f6",
+          "500": "#a34bb7",
+          "600": "#9b44b0",
+          "700": "#913ba7",
+          "800": "#88339f",
+          "900": "#772390",
+          "A100": "#f3cfff",
+          "A200": "#e69cff",
+          "A400": "#da69ff",
+          "A700": "#d34fff",
+          "contrastDefaultColor": "light",
+        },
+        "shades": Object {
+          "dark": Object {
+            "action": Object {
+              "active": "rgba(255, 255, 255, 1)",
+              "disabled": "rgba(255, 255, 255, 0.3)",
+            },
+            "background": Object {
+              "appBar": "#212121",
+              "contentFrame": "#0d002b",
+              "default": "#16003c",
+              "paper": "#1b0045",
+            },
+            "input": Object {
+              "bottomLine": "rgba(255, 255, 255, 0.7)",
+              "disabled": "rgba(255, 255, 255, 0.5)",
+              "helperText": "rgba(255, 255, 255, 0.7)",
+              "inputText": "rgba(255, 255, 255, 1)",
+              "labelText": "rgba(255, 255, 255, 0.7)",
+            },
+            "text": Object {
+              "disabled": "rgba(255, 255, 255, 0.5)",
+              "divider": "rgba(255, 255, 255, 0.12)",
+              "hint": "rgba(255, 255, 255, 0.5)",
+              "icon": "rgba(255, 255, 255, 0.5)",
+              "lightDivider": "rgba(255, 255, 255, 0.075)",
+              "primary": "rgba(255, 255, 255, 1)",
+              "secondary": "rgba(255, 255, 255, 0.7)",
+            },
+          },
+          "light": Object {
+            "action": Object {
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+            },
+            "background": Object {
+              "appBar": "#f5f5f5",
+              "contentFrame": "#f2f2f2",
+              "default": "#f6f6f6",
+              "paper": "#fff",
+            },
+            "input": Object {
+              "bottomLine": "rgba(0, 0, 0, 0.42)",
+              "disabled": "rgba(0, 0, 0, 0.42)",
+              "helperText": "rgba(0, 0, 0, 0.54)",
+              "inputText": "rgba(0, 0, 0, 0.87)",
+              "labelText": "rgba(0, 0, 0, 0.54)",
+            },
+            "text": Object {
+              "disabled": "rgba(0, 0, 0, 0.38)",
+              "divider": "#e5efff",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "icon": "rgba(0, 0, 0, 0.38)",
+              "lightDivider": "rgba(0, 0, 0, 0.075)",
+              "primary": "rgba(0, 0, 0, 0.87)",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+          },
+        },
+        "text": Object {
+          "disabled": "rgba(255, 255, 255, 0.5)",
+          "divider": "rgba(255, 255, 255, 0.12)",
+          "hint": "rgba(255, 255, 255, 0.5)",
+          "icon": "rgba(255, 255, 255, 0.5)",
+          "lightDivider": "rgba(255, 255, 255, 0.075)",
+          "primary": "rgba(255, 255, 255, 1)",
+          "secondary": "rgba(255, 255, 255, 0.7)",
+        },
+        "type": "dark",
+      },
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+        "0px 1px 5px 0px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+        "0px 1px 8px 0px rgba(0, 0, 0, 0.2),0px 3px 4px 0px rgba(0, 0, 0, 0.14),0px 3px 3px -2px rgba(0, 0, 0, 0.12)",
+        "0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+        "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 5px 8px 0px rgba(0, 0, 0, 0.14),0px 1px 14px 0px rgba(0, 0, 0, 0.12)",
+        "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)",
+        "0px 4px 5px -2px rgba(0, 0, 0, 0.2),0px 7px 10px 1px rgba(0, 0, 0, 0.14),0px 2px 16px 1px rgba(0, 0, 0, 0.12)",
+        "0px 5px 5px -3px rgba(0, 0, 0, 0.2),0px 8px 10px 1px rgba(0, 0, 0, 0.14),0px 3px 14px 2px rgba(0, 0, 0, 0.12)",
+        "0px 5px 6px -3px rgba(0, 0, 0, 0.2),0px 9px 12px 1px rgba(0, 0, 0, 0.14),0px 3px 16px 2px rgba(0, 0, 0, 0.12)",
+        "0px 6px 6px -3px rgba(0, 0, 0, 0.2),0px 10px 14px 1px rgba(0, 0, 0, 0.14),0px 4px 18px 3px rgba(0, 0, 0, 0.12)",
+        "0px 6px 7px -4px rgba(0, 0, 0, 0.2),0px 11px 15px 1px rgba(0, 0, 0, 0.14),0px 4px 20px 3px rgba(0, 0, 0, 0.12)",
+        "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 12px 17px 2px rgba(0, 0, 0, 0.14),0px 5px 22px 4px rgba(0, 0, 0, 0.12)",
+        "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 13px 19px 2px rgba(0, 0, 0, 0.14),0px 5px 24px 4px rgba(0, 0, 0, 0.12)",
+        "0px 7px 9px -4px rgba(0, 0, 0, 0.2),0px 14px 21px 2px rgba(0, 0, 0, 0.14),0px 5px 26px 4px rgba(0, 0, 0, 0.12)",
+        "0px 8px 9px -5px rgba(0, 0, 0, 0.2),0px 15px 22px 2px rgba(0, 0, 0, 0.14),0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
+        "0px 8px 10px -5px rgba(0, 0, 0, 0.2),0px 16px 24px 2px rgba(0, 0, 0, 0.14),0px 6px 30px 5px rgba(0, 0, 0, 0.12)",
+        "0px 8px 11px -5px rgba(0, 0, 0, 0.2),0px 17px 26px 2px rgba(0, 0, 0, 0.14),0px 6px 32px 5px rgba(0, 0, 0, 0.12)",
+        "0px 9px 11px -5px rgba(0, 0, 0, 0.2),0px 18px 28px 2px rgba(0, 0, 0, 0.14),0px 7px 34px 6px rgba(0, 0, 0, 0.12)",
+        "0px 9px 12px -6px rgba(0, 0, 0, 0.2),0px 19px 29px 2px rgba(0, 0, 0, 0.14),0px 7px 36px 6px rgba(0, 0, 0, 0.12)",
+        "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 20px 31px 3px rgba(0, 0, 0, 0.14),0px 8px 38px 7px rgba(0, 0, 0, 0.12)",
+        "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 21px 33px 3px rgba(0, 0, 0, 0.14),0px 8px 40px 7px rgba(0, 0, 0, 0.12)",
+        "0px 10px 14px -6px rgba(0, 0, 0, 0.2),0px 22px 35px 3px rgba(0, 0, 0, 0.14),0px 8px 42px 7px rgba(0, 0, 0, 0.12)",
+        "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
+        "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
+      ],
+      "spacing": Object {
+        "unit": 8,
+      },
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "lineHeight": "1.46429em",
+        },
+        "body2": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "lineHeight": "1.71429em",
+        },
+        "button": Object {
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.9375rem",
+          "fontWeight": 500,
+          "textTransform": "none",
+        },
+        "caption": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "lineHeight": "1.375em",
+        },
+        "display1": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "lineHeight": "1.20588em",
+          "marginLeft": "-.04em",
+        },
+        "display2": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "2.8125rem",
+          "fontWeight": 400,
+          "lineHeight": "1.06667em",
+          "marginLeft": "-.04em",
+        },
+        "display3": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "3.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "-.02em",
+          "lineHeight": "1.30357em",
+          "marginLeft": "-.04em",
+        },
+        "display4": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "7rem",
+          "fontWeight": 300,
+          "letterSpacing": "-.04em",
+          "lineHeight": "1.14286em",
+          "marginLeft": "-.06em",
+        },
+        "fontFamily": "Nunito Sans, Roboto, sans-serif",
+        "fontSize": 16,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "headline": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "lineHeight": "1.35417em",
+        },
+        "subheading": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "lineHeight": "1.5em",
+        },
+        "title": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1.3125rem",
+          "fontWeight": 500,
+          "lineHeight": "1.16667em",
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "dialog": 1500,
+        "dialogOverlay": 1400,
+        "drawerOverlay": 1200,
+        "layer": 2000,
+        "menu": 1000,
+        "mobileStepper": 900,
+        "navDrawer": 1300,
+        "popover": 2100,
+        "snackbar": 2900,
+        "tooltip": 3000,
+      },
+    }
+  }
+>
+  <withStyles(Drawer)
+    classes={
+      Object {
+        "paper": "drawer",
+      }
+    }
+    type="permanent"
+  >
+    <withStyles(Divider) />
+    <div
+      className="header"
+    >
+      <div>
+        <withStyles(Typography)
+          gutterBottom={true}
+          type="title"
+        >
+          Test Title Id
+        </withStyles(Typography)>
+        <withStyles(Divider) />
+      </div>
+      <div />
+    </div>
+    <withStyles(List) />
+  </withStyles(Drawer)>
+</MuiThemeProviderWrapper>
+`;
+
+exports[`<SideMenu/> component renders successfully with empty listItems array 1`] = `
+<MuiThemeProviderWrapper
+  theme={
+    Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 360,
+        },
+        "width": [Function],
+      },
+      "chart": Object {
+        "background": "#fff",
+        "bar": Object {
+          "0": "#94befe",
+          "1": "#1960fc",
+        },
+        "fill": Object {
+          "0": "#297dfd",
+          "1": "#94befe",
+        },
+        "line": Object {
+          "0": "#297dfd",
+          "1": "#F17800",
+          "2": "#7F3BA7",
+          "3": "#E2B627",
+          "4": "#43B649",
+          "5": "#DD4477",
+          "6": "#0099C6",
+        },
+      },
+      "darkChart": Object {
+        "background": "#1b0045",
+        "bar": Object {
+          "0": "#94befe",
+          "1": "#da69ff",
+        },
+        "fill": Object {
+          "0": "#da69ff",
+          "1": "#94befe",
+        },
+        "line": Object {
+          "0": "#f8f9fb",
+          "1": "#F17800",
+          "2": "#7F3BA7",
+          "3": "#E2B627",
+          "4": "#43B649",
+          "5": "#DD4477",
+          "6": "#0099C6",
+        },
+      },
+      "direction": "ltr",
+      "menu": Object {
+        "active": Object {
+          "background": "rgba(255, 255, 255, .27)",
+        },
+      },
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {
+        "MuiAppBar": Object {
+          "colorPrimary": Object {
+            "background": "linear-gradient(to right, #250056, #0076ae)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+          },
+          "root": Object {
+            "boxShadow": "none",
+          },
+        },
+        "MuiButton": Object {
+          "root": Object {
+            "borderRadius": 3,
+            "whiteSpace": "nowrap",
+          },
+        },
+        "MuiDrawer": Object {
+          "paper": Object {
+            "background": "linear-gradient(to bottom, #250056, #0076ae)",
+            "border": 0,
+          },
+        },
+        "MuiFormLabel": Object {
+          "focused": Object {
+            "color": "#297dfd",
+          },
+        },
+        "MuiInput": Object {
+          "inkbar": Object {
+            "&:after": Object {
+              "backgroundColor": "#297dfd",
+            },
+          },
+        },
+        "MuiMenuItem": Object {
+          "root": Object {
+            "&:hover": Object {
+              "backgroundColor": "#297dfd",
+              "boxShadow": "0 5px 5px #d9d9d9",
+              "color": "#fff",
+            },
+            "borderRadius": 4,
+            "color": "#000",
+            "fontSize": 14,
+            "fontWeight": 300,
+            "height": 8,
+            "margin": "0 3px",
+          },
+        },
+        "MuiPaper": Object {
+          "root": Object {
+            "border": ".5px solid rgba(0, 0, 0, 0.075)",
+          },
+          "rounded": Object {
+            "borderRadius": 4,
+          },
+          "shadow8": Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #d9d9d9",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+          },
+        },
+        "MuiTab": Object {
+          "root": Object {
+            "borderBottom": "1px solid #e8e8e8",
+            "lineHeight": 1,
+            "textTransform": "none",
+          },
+          "rootInheritSelected": Object {
+            "borderBottom": "none",
+            "borderLeft": "1px solid #e8e8e8",
+            "borderRight": "1px solid #e8e8e8",
+            "borderTop": "4px solid #297dfd",
+            "borderTopLeftRadius": 4,
+            "borderTopRightRadius": 4,
+          },
+        },
+        "MuiTable": Object {
+          "root": Object {
+            "border": "none",
+          },
+        },
+        "MuiTableBody": Object {
+          "root": Object {
+            "border": "none",
+          },
+        },
+        "MuiTableCell": Object {
+          "head": Object {
+            "color": "#000",
+            "fontWeight": 700,
+          },
+          "root": Object {
+            "borderBottom": "none",
+          },
+        },
+        "MuiTableHead": Object {
+          "root": Object {
+            "backgroundColor": "#f2f2f2",
+            "border": "none",
+          },
+        },
+        "MuiTableRow": Object {
+          "footer": Object {
+            "height": 32,
+          },
+          "head": Object {
+            "height": 32,
+          },
+          "hover": Object {
+            "&:hover": Object {
+              "backgroundColor": "#e5efff",
+            },
+          },
+          "root": Object {
+            "&:first-of-type": Object {
+              "border": "none",
+            },
+            "borderBottom": ".2px solid #d9d9d9",
+            "borderTop": ".2px solid #d9d9d9",
+          },
+          "selected": Object {
+            "backgroundColor": "#e5efff",
+          },
+        },
+      },
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(255, 255, 255, 1)",
+          "disabled": "rgba(255, 255, 255, 0.3)",
+        },
+        "background": Object {
+          "appBar": "#212121",
+          "contentFrame": "#0d002b",
+          "default": "#16003c",
+          "paper": "#1b0045",
+        },
+        "common": Object {
+          "black": "#000",
+          "darkBlack": "rgba(0, 0, 0, 0.87)",
+          "darkWhite": "rgba(255, 255, 255, 0.87)",
+          "faintBlack": "rgba(0, 0, 0, 0.12)",
+          "fullBlack": "rgba(0, 0, 0, 1)",
+          "fullWhite": "rgba(255, 255, 255, 1)",
+          "lightBlack": "rgba(0, 0, 0, 0.54)",
+          "lightWhite": "rgba(255, 255, 255, 0.54)",
+          "minBlack": "rgba(0, 0, 0, 0.26)",
+          "transparent": "rgba(0, 0, 0, 0)",
+          "white": "#fff",
+        },
+        "error": Object {
+          "100": "#f5bebe",
+          "200": "#ee9393",
+          "300": "#e76767",
+          "400": "#e24747",
+          "50": "#fbe5e5",
+          "500": "#dd2626",
+          "600": "#d92222",
+          "700": "#d41c1c",
+          "800": "#cf1717",
+          "900": "#c70d0d",
+          "A100": "#fff3f3",
+          "A200": "#ffc0c0",
+          "A400": "#ff8d8d",
+          "A700": "#ff7474",
+          "contrastDefaultColor": "light",
+        },
+        "getContrastText": [Function],
+        "gradient1": Object {
+          "100": "#beb3cc",
+          "200": "#9280ab",
+          "300": "#664d89",
+          "400": "#46266f",
+          "50": "#e5e0eb",
+          "500": "#250056",
+          "600": "#21004f",
+          "700": "#1b0045",
+          "800": "#16003c",
+          "900": "#0d002b",
+          "A100": "#8065ff",
+          "A200": "#5532ff",
+          "A400": "#5506fb",
+          "A700": "#4800df",
+          "contrastDefaultColor": "light",
+        },
+        "gradient2": Object {
+          "100": "#b3d6e7",
+          "200": "#80bbd7",
+          "300": "#4d9fc6",
+          "400": "#268bba",
+          "50": "#e0eff5",
+          "500": "#0076ae",
+          "600": "#006ea7",
+          "700": "#00639d",
+          "800": "#005994",
+          "900": "#004684",
+          "A100": "#b1d5ff",
+          "A200": "#7eb9ff",
+          "A400": "#4b9dff",
+          "A700": "#318fff",
+          "contrastDefaultColor": "light",
+        },
+        "grey": Object {
+          "100": "#f6f6f6",
+          "200": "#f2f2f2",
+          "300": "#e8e8e8",
+          "400": "#d9d9d9",
+          "50": "#f8f9fb",
+          "500": "#cccccc",
+          "600": "#b2b2b2",
+          "700": "#999999",
+          "800": "#666666",
+          "900": "#333333",
+          "A100": "#e2edf2",
+          "A200": "#a6b2b8",
+          "A400": "#626f74",
+          "A700": "#384145",
+          "contrastDefaultColor": "dark",
+        },
+        "input": Object {
+          "bottomLine": "rgba(255, 255, 255, 0.7)",
+          "disabled": "rgba(255, 255, 255, 0.5)",
+          "helperText": "rgba(255, 255, 255, 0.7)",
+          "inputText": "rgba(255, 255, 255, 1)",
+          "labelText": "rgba(255, 255, 255, 0.7)",
+        },
+        "primary": Object {
+          "100": "#bfd8fe",
+          "200": "#94befe",
+          "300": "#69a4fe",
+          "400": "#4991fd",
+          "50": "#e5efff",
+          "500": "#297dfd",
+          "600": "#2475fd",
+          "700": "#1f6afc",
+          "800": "#1960fc",
+          "900": "#0f4dfc",
+          "A100": "#ecf0fb",
+          "A200": "#dfe5ff",
+          "A400": "#c1cfff",
+          "A700": "#a7bbff",
+          "contrastDefaultColor": "light",
+        },
+        "secondary": Object {
+          "100": "#e3c9e9",
+          "200": "#d1a5db",
+          "300": "#bf81cd",
+          "400": "#b166c2",
+          "50": "#f4e9f6",
+          "500": "#a34bb7",
+          "600": "#9b44b0",
+          "700": "#913ba7",
+          "800": "#88339f",
+          "900": "#772390",
+          "A100": "#f3cfff",
+          "A200": "#e69cff",
+          "A400": "#da69ff",
+          "A700": "#d34fff",
+          "contrastDefaultColor": "light",
+        },
+        "shades": Object {
+          "dark": Object {
+            "action": Object {
+              "active": "rgba(255, 255, 255, 1)",
+              "disabled": "rgba(255, 255, 255, 0.3)",
+            },
+            "background": Object {
+              "appBar": "#212121",
+              "contentFrame": "#0d002b",
+              "default": "#16003c",
+              "paper": "#1b0045",
+            },
+            "input": Object {
+              "bottomLine": "rgba(255, 255, 255, 0.7)",
+              "disabled": "rgba(255, 255, 255, 0.5)",
+              "helperText": "rgba(255, 255, 255, 0.7)",
+              "inputText": "rgba(255, 255, 255, 1)",
+              "labelText": "rgba(255, 255, 255, 0.7)",
+            },
+            "text": Object {
+              "disabled": "rgba(255, 255, 255, 0.5)",
+              "divider": "rgba(255, 255, 255, 0.12)",
+              "hint": "rgba(255, 255, 255, 0.5)",
+              "icon": "rgba(255, 255, 255, 0.5)",
+              "lightDivider": "rgba(255, 255, 255, 0.075)",
+              "primary": "rgba(255, 255, 255, 1)",
+              "secondary": "rgba(255, 255, 255, 0.7)",
+            },
+          },
+          "light": Object {
+            "action": Object {
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+            },
+            "background": Object {
+              "appBar": "#f5f5f5",
+              "contentFrame": "#f2f2f2",
+              "default": "#f6f6f6",
+              "paper": "#fff",
+            },
+            "input": Object {
+              "bottomLine": "rgba(0, 0, 0, 0.42)",
+              "disabled": "rgba(0, 0, 0, 0.42)",
+              "helperText": "rgba(0, 0, 0, 0.54)",
+              "inputText": "rgba(0, 0, 0, 0.87)",
+              "labelText": "rgba(0, 0, 0, 0.54)",
+            },
+            "text": Object {
+              "disabled": "rgba(0, 0, 0, 0.38)",
+              "divider": "#e5efff",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "icon": "rgba(0, 0, 0, 0.38)",
+              "lightDivider": "rgba(0, 0, 0, 0.075)",
+              "primary": "rgba(0, 0, 0, 0.87)",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+          },
+        },
+        "text": Object {
+          "disabled": "rgba(255, 255, 255, 0.5)",
+          "divider": "rgba(255, 255, 255, 0.12)",
+          "hint": "rgba(255, 255, 255, 0.5)",
+          "icon": "rgba(255, 255, 255, 0.5)",
+          "lightDivider": "rgba(255, 255, 255, 0.075)",
+          "primary": "rgba(255, 255, 255, 1)",
+          "secondary": "rgba(255, 255, 255, 0.7)",
+        },
+        "type": "dark",
+      },
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+        "0px 1px 5px 0px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+        "0px 1px 8px 0px rgba(0, 0, 0, 0.2),0px 3px 4px 0px rgba(0, 0, 0, 0.14),0px 3px 3px -2px rgba(0, 0, 0, 0.12)",
+        "0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+        "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 5px 8px 0px rgba(0, 0, 0, 0.14),0px 1px 14px 0px rgba(0, 0, 0, 0.12)",
+        "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)",
+        "0px 4px 5px -2px rgba(0, 0, 0, 0.2),0px 7px 10px 1px rgba(0, 0, 0, 0.14),0px 2px 16px 1px rgba(0, 0, 0, 0.12)",
+        "0px 5px 5px -3px rgba(0, 0, 0, 0.2),0px 8px 10px 1px rgba(0, 0, 0, 0.14),0px 3px 14px 2px rgba(0, 0, 0, 0.12)",
+        "0px 5px 6px -3px rgba(0, 0, 0, 0.2),0px 9px 12px 1px rgba(0, 0, 0, 0.14),0px 3px 16px 2px rgba(0, 0, 0, 0.12)",
+        "0px 6px 6px -3px rgba(0, 0, 0, 0.2),0px 10px 14px 1px rgba(0, 0, 0, 0.14),0px 4px 18px 3px rgba(0, 0, 0, 0.12)",
+        "0px 6px 7px -4px rgba(0, 0, 0, 0.2),0px 11px 15px 1px rgba(0, 0, 0, 0.14),0px 4px 20px 3px rgba(0, 0, 0, 0.12)",
+        "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 12px 17px 2px rgba(0, 0, 0, 0.14),0px 5px 22px 4px rgba(0, 0, 0, 0.12)",
+        "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 13px 19px 2px rgba(0, 0, 0, 0.14),0px 5px 24px 4px rgba(0, 0, 0, 0.12)",
+        "0px 7px 9px -4px rgba(0, 0, 0, 0.2),0px 14px 21px 2px rgba(0, 0, 0, 0.14),0px 5px 26px 4px rgba(0, 0, 0, 0.12)",
+        "0px 8px 9px -5px rgba(0, 0, 0, 0.2),0px 15px 22px 2px rgba(0, 0, 0, 0.14),0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
+        "0px 8px 10px -5px rgba(0, 0, 0, 0.2),0px 16px 24px 2px rgba(0, 0, 0, 0.14),0px 6px 30px 5px rgba(0, 0, 0, 0.12)",
+        "0px 8px 11px -5px rgba(0, 0, 0, 0.2),0px 17px 26px 2px rgba(0, 0, 0, 0.14),0px 6px 32px 5px rgba(0, 0, 0, 0.12)",
+        "0px 9px 11px -5px rgba(0, 0, 0, 0.2),0px 18px 28px 2px rgba(0, 0, 0, 0.14),0px 7px 34px 6px rgba(0, 0, 0, 0.12)",
+        "0px 9px 12px -6px rgba(0, 0, 0, 0.2),0px 19px 29px 2px rgba(0, 0, 0, 0.14),0px 7px 36px 6px rgba(0, 0, 0, 0.12)",
+        "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 20px 31px 3px rgba(0, 0, 0, 0.14),0px 8px 38px 7px rgba(0, 0, 0, 0.12)",
+        "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 21px 33px 3px rgba(0, 0, 0, 0.14),0px 8px 40px 7px rgba(0, 0, 0, 0.12)",
+        "0px 10px 14px -6px rgba(0, 0, 0, 0.2),0px 22px 35px 3px rgba(0, 0, 0, 0.14),0px 8px 42px 7px rgba(0, 0, 0, 0.12)",
+        "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
+        "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
+      ],
+      "spacing": Object {
+        "unit": 8,
+      },
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "lineHeight": "1.46429em",
+        },
+        "body2": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "lineHeight": "1.71429em",
+        },
+        "button": Object {
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.9375rem",
+          "fontWeight": 500,
+          "textTransform": "none",
+        },
+        "caption": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "lineHeight": "1.375em",
+        },
+        "display1": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "lineHeight": "1.20588em",
+          "marginLeft": "-.04em",
+        },
+        "display2": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "2.8125rem",
+          "fontWeight": 400,
+          "lineHeight": "1.06667em",
+          "marginLeft": "-.04em",
+        },
+        "display3": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "3.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "-.02em",
+          "lineHeight": "1.30357em",
+          "marginLeft": "-.04em",
+        },
+        "display4": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "7rem",
+          "fontWeight": 300,
+          "letterSpacing": "-.04em",
+          "lineHeight": "1.14286em",
+          "marginLeft": "-.06em",
+        },
+        "fontFamily": "Nunito Sans, Roboto, sans-serif",
+        "fontSize": 16,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "headline": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "lineHeight": "1.35417em",
+        },
+        "subheading": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "lineHeight": "1.5em",
+        },
+        "title": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1.3125rem",
+          "fontWeight": 500,
+          "lineHeight": "1.16667em",
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "dialog": 1500,
+        "dialogOverlay": 1400,
+        "drawerOverlay": 1200,
+        "layer": 2000,
+        "menu": 1000,
+        "mobileStepper": 900,
+        "navDrawer": 1300,
+        "popover": 2100,
+        "snackbar": 2900,
+        "tooltip": 3000,
+      },
+    }
+  }
+>
+  <withStyles(Drawer)
+    classes={
+      Object {
+        "paper": "drawer",
+      }
+    }
+    type="permanent"
+  >
+    <withStyles(Divider) />
+    <div
+      className="header"
+    >
+      <div>
+        <withStyles(Typography)
+          gutterBottom={true}
+          type="title"
+        >
+          Test Title Id
+        </withStyles(Typography)>
+        <withStyles(Divider) />
+      </div>
+      <div />
+    </div>
+    <withStyles(List)>
+      <withStyles(ListItem)
+        button={true}
+        disableGutters={true}
+      >
+        <withStyles(Button)
+          color="primary"
+          onClick={[Function]}
+          raised={true}
+        >
+          <FormattedMessage
+            id="Test Button Text Id"
+            values={Object {}}
+          />
+        </withStyles(Button)>
+      </withStyles(ListItem)>
+    </withStyles(List)>
+  </withStyles(Drawer)>
+</MuiThemeProviderWrapper>
+`;
+
+exports[`<SideMenu/> component renders successfully without listItems 1`] = `
+<MuiThemeProviderWrapper
+  theme={
+    Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 360,
+        },
+        "width": [Function],
+      },
+      "chart": Object {
+        "background": "#fff",
+        "bar": Object {
+          "0": "#94befe",
+          "1": "#1960fc",
+        },
+        "fill": Object {
+          "0": "#297dfd",
+          "1": "#94befe",
+        },
+        "line": Object {
+          "0": "#297dfd",
+          "1": "#F17800",
+          "2": "#7F3BA7",
+          "3": "#E2B627",
+          "4": "#43B649",
+          "5": "#DD4477",
+          "6": "#0099C6",
+        },
+      },
+      "darkChart": Object {
+        "background": "#1b0045",
+        "bar": Object {
+          "0": "#94befe",
+          "1": "#da69ff",
+        },
+        "fill": Object {
+          "0": "#da69ff",
+          "1": "#94befe",
+        },
+        "line": Object {
+          "0": "#f8f9fb",
+          "1": "#F17800",
+          "2": "#7F3BA7",
+          "3": "#E2B627",
+          "4": "#43B649",
+          "5": "#DD4477",
+          "6": "#0099C6",
+        },
+      },
+      "direction": "ltr",
+      "menu": Object {
+        "active": Object {
+          "background": "rgba(255, 255, 255, .27)",
+        },
+      },
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {
+        "MuiAppBar": Object {
+          "colorPrimary": Object {
+            "background": "linear-gradient(to right, #250056, #0076ae)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+          },
+          "root": Object {
+            "boxShadow": "none",
+          },
+        },
+        "MuiButton": Object {
+          "root": Object {
+            "borderRadius": 3,
+            "whiteSpace": "nowrap",
+          },
+        },
+        "MuiDrawer": Object {
+          "paper": Object {
+            "background": "linear-gradient(to bottom, #250056, #0076ae)",
+            "border": 0,
+          },
+        },
+        "MuiFormLabel": Object {
+          "focused": Object {
+            "color": "#297dfd",
+          },
+        },
+        "MuiInput": Object {
+          "inkbar": Object {
+            "&:after": Object {
+              "backgroundColor": "#297dfd",
+            },
+          },
+        },
+        "MuiMenuItem": Object {
+          "root": Object {
+            "&:hover": Object {
+              "backgroundColor": "#297dfd",
+              "boxShadow": "0 5px 5px #d9d9d9",
+              "color": "#fff",
+            },
+            "borderRadius": 4,
+            "color": "#000",
+            "fontSize": 14,
+            "fontWeight": 300,
+            "height": 8,
+            "margin": "0 3px",
+          },
+        },
+        "MuiPaper": Object {
+          "root": Object {
+            "border": ".5px solid rgba(0, 0, 0, 0.075)",
+          },
+          "rounded": Object {
+            "borderRadius": 4,
+          },
+          "shadow8": Object {
+            "backgroundColor": "#fff",
+            "border": "1px solid #d9d9d9",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+          },
+        },
+        "MuiTab": Object {
+          "root": Object {
+            "borderBottom": "1px solid #e8e8e8",
+            "lineHeight": 1,
+            "textTransform": "none",
+          },
+          "rootInheritSelected": Object {
+            "borderBottom": "none",
+            "borderLeft": "1px solid #e8e8e8",
+            "borderRight": "1px solid #e8e8e8",
+            "borderTop": "4px solid #297dfd",
+            "borderTopLeftRadius": 4,
+            "borderTopRightRadius": 4,
+          },
+        },
+        "MuiTable": Object {
+          "root": Object {
+            "border": "none",
+          },
+        },
+        "MuiTableBody": Object {
+          "root": Object {
+            "border": "none",
+          },
+        },
+        "MuiTableCell": Object {
+          "head": Object {
+            "color": "#000",
+            "fontWeight": 700,
+          },
+          "root": Object {
+            "borderBottom": "none",
+          },
+        },
+        "MuiTableHead": Object {
+          "root": Object {
+            "backgroundColor": "#f2f2f2",
+            "border": "none",
+          },
+        },
+        "MuiTableRow": Object {
+          "footer": Object {
+            "height": 32,
+          },
+          "head": Object {
+            "height": 32,
+          },
+          "hover": Object {
+            "&:hover": Object {
+              "backgroundColor": "#e5efff",
+            },
+          },
+          "root": Object {
+            "&:first-of-type": Object {
+              "border": "none",
+            },
+            "borderBottom": ".2px solid #d9d9d9",
+            "borderTop": ".2px solid #d9d9d9",
+          },
+          "selected": Object {
+            "backgroundColor": "#e5efff",
+          },
+        },
+      },
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(255, 255, 255, 1)",
+          "disabled": "rgba(255, 255, 255, 0.3)",
+        },
+        "background": Object {
+          "appBar": "#212121",
+          "contentFrame": "#0d002b",
+          "default": "#16003c",
+          "paper": "#1b0045",
+        },
+        "common": Object {
+          "black": "#000",
+          "darkBlack": "rgba(0, 0, 0, 0.87)",
+          "darkWhite": "rgba(255, 255, 255, 0.87)",
+          "faintBlack": "rgba(0, 0, 0, 0.12)",
+          "fullBlack": "rgba(0, 0, 0, 1)",
+          "fullWhite": "rgba(255, 255, 255, 1)",
+          "lightBlack": "rgba(0, 0, 0, 0.54)",
+          "lightWhite": "rgba(255, 255, 255, 0.54)",
+          "minBlack": "rgba(0, 0, 0, 0.26)",
+          "transparent": "rgba(0, 0, 0, 0)",
+          "white": "#fff",
+        },
+        "error": Object {
+          "100": "#f5bebe",
+          "200": "#ee9393",
+          "300": "#e76767",
+          "400": "#e24747",
+          "50": "#fbe5e5",
+          "500": "#dd2626",
+          "600": "#d92222",
+          "700": "#d41c1c",
+          "800": "#cf1717",
+          "900": "#c70d0d",
+          "A100": "#fff3f3",
+          "A200": "#ffc0c0",
+          "A400": "#ff8d8d",
+          "A700": "#ff7474",
+          "contrastDefaultColor": "light",
+        },
+        "getContrastText": [Function],
+        "gradient1": Object {
+          "100": "#beb3cc",
+          "200": "#9280ab",
+          "300": "#664d89",
+          "400": "#46266f",
+          "50": "#e5e0eb",
+          "500": "#250056",
+          "600": "#21004f",
+          "700": "#1b0045",
+          "800": "#16003c",
+          "900": "#0d002b",
+          "A100": "#8065ff",
+          "A200": "#5532ff",
+          "A400": "#5506fb",
+          "A700": "#4800df",
+          "contrastDefaultColor": "light",
+        },
+        "gradient2": Object {
+          "100": "#b3d6e7",
+          "200": "#80bbd7",
+          "300": "#4d9fc6",
+          "400": "#268bba",
+          "50": "#e0eff5",
+          "500": "#0076ae",
+          "600": "#006ea7",
+          "700": "#00639d",
+          "800": "#005994",
+          "900": "#004684",
+          "A100": "#b1d5ff",
+          "A200": "#7eb9ff",
+          "A400": "#4b9dff",
+          "A700": "#318fff",
+          "contrastDefaultColor": "light",
+        },
+        "grey": Object {
+          "100": "#f6f6f6",
+          "200": "#f2f2f2",
+          "300": "#e8e8e8",
+          "400": "#d9d9d9",
+          "50": "#f8f9fb",
+          "500": "#cccccc",
+          "600": "#b2b2b2",
+          "700": "#999999",
+          "800": "#666666",
+          "900": "#333333",
+          "A100": "#e2edf2",
+          "A200": "#a6b2b8",
+          "A400": "#626f74",
+          "A700": "#384145",
+          "contrastDefaultColor": "dark",
+        },
+        "input": Object {
+          "bottomLine": "rgba(255, 255, 255, 0.7)",
+          "disabled": "rgba(255, 255, 255, 0.5)",
+          "helperText": "rgba(255, 255, 255, 0.7)",
+          "inputText": "rgba(255, 255, 255, 1)",
+          "labelText": "rgba(255, 255, 255, 0.7)",
+        },
+        "primary": Object {
+          "100": "#bfd8fe",
+          "200": "#94befe",
+          "300": "#69a4fe",
+          "400": "#4991fd",
+          "50": "#e5efff",
+          "500": "#297dfd",
+          "600": "#2475fd",
+          "700": "#1f6afc",
+          "800": "#1960fc",
+          "900": "#0f4dfc",
+          "A100": "#ecf0fb",
+          "A200": "#dfe5ff",
+          "A400": "#c1cfff",
+          "A700": "#a7bbff",
+          "contrastDefaultColor": "light",
+        },
+        "secondary": Object {
+          "100": "#e3c9e9",
+          "200": "#d1a5db",
+          "300": "#bf81cd",
+          "400": "#b166c2",
+          "50": "#f4e9f6",
+          "500": "#a34bb7",
+          "600": "#9b44b0",
+          "700": "#913ba7",
+          "800": "#88339f",
+          "900": "#772390",
+          "A100": "#f3cfff",
+          "A200": "#e69cff",
+          "A400": "#da69ff",
+          "A700": "#d34fff",
+          "contrastDefaultColor": "light",
+        },
+        "shades": Object {
+          "dark": Object {
+            "action": Object {
+              "active": "rgba(255, 255, 255, 1)",
+              "disabled": "rgba(255, 255, 255, 0.3)",
+            },
+            "background": Object {
+              "appBar": "#212121",
+              "contentFrame": "#0d002b",
+              "default": "#16003c",
+              "paper": "#1b0045",
+            },
+            "input": Object {
+              "bottomLine": "rgba(255, 255, 255, 0.7)",
+              "disabled": "rgba(255, 255, 255, 0.5)",
+              "helperText": "rgba(255, 255, 255, 0.7)",
+              "inputText": "rgba(255, 255, 255, 1)",
+              "labelText": "rgba(255, 255, 255, 0.7)",
+            },
+            "text": Object {
+              "disabled": "rgba(255, 255, 255, 0.5)",
+              "divider": "rgba(255, 255, 255, 0.12)",
+              "hint": "rgba(255, 255, 255, 0.5)",
+              "icon": "rgba(255, 255, 255, 0.5)",
+              "lightDivider": "rgba(255, 255, 255, 0.075)",
+              "primary": "rgba(255, 255, 255, 1)",
+              "secondary": "rgba(255, 255, 255, 0.7)",
+            },
+          },
+          "light": Object {
+            "action": Object {
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+            },
+            "background": Object {
+              "appBar": "#f5f5f5",
+              "contentFrame": "#f2f2f2",
+              "default": "#f6f6f6",
+              "paper": "#fff",
+            },
+            "input": Object {
+              "bottomLine": "rgba(0, 0, 0, 0.42)",
+              "disabled": "rgba(0, 0, 0, 0.42)",
+              "helperText": "rgba(0, 0, 0, 0.54)",
+              "inputText": "rgba(0, 0, 0, 0.87)",
+              "labelText": "rgba(0, 0, 0, 0.54)",
+            },
+            "text": Object {
+              "disabled": "rgba(0, 0, 0, 0.38)",
+              "divider": "#e5efff",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "icon": "rgba(0, 0, 0, 0.38)",
+              "lightDivider": "rgba(0, 0, 0, 0.075)",
+              "primary": "rgba(0, 0, 0, 0.87)",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+          },
+        },
+        "text": Object {
+          "disabled": "rgba(255, 255, 255, 0.5)",
+          "divider": "rgba(255, 255, 255, 0.12)",
+          "hint": "rgba(255, 255, 255, 0.5)",
+          "icon": "rgba(255, 255, 255, 0.5)",
+          "lightDivider": "rgba(255, 255, 255, 0.075)",
+          "primary": "rgba(255, 255, 255, 1)",
+          "secondary": "rgba(255, 255, 255, 0.7)",
+        },
+        "type": "dark",
+      },
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+        "0px 1px 5px 0px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+        "0px 1px 8px 0px rgba(0, 0, 0, 0.2),0px 3px 4px 0px rgba(0, 0, 0, 0.14),0px 3px 3px -2px rgba(0, 0, 0, 0.12)",
+        "0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+        "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 5px 8px 0px rgba(0, 0, 0, 0.14),0px 1px 14px 0px rgba(0, 0, 0, 0.12)",
+        "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)",
+        "0px 4px 5px -2px rgba(0, 0, 0, 0.2),0px 7px 10px 1px rgba(0, 0, 0, 0.14),0px 2px 16px 1px rgba(0, 0, 0, 0.12)",
+        "0px 5px 5px -3px rgba(0, 0, 0, 0.2),0px 8px 10px 1px rgba(0, 0, 0, 0.14),0px 3px 14px 2px rgba(0, 0, 0, 0.12)",
+        "0px 5px 6px -3px rgba(0, 0, 0, 0.2),0px 9px 12px 1px rgba(0, 0, 0, 0.14),0px 3px 16px 2px rgba(0, 0, 0, 0.12)",
+        "0px 6px 6px -3px rgba(0, 0, 0, 0.2),0px 10px 14px 1px rgba(0, 0, 0, 0.14),0px 4px 18px 3px rgba(0, 0, 0, 0.12)",
+        "0px 6px 7px -4px rgba(0, 0, 0, 0.2),0px 11px 15px 1px rgba(0, 0, 0, 0.14),0px 4px 20px 3px rgba(0, 0, 0, 0.12)",
+        "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 12px 17px 2px rgba(0, 0, 0, 0.14),0px 5px 22px 4px rgba(0, 0, 0, 0.12)",
+        "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 13px 19px 2px rgba(0, 0, 0, 0.14),0px 5px 24px 4px rgba(0, 0, 0, 0.12)",
+        "0px 7px 9px -4px rgba(0, 0, 0, 0.2),0px 14px 21px 2px rgba(0, 0, 0, 0.14),0px 5px 26px 4px rgba(0, 0, 0, 0.12)",
+        "0px 8px 9px -5px rgba(0, 0, 0, 0.2),0px 15px 22px 2px rgba(0, 0, 0, 0.14),0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
+        "0px 8px 10px -5px rgba(0, 0, 0, 0.2),0px 16px 24px 2px rgba(0, 0, 0, 0.14),0px 6px 30px 5px rgba(0, 0, 0, 0.12)",
+        "0px 8px 11px -5px rgba(0, 0, 0, 0.2),0px 17px 26px 2px rgba(0, 0, 0, 0.14),0px 6px 32px 5px rgba(0, 0, 0, 0.12)",
+        "0px 9px 11px -5px rgba(0, 0, 0, 0.2),0px 18px 28px 2px rgba(0, 0, 0, 0.14),0px 7px 34px 6px rgba(0, 0, 0, 0.12)",
+        "0px 9px 12px -6px rgba(0, 0, 0, 0.2),0px 19px 29px 2px rgba(0, 0, 0, 0.14),0px 7px 36px 6px rgba(0, 0, 0, 0.12)",
+        "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 20px 31px 3px rgba(0, 0, 0, 0.14),0px 8px 38px 7px rgba(0, 0, 0, 0.12)",
+        "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 21px 33px 3px rgba(0, 0, 0, 0.14),0px 8px 40px 7px rgba(0, 0, 0, 0.12)",
+        "0px 10px 14px -6px rgba(0, 0, 0, 0.2),0px 22px 35px 3px rgba(0, 0, 0, 0.14),0px 8px 42px 7px rgba(0, 0, 0, 0.12)",
+        "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
+        "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
+      ],
+      "spacing": Object {
+        "unit": 8,
+      },
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "lineHeight": "1.46429em",
+        },
+        "body2": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "lineHeight": "1.71429em",
+        },
+        "button": Object {
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.9375rem",
+          "fontWeight": 500,
+          "textTransform": "none",
+        },
+        "caption": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "lineHeight": "1.375em",
+        },
+        "display1": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "lineHeight": "1.20588em",
+          "marginLeft": "-.04em",
+        },
+        "display2": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "2.8125rem",
+          "fontWeight": 400,
+          "lineHeight": "1.06667em",
+          "marginLeft": "-.04em",
+        },
+        "display3": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "3.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "-.02em",
+          "lineHeight": "1.30357em",
+          "marginLeft": "-.04em",
+        },
+        "display4": Object {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "7rem",
+          "fontWeight": 300,
+          "letterSpacing": "-.04em",
+          "lineHeight": "1.14286em",
+          "marginLeft": "-.06em",
+        },
+        "fontFamily": "Nunito Sans, Roboto, sans-serif",
+        "fontSize": 16,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "headline": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "lineHeight": "1.35417em",
+        },
+        "subheading": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "lineHeight": "1.5em",
+        },
+        "title": Object {
+          "color": "rgba(255, 255, 255, 1)",
+          "fontFamily": "Nunito Sans, Roboto, sans-serif",
+          "fontSize": "1.3125rem",
+          "fontWeight": 500,
+          "lineHeight": "1.16667em",
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "dialog": 1500,
+        "dialogOverlay": 1400,
+        "drawerOverlay": 1200,
+        "layer": 2000,
+        "menu": 1000,
+        "mobileStepper": 900,
+        "navDrawer": 1300,
+        "popover": 2100,
+        "snackbar": 2900,
+        "tooltip": 3000,
+      },
+    }
+  }
+>
+  <withStyles(Drawer)
+    classes={
+      Object {
+        "paper": "drawer",
+      }
+    }
+    type="permanent"
+  >
+    <withStyles(Divider) />
+    <div
+      className="header"
+    >
+      <div>
+        <withStyles(Typography)
+          gutterBottom={true}
+          type="title"
+        >
+          Test Title Id
+        </withStyles(Typography)>
+        <withStyles(Divider) />
+      </div>
+      <div />
+    </div>
+    <withStyles(List) />
+  </withStyles(Drawer)>
+</MuiThemeProviderWrapper>
+`;

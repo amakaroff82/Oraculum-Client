@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DataTableRowActions /> renders snapshot correctly with a child action 1`] = `
+<div>
+  <withStyles(Component)
+    childComponent={<div />}
+  />
+</div>
+`;
+
+exports[`<DataTableRowActions /> renders snapshot correctly with required props 1`] = `<div />`;

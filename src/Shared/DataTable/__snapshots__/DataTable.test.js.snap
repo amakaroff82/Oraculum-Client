@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DataTable /> renders snapshot correctly with required props 1`] = `
+<ReactTable
+  AggregatedComponent={[Function]}
+  ExpanderComponent={[Function]}
+  FilterComponent={[Function]}
+  LoadingComponent={[Function]}
+  NextComponent={[Function]}
+  NoDataComponent={[Function]}
+  PadRowComponent={[Function]}
+  PaginationComponent={[Function]}
+  PivotValueComponent={[Function]}
+  PreviousComponent={[Function]}
+  ResizerComponent={[Function]}
+  TableComponent={[Function]}
+  TbodyComponent={[Function]}
+  TdComponent={[Function]}
+  TfootComponent={[Function]}
+  ThComponent={[Function]}
+  TheadComponent={[Function]}
+  TrComponent={[Function]}
+  TrGroupComponent={[Function]}
+  aggregatedKey="_aggregated"
+  className=""
+  collapseOnDataChange={true}
+  collapseOnPageChange={true}
+  collapseOnSortingChange={true}
+  column={
+    Object {
+      "Aggregated": undefined,
+      "Cell": undefined,
+      "Expander": undefined,
+      "Filter": undefined,
+      "Footer": undefined,
+      "Header": undefined,
+      "Pivot": undefined,
+      "PivotValue": undefined,
+      "aggregate": undefined,
+      "className": undefined,
+      "filterAll": false,
+      "filterMethod": undefined,
+      "filterable": undefined,
+      "footerClassName": "",
+      "footerStyle": Object {},
+      "getFooterProps": [Function],
+      "getHeaderProps": [Function],
+      "getProps": [Function],
+      "headerClassName": undefined,
+      "headerStyle": Object {},
+      "minWidth": 100,
+      "resizable": undefined,
+      "show": true,
+      "sortMethod": undefined,
+      "sortable": undefined,
+      "style": Object {},
+    }
+  }
+  columns={
+    Array [
+      Object {
+        "Header": "Name",
+        "accessor": "name",
+      },
+      Object {
+        "Header": "Status",
+        "accessor": "status",
+      },
+      Object {
+        "Header": "Topic",
+        "accessor": "topic",
+      },
+      Object {
+        "Header": "Products",
+        "accessor": [Function],
+        "id": "products",
+      },
+      Object {
+        "Header": "Date Last Modified",
+        "accessor": "dateLastModified",
+      },
+      Object {
+        "Header": "Orchestration",
+        "accessor": "crmOrchestration",
+      },
+    ]
+  }
+  data={
+    Array [
+      Object {
+        "crmOrchestration": "Triggerable",
+        "dateLastModified": "2017-05-10T15:16:25.087",
+        "id": "1",
+        "name": "Prelaunch Teaser",
+        "owner": "swift_nick@yahoo.com",
+        "products": Array [
+          "Atrino Health",
+        ],
+        "status": "Running",
+        "topic": "General Communications",
+      },
+      Object {
+        "crmOrchestration": "Not Shared",
+        "dateLastModified": "2017-05-16T16:36:38.19",
+        "id": "2",
+        "name": "Physician Event",
+        "owner": "jedidiah.fahey@george.ca",
+        "products": Array [
+          "Atrino Health",
+        ],
+        "status": "Running",
+        "topic": "Event Nurture Info",
+      },
+      Object {
+        "crmOrchestration": "Viewable",
+        "dateLastModified": "2017-05-16T16:56:52.977",
+        "id": "3",
+        "name": "Q2 Campaigns",
+        "owner": "daphne_leuschke@hotmail.com",
+        "products": Array [
+          "Atrino Health",
+        ],
+        "status": "Draft",
+        "topic": "Web Contacts",
+      },
+      Object {
+        "crmOrchestration": "Not Shared",
+        "dateLastModified": "2017-05-18T16:47:49.56",
+        "id": "4",
+        "name": "Austin Symposium",
+        "owner": "ida.walker@brown.biz",
+        "products": Array [
+          "Atrino Health",
+        ],
+        "status": "Running",
+        "topic": "Event Nurture Info",
+      },
+      Object {
+        "crmOrchestration": "Triggerable",
+        "dateLastModified": "2017-05-22T15:04:13.57",
+        "id": "5",
+        "name": "Objection blunting",
+        "owner": "bria.jewess@yahoo.com",
+        "products": Array [
+          "Atrino Health",
+        ],
+        "status": "Running",
+        "topic": "Sales Communications",
+      },
+      Object {
+        "crmOrchestration": "Not Shared",
+        "dateLastModified": "2017-05-22T17:43:25.24",
+        "id": "6",
+        "name": "Objection blunting",
+        "owner": "bartell_alicia@langworth.ca",
+        "products": Array [
+          "Atrino Health",
+        ],
+        "status": "Draft",
+        "topic": "General Communications",
+      },
+    ]
+  }
+  defaultExpanded={Object {}}
+  defaultFilterMethod={[Function]}
+  defaultFiltered={Array []}
+  defaultPageSize={10}
+  defaultResized={Array []}
+  defaultSortDesc={false}
+  defaultSortMethod={[Function]}
+  defaultSorted={Array []}
+  expanderDefaults={
+    Object {
+      "filterable": false,
+      "resizable": false,
+      "sortable": false,
+      "width": 35,
+    }
+  }
+  filterable={false}
+  freezeWhenExpanded={false}
+  getLoadingProps={[Function]}
+  getNoDataProps={[Function]}
+  getPaginationProps={[Function]}
+  getProps={[Function]}
+  getResizerProps={[Function]}
+  getTableProps={[Function]}
+  getTbodyProps={[Function]}
+  getTdProps={[Function]}
+  getTfootProps={[Function]}
+  getTfootTdProps={[Function]}
+  getTfootTrProps={[Function]}
+  getTheadFilterProps={[Function]}
+  getTheadFilterThProps={[Function]}
+  getTheadFilterTrProps={[Function]}
+  getTheadGroupProps={[Function]}
+  getTheadGroupThProps={[Function]}
+  getTheadGroupTrProps={[Function]}
+  getTheadProps={[Function]}
+  getTheadThProps={[Function]}
+  getTheadTrProps={[Function]}
+  getTrGroupProps={[Function]}
+  getTrProps={[Function]}
+  groupedByPivotKey="_groupedByPivot"
+  indexKey="_index"
+  loading={false}
+  loadingText="Loading..."
+  nestingLevelKey="_nestingLevel"
+  nextText="Next"
+  noDataText={
+    <FormattedMessage
+      id="noResults"
+      values={Object {}}
+    />
+  }
+  ofText={
+    <FormattedMessage
+      id="of"
+      values={Object {}}
+    />
+  }
+  onFetchData={[Function]}
+  originalKey="_original"
+  pageSizeOptions={
+    Array [
+      5,
+      10,
+      20,
+      25,
+      50,
+      100,
+    ]
+  }
+  pageText={
+    <FormattedMessage
+      id="page"
+      values={Object {}}
+    />
+  }
+  pivotDefaults={Object {}}
+  pivotIDKey="_pivotID"
+  pivotValKey="_pivotVal"
+  previousText="Previous"
+  resizable={true}
+  rowsText="rowsText"
+  showPageJump={true}
+  showPageSizeOptions={true}
+  showPagination={true}
+  showPaginationBottom={true}
+  showPaginationTop={false}
+  sortable={true}
+  style={Object {}}
+  subRowsKey="_subRows"
+/>
+`;

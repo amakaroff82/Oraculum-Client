@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DataTableRowAction /> renders snapshot correctly when onClick prop is present 1`] = `
+<span>
+  <withStyles(IconButton)
+    classes={
+      Object {
+        "root": undefined,
+      }
+    }
+    onClick={[Function]}
+    title=""
+  >
+    <div />
+  </withStyles(IconButton)>
+</span>
+`;
+
+exports[`<DataTableRowAction /> renders snapshot correctly when onClick prop isnt present 1`] = `
+<span>
+  <div />
+</span>
+`;
