@@ -9,7 +9,7 @@ import {
   cmdLogoutUser,
   cmdAddComment
 } from '../Shared/types';
-import {Oraculum} from './base'
+import {Oraculum} from './base';
 
 
 const testUser = {
@@ -26,9 +26,14 @@ const testUser = {
 
 
 const chrome = window.chrome;
+const appConstants = require('../app-constants.json');
 
 function sendMessage(data, callback) {
-  chrome.runtime.sendMessage("lcpmicjjmgdclbmaeeeffjkiffpgddig", data, callback)
+  if (appConstants.isProdMod) {
+    chrome.runtime.sendMessage(data, callback);
+  } else {
+    chrome.runtime.sendMessage(appConstants.googleExtensionId, data, callback);
+  }
 }
 
 export function addPage(page) {
@@ -56,6 +61,7 @@ export function addComment(comment) {
 
 export function loginUser() {
   return new Promise(function (resolve, reject) {
+    // todo: refactor
     if (!chrome.extension) {
       Oraculum.user = testUser;
       resolve(testUser);

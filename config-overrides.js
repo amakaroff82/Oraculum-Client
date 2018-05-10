@@ -1,5 +1,6 @@
 const GenerateJsonPlugin = require('generate-json-webpack-plugin')
 const mnfst = require('./src/manifest.json');
+const appConstants = require('./src/app-constants.json');
 
 
 module.exports = (config, env) => {
@@ -52,11 +53,14 @@ module.exports = (config, env) => {
   if (process.env.GOOGLE_KEY === "production") {
     console.log("Production Google Key")
     // production
-    mnfst.oauth2.client_id = "696698952210-gbd3r631335t0pheksem6g1p41edqs34.apps.googleusercontent.com";
+    mnfst.oauth2.client_id = process.env.PROD_OAUTH_2_CLIENT_ID;
+    appConstants.googleExtensionId = process.env.DEV_GOOGLE_EXTENSION_ID;
+    appConstants.isProdMod = true;
   } else {
     console.log("Development Google Key")
     // dev
-    mnfst.oauth2.client_id = "696698952210-gr6m2p41uj8ckn3a2ldettt1teng54dk.apps.googleusercontent.com"
+    mnfst.oauth2.client_id = process.env.DEV_OAUTH_2_CLIENT_ID;
+      appConstants.isProdMod = false;
   }
 
   // remove hashes
@@ -92,6 +96,9 @@ module.exports = (config, env) => {
 
   // generate manifest
   config.plugins.push(new GenerateJsonPlugin("./manifest.json", mnfst));
+
+  // generate app constants
+  config.plugins.push(new GenerateJsonPlugin("./app-constants.json", appConstants));
 
   //console.log(JSON.stringify(config));
 
