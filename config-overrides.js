@@ -1,10 +1,13 @@
-const GenerateJsonPlugin = require('generate-json-webpack-plugin')
+const GenerateJsonPlugin = require('generate-json-webpack-plugin');
 const mnfst = require('./src/manifest.json');
-const appConstants = require('./src/app-constants.json');
 
 
 module.exports = (config, env) => {
 
+  const appConstants = {
+    googleExtensionId: '',
+    apiRoot: ''
+  };
   const config_entry = [...config.entry];
   config.entry = {
     index: config_entry,
@@ -51,17 +54,28 @@ module.exports = (config, env) => {
 
   // setup oauth2 keys
   if (process.env.GOOGLE_KEY === "production") {
-    console.log("Production Google Key")
+    console.log('Production Google Key');
     // production
     mnfst.oauth2.client_id = process.env.PROD_OAUTH_2_CLIENT_ID;
-    appConstants.googleExtensionId = process.env.DEV_GOOGLE_EXTENSION_ID;
-    appConstants.isProdMod = true;
+    appConstants.apiRoot = process.env.PROD_REACT_APP_API_URL;
   } else {
-    console.log("Development Google Key")
+    console.log('Development Google Key');
     // dev
     mnfst.oauth2.client_id = process.env.DEV_OAUTH_2_CLIENT_ID;
-      appConstants.isProdMod = false;
+    appConstants.googleExtensionId = process.env.DEV_GOOGLE_EXTENSION_ID;
+    appConstants.apiRoot = process.env.DEV_REACT_APP_API_URL;
   }
+
+  config.module.rules.push({
+    test: /app-constants\.js$/,
+    loader: 'string-replace-loader',
+    options: {
+      multiple: [
+        { search: '<--GOOGLE_EXTENSION_ID-->', replace: appConstants.googleExtensionId },
+        { search: '<--API_ROOT-->', replace: appConstants.apiRoot }
+      ]
+    }
+  });
 
   // remove hashes
   var cssConfig = config.plugins.find(function (plugin) {
@@ -97,10 +111,6 @@ module.exports = (config, env) => {
   // generate manifest
   config.plugins.push(new GenerateJsonPlugin("./manifest.json", mnfst));
 
-  // generate app constants
-  config.plugins.push(new GenerateJsonPlugin("./app-constants.json", appConstants));
-
   //console.log(JSON.stringify(config));
-
   return config;
 }
