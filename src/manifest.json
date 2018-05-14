@@ -39,5 +39,14 @@
     ],
     "browser_action": {
       "default_icon": "assets/logo1.png"
-    }
+    },
+   "externally_connectable": {
+     "ids": [
+       "*"
+     ],
+     "matches": [
+       "*://www.some-site.com/*"
+     ],
+     "accepts_tls_channel_id": false
+   }
 }

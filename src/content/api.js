@@ -9,26 +9,17 @@ import {
   cmdLogoutUser,
   cmdAddComment
 } from '../Shared/types';
-import {Oraculum} from './base'
-
-
-const testUser = {
-  "_id": "5acc99ca3ba11b31f4edad24",
-  "id": "111608252004820560470",
-  "name": "",
-  "given_name": "",
-  "family_name": "",
-  "email": "omakarov@corevalue.net",
-  "verified_email": "true",
-  "picture": "https://lh5.googleusercontent.com/-prImsZ2Mnl0/AAAAAAAAAAI/AAAAAAAAAAs/jFj7h6CNrbs/photo.jpg",
-  "hd": "corevalue.net"
-};
-
+import {Oraculum} from './base';
+import {APP_CONSTANTS} from '../app-constants';
 
 const chrome = window.chrome;
 
 function sendMessage(data, callback) {
-  chrome.runtime.sendMessage("lcpmicjjmgdclbmaeeeffjkiffpgddig", data, callback)
+  if (APP_CONSTANTS.googleExtensionId) {
+    chrome.runtime.sendMessage(APP_CONSTANTS.googleExtensionId, data, callback);
+  } else {
+    chrome.runtime.sendMessage(data, callback);
+  }
 }
 
 export function addPage(page) {
@@ -56,13 +47,7 @@ export function addComment(comment) {
 
 export function loginUser() {
   return new Promise(function (resolve, reject) {
-    if (!chrome.extension) {
-      Oraculum.user = testUser;
-      resolve(testUser);
-      return;
-    }
-
-    chrome.runtime.sendMessage({
+    sendMessage({
       oraculumCommand: cmdLoginUser
     }, function (userData) {
       Oraculum.user = userData;
@@ -71,34 +56,20 @@ export function loginUser() {
   });
 }
 
-
 export function logoutUser() {
   return new Promise(function (resolve, reject) {
-    console.log(">>> content api: logoutUser")
-    if (!chrome.extension) {
-      Oraculum.user = null;
-      resolve(null);
-      return;
-    }
-    chrome.runtime.sendMessage({
-      oraculumCommand: cmdLogoutUser
+    sendMessage({
+        oraculumCommand: cmdLogoutUser
     }, function () {
-      Oraculum.user = null;
-      resolve(Oraculum.user);
+        Oraculum.user = null;
+        resolve(Oraculum.user);
     });
   });
 }
 
-
 export function getUserData() {
   return new Promise(function (resolve, reject) {
-    if (!chrome.extension) {
-      Oraculum.user = testUser;
-      resolve(testUser);
-      return;
-    }
-
-    chrome.runtime.sendMessage({
+    sendMessage({
       oraculumCommand: cmdGetUserData
     }, function (userData) {
       Oraculum.user = userData;

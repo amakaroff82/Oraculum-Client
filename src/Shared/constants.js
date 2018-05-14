@@ -1,4 +1,3 @@
-export const BASE_PATH = process.env.REACT_APP_API_URL;
 export const NUMBER_FORMAT = '0a';
 export const NUMBER_FORMAT_SINGLE_DECIMAL = '0.0a';
 export const FILTER_VALUE_SHOW_ALL = 'ShowAll';

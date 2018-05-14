@@ -1,4 +1,5 @@
-export const API_ROOT = process.env.REACT_APP_API_URL;
+import {APP_CONSTANTS} from '../app-constants';
+export const API_ROOT = APP_CONSTANTS.apiRoot;
 const BASE_URL = `${API_ROOT}/oraculum`;
 
 export const createOrUpdatePage = (data) => (graphQLMutation("createOrUpdatePage", "PageInput", data, `url comments { content author { name, picture } }`));
