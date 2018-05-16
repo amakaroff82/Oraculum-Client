@@ -33,6 +33,7 @@
     },
     "permissions": [
       "identity",
+      "contextMenus",
       "storage",
       "tabs",
       "*://*/*"
@@ -45,7 +46,7 @@
        "*"
      ],
      "matches": [
-       "*://www.some-site.com/*"
+       "*://www.oraculum-dev.com/*"
      ],
      "accepts_tls_channel_id": false
    }
