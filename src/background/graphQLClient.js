@@ -2,7 +2,7 @@ import {APP_CONSTANTS} from '../app-constants';
 export const API_ROOT = APP_CONSTANTS.apiRoot;
 const BASE_URL = `${API_ROOT}/oraculum`;
 
-export const createOrUpdatePage = (data) => (graphQLMutation("createOrUpdatePage", "PageInput", data, `url comments { content author { name, picture } }`));
+export const createOrUpdatePage = (data) => (graphQLMutation("createOrUpdatePage", "PageInput", data, `url tags comments { content author { name, picture } }`));
 export const createOrUpdateUsers = (data) => (graphQLMutation("createOrUpdateUser", "UserInput", data, `id email`));
 export const createComment = (data) => (graphQLMutation("createComment", "CommentInput", data, `_id content author { name, picture }`));
 export const getPagesByUrls = (urls) => (graphQLQueryWithParams("pages", `_id url title author { id picture name }`, 'urls', '[String]', urls));

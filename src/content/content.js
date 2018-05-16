@@ -57,6 +57,7 @@ function loadPanel() {
     }).then(function (page) {
       addPanelHandlers(page, mainPanel);
       displayComments(page, mainPanel);
+      renderUserTags(page, mainPanel);
       mainPanel.className = "opened";
     });
   }
@@ -123,8 +124,30 @@ function addPanelHandlers(page, mainPanel) {
       const listComments = mainPanel.querySelector("#oraculum_list_comments");
       const comment = renderComment(newComment);
       listComments.append(comment);
-    })
-  }
+    });
+  };
+
+  const userTagsInput = mainPanel.querySelector("#oraculum_tags_user_new");
+  let prevUserTagsInputValue;
+  userTagsInput.onfocus = function () {
+    prevUserTagsInputValue = userTagsInput.value;
+  };
+  userTagsInput.onblur = function () {
+    if (prevUserTagsInputValue !== userTagsInput.value) {
+      addPage({
+        url: document.location.href,
+        title: document.title,
+        content: document.body.innerText,
+        sourceTags: getSourceTags(),
+        tags: userTagsInput.value
+      });
+    }
+  };
+}
+
+function renderUserTags (page, mainPanel) {
+  const userTagsInput = mainPanel.querySelector("#oraculum_tags_user_new");
+  userTagsInput.value = page.tags || '';
 }
 
 
