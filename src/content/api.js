@@ -13,6 +13,7 @@ import {Oraculum} from './base';
 import {APP_CONSTANTS} from '../app-constants';
 
 const chrome = window.chrome;
+const localStorage = window.localStorage;
 
 function sendMessage(data, callback) {
   if (APP_CONSTANTS.googleExtensionId) {
@@ -50,6 +51,7 @@ export function loginUser() {
     sendMessage({
       oraculumCommand: cmdLoginUser
     }, function (userData) {
+      localStorage.user = JSON.stringify(userData);
       Oraculum.user = userData;
       resolve(Oraculum.user);
     });
@@ -61,6 +63,7 @@ export function logoutUser() {
     sendMessage({
         oraculumCommand: cmdLogoutUser
     }, function () {
+        localStorage.removeItem('user');
         Oraculum.user = null;
         resolve(Oraculum.user);
     });

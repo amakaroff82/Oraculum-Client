@@ -3,7 +3,8 @@ import R from 'ramda';
 export const COMPONENT_NAMES = {
   /*DASHBOARD_AREA: 'DashboardArea',*/
     JOURNEYS_AREA: 'JourneysArea',
-    PAGES_AREA: 'PagesArea',
+  PAGES_AREA: 'PagesArea',
+  ALL_PAGES_AREA: 'AllPagesArea',
   /*SEGMENTS_AREA: 'SegmentsArea',*/
   //INSIGHTS_AREA: 'InsightsArea',
   /*ADMIN_AREA: 'AdminArea',
@@ -26,6 +27,11 @@ export const ROUTES_LIST = [
     exact: true,
     path: '/',
     componentName: COMPONENT_NAMES.PAGES_AREA,
+  },
+  {
+    exact: true,
+    path: '/allpages',
+    componentName: COMPONENT_NAMES.ALL_PAGES_AREA,
   },
   /*{
     exact: false,

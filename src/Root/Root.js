@@ -8,7 +8,7 @@ import '../assets/react-toolbox/theme.css';
 import withHostContext from '../Shared/withHostContext';
 import { getRoutes, COMPONENT_NAMES } from '../Shared/routes';
 import Loader from '../Shared/Loader';
-import PagesArea from '../Pages';
+import PagesArea, { AllPagesArea } from '../Pages';
 import PrivateRoute from '../Shared/PrivateRoute';
 import SignInContainer from '../Root/SignInContainer';
 import SignOutContainer from '../Root/SignOutContainer';
@@ -16,6 +16,7 @@ import ConfirmNavigationDialogContainer from '../Root/ConfirmNavigationDialogCon
 
 const subComponents = {};
 subComponents[COMPONENT_NAMES.PAGES_AREA] = withHostContext(PagesArea);
+subComponents[COMPONENT_NAMES.ALL_PAGES_AREA] = withHostContext(AllPagesArea);
 
 const styles = theme => ({
   '@global': {

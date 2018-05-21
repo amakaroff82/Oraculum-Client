@@ -5,6 +5,11 @@ export const menus = [
     exact: true,
   },
   {
+    intlMessageId: 'All Pages',
+    url: '/allpages',
+    exact: true,
+  },
+  {
     intlMessageId: 'Settings',
     menuItems: [
         {

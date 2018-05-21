@@ -1,6 +1,7 @@
 //import GoogleAnalytics from 'react-ga';
 
 export const FETCH_PAGES_REQUEST = 'FETCH_PAGES_REQUEST';
+export const FETCH_ALL_PAGES_REQUEST = 'FETCH_ALL_PAGES_REQUEST';
 export const FETCH_PAGES_SUCCESS = 'FETCH_PAGES_SUCCESS';
 export const FETCH_PAGES_FAILURE = 'FETCH_PAGES_FAILURE';
 
@@ -29,6 +30,7 @@ export const UPDATE_SHOWN_COLUMNS = 'UPDATE_SHOWN_COLUMNS';
 // TODO: OCEMCM-280 Consider exporting actions grouped by object to facilitate imports
 // Fetches the current list of pages from HubExchangeGateway API.
 export const loadPages = () => ({ type: FETCH_PAGES_REQUEST });
+export const loadAllPages = () => ({ type: FETCH_ALL_PAGES_REQUEST });
 
 // Creates a page with the HubExchangeGateway API.
 export const createPage = pageParams => ({

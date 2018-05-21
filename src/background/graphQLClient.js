@@ -8,6 +8,7 @@ export const createComment = (data) => (graphQLMutation("createComment", "Commen
 export const getPagesByUrls = (urls) => (graphQLQueryWithParams("pages", `_id url title author { id picture name }`, 'urls', '[String]', urls));
 export const getPageByUrl = (url) => (graphQLQueryWithParams("pageByUrl", `_id url title author { id picture name } comments`, 'url', 'String', url));
 export const getMyPages = (authorId) => (graphQLQueryWithParams("getMyPages", `_id url title author { id picture name email }`, 'authorId', 'String', authorId));
+export const getAllPages = () => (graphQLQuery("getAllPages", `_id url title author { id picture name email }`));
 
 
 function apiHttp(method, url, data) {
@@ -59,7 +60,9 @@ function graphQLQuery(queryName, queryResult) {
                 }
             }`,
     variables: {}
-  }));
+  })).then(response => {
+    return response.data[queryName]
+  });
 }
 
 function graphQLQueryWithParams(queryName, queryResult, inputName, inputType, data) {

@@ -1,7 +1,7 @@
  {
     "name": "Oraculum",
     "description" : "Oraculum Search Extension",
-    "version": "0.019",
+    "version": "0.026",
     "manifest_version": 2,
     "background": {
       "scripts": [

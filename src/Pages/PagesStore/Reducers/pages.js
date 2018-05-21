@@ -8,6 +8,7 @@ export const initialPagesState = {
 
 export const pages = (state = initialPagesState, action) => {
     switch (action.type) {
+        case actionTypes.FETCH_ALL_PAGES_REQUEST:
         case actionTypes.FETCH_PAGES_REQUEST:
         case actionTypes.POST_PAGE_REQUEST:
         case actionTypes.EDIT_PAGE_REQUEST:

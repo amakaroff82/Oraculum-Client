@@ -1,6 +1,9 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { types } from '../Actions/auth';
 import { loginUser, logoutUser, getUserData } from '../../content/api'
+import {initialAuthState} from "../Reducers/auth";
+
+const localStorage = window.localStorage;
 
 // worker Saga: will be fired on POST_USER_REQUEST actions
 export function* postUser() {
@@ -17,7 +20,9 @@ export function* postUser() {
 export function* postCachedUser() {
     try {
         const data = yield call(getUserData);
-        yield put({ type: types.POST_USER_SUCCESS, user: data });
+      localStorage.user = JSON.stringify(data);
+
+      yield put({ type: types.POST_USER_SUCCESS, user: data });
         //window.location.reload(); //temporary solution
     } catch (e) {
         yield put({ type: types.POST_USER_FAILURE });
