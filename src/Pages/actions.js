@@ -29,7 +29,7 @@ export const UPDATE_SHOWN_COLUMNS = 'UPDATE_SHOWN_COLUMNS';
 
 // TODO: OCEMCM-280 Consider exporting actions grouped by object to facilitate imports
 // Fetches the current list of pages from HubExchangeGateway API.
-export const loadPages = () => ({ type: FETCH_PAGES_REQUEST });
+export const loadPages = (userId) => ({ type: FETCH_PAGES_REQUEST, userId: userId });
 export const loadAllPages = () => ({ type: FETCH_ALL_PAGES_REQUEST });
 
 // Creates a page with the HubExchangeGateway API.

@@ -22,6 +22,9 @@ export const PagesTabPageComponent = () => {
 export default lifecycle({
     componentWillMount() {
         // This method runs when the component is first added to the page
-        this.props.loadPages();
+      const { loadPages, auth } = this.props;
+      if(auth.user) {
+        loadPages(auth.user.id);
+      }
     },
 })(PagesTabPageComponent);

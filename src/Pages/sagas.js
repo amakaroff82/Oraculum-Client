@@ -10,7 +10,7 @@ import {
 // worker Saga: will be fired on FETCH_PAGES_REQUEST actions
 export function* fetchPages(action) {
   try {
-    const data = yield call(requestPages, window.App.user.id);
+    const data = yield call(requestPages, action.userId);
 
     // Initial data sort by last modified date.
     const sortedData = yield data.sort((a, b) => {

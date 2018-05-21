@@ -86,7 +86,7 @@ function removeComments(mainPanel) {
 
 function renderComment(item) {
 
-  console.log(item)
+  //console.log(item)
 
   const comment = renderTemplate("comments", {
     id: Oraculum.commentsId
