@@ -51,6 +51,23 @@ export function isGoogle() {
   return document.location.host.indexOf("www.google.com") === 0;
 }
 
+export function isSiteInBlackList() {
+  var host = document.location.host,
+    blackList = [
+    "mail.google.com",
+    "www.hotmail.com",
+    "outlook.live.com"
+  ];
+
+  for (var i = 0; i < blackList.length; i++) {
+    if (host.indexOf(blackList[i]) === 0) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 export function inIframe() {
   try {
     return window.self !== window.top;

@@ -7,7 +7,7 @@ import TableHeader from '../Shared/DataTable/TableHeader';
 
 const renderLeftButtons = (toggleCreateModal, disabled) => {
     return [
-        <Button
+        /*<Button
             className={'PagesHeaderComponent-new-page-button'}
             raised
             color="primary"
@@ -16,14 +16,14 @@ const renderLeftButtons = (toggleCreateModal, disabled) => {
             disabled={true}
         >
             Add New Page
-        </Button>,
+        </Button>,*/
     ];
 };
 
 const renderRightButtons = (toggleFilterable, loadPages) => [
-    <IconButton key="toolbar_filter" onClick={toggleFilterable}>
+    /*<IconButton key="toolbar_filter" onClick={toggleFilterable}>
         <FilterIcon />
-    </IconButton>,
+    </IconButton>,*/
     <IconButton key="toolbar_refresh" onClick={loadPages}>
         <ReloadIcon />
     </IconButton>,
@@ -35,10 +35,11 @@ export const PagesHeader = ({
                                    toggleCreateModal,
                                    toggleFilterable,
                                    intl,
+                                   pagesHeaderLabel
                                }) => {
     return (
         <TableHeader
-            headerLabel={'My Pages'}
+            headerLabel={pagesHeaderLabel}
             leftButtons={renderLeftButtons(toggleCreateModal, false)}
             rightButtons={renderRightButtons(toggleFilterable, loadPages)}
         />
@@ -49,6 +50,7 @@ PagesHeader.propTypes = {
     loadPages: PropTypes.func.isRequired,
     toggleCreateModal: PropTypes.func.isRequired,
     toggleFilterable: PropTypes.func.isRequired,
+    pagesHeaderLabel: PropTypes.string.isRequired,
 };
 
 export default PagesHeader;

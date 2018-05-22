@@ -1,4 +1,4 @@
-import {Oraculum, inIframe, isGoogle, initTemplates} from './base';
+import { Oraculum, inIframe, isGoogle, initTemplates, isSiteInBlackList } from './base';
 import {initGoogle} from './googleAgent';
 import {initContentPanel} from './content';
 import {getUserData} from './api';
@@ -25,8 +25,7 @@ export function bootstrap(force) {
         if (isGoogle()) {
           // google agent
           initGoogle();
-        }
-        else {
+        } else if (!isSiteInBlackList()) {
           // content panel
           initContentPanel();
         }
