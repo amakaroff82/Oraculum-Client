@@ -2,6 +2,7 @@
 
 import {Oraculum} from './base';
 import {addPage, addComment} from './api';
+import {initTagInput} from './tag-component';
 
 const chrome = window.chrome;
 let _mouseLeave = false;
@@ -126,28 +127,16 @@ function addPanelHandlers(page, mainPanel) {
       listComments.append(comment);
     });
   };
-
-  const userTagsInput = mainPanel.querySelector("#oraculum_tags_user_new");
-  let prevUserTagsInputValue;
-  userTagsInput.onfocus = function () {
-    prevUserTagsInputValue = userTagsInput.value;
-  };
-  userTagsInput.onblur = function () {
-    if (prevUserTagsInputValue !== userTagsInput.value) {
-      addPage({
-        url: document.location.href,
-        title: document.title,
-        content: document.body.innerText,
-        sourceTags: getSourceTags(),
-        tags: userTagsInput.value
-      });
-    }
-  };
 }
 
-function renderUserTags (page, mainPanel) {
-  const userTagsInput = mainPanel.querySelector("#oraculum_tags_user_new");
-  userTagsInput.value = page.tags || '';
+function renderUserTags(page, mainPanel) {
+  const tagComponent = mainPanel.querySelector('#tag-component');
+  initTagInput(tagComponent, page.tags, function(tags) {
+    addPage({
+      url: document.location.href,
+      tags: tags
+    });
+  });
 }
 
 
