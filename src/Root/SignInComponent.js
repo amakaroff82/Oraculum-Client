@@ -41,7 +41,7 @@ class SubmitValidationForm extends Component {
     const { from } = this.props.location.state || {
       from: { pathname: '/' },
     };
-    if (auth.user && auth.user.id) {
+    if (auth.user && auth.user._id) {
       if (window.App) {
         window.App.user = auth.user;
       } else {

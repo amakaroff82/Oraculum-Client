@@ -18,6 +18,6 @@ export const defaultWidgetTableState = {
 
 export const defaultAppData = {
   user: {
-    id: null,
+    _id: null,
   },
 };

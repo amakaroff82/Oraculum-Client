@@ -8,6 +8,6 @@ export function contextMenuHandler(info, tab) {
   createOrUpdatePage({
     url: info.pageUrl,
     selection: info.selectionText,
-    authorId: user.id
+    authorId: user._id
   });
 }

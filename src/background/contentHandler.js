@@ -17,7 +17,7 @@ export function contentHandler(msg, sender, sendResponse) {
     switch (msg.oraculumCommand) {
       case cmdAddUpdatePage: {
         let user = getUserData();
-        msg.oraculumData.authorId = user.id;
+        msg.oraculumData.authorId = user._id;
         createOrUpdatePage(msg.oraculumData).then((result) =>
           sendResponse(result)
         );
@@ -26,7 +26,7 @@ export function contentHandler(msg, sender, sendResponse) {
 
       case cmdAddComment: {
         let user = getUserData();
-        msg.oraculumData.authorId = user.id;
+        msg.oraculumData.authorId = user._id;
         createComment(msg.oraculumData).then((result) =>
           sendResponse(result)
         );

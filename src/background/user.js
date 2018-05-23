@@ -87,7 +87,7 @@ export function handleToken(token, callback) {
               }) {
 
       const user = {
-        id,
+        googleId: id,
         name,
         given_name,
         family_name,
@@ -97,8 +97,9 @@ export function handleToken(token, callback) {
         hd
       };
 
-      createOrUpdateUsers(user).then(function (res) {
+      createOrUpdateUsers(user).then(function ({_id}) {
         console.log("load user:", user);
+        user._id = _id;
         userData = user;
         callback();
         //startApp();
