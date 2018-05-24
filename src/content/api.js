@@ -5,7 +5,8 @@ import {
   cmdGetUserData,
   cmdGetPagesByUrls,
   cmdGetPageByUrl,
-  cmdLoginUser,
+  cmdLoginUserWithGoogle,
+  cmdRegisterUser,
   cmdLogoutUser,
   cmdAddComment
 } from '../Shared/types';
@@ -46,10 +47,22 @@ export function addComment(comment) {
 }
 
 
-export function loginUser() {
+export function loginUserWithGoogle() {
   return new Promise(function (resolve, reject) {
     sendMessage({
-      oraculumCommand: cmdLoginUser
+      oraculumCommand: cmdLoginUserWithGoogle
+    }, function (userData) {
+      localStorage.user = JSON.stringify(userData);
+      Oraculum.user = userData;
+      resolve(Oraculum.user);
+    });
+  });
+}
+
+export function registerUser() {
+  return new Promise(function (resolve, reject) {
+    sendMessage({
+      oraculumCommand: cmdRegisterUser
     }, function (userData) {
       localStorage.user = JSON.stringify(userData);
       Oraculum.user = userData;

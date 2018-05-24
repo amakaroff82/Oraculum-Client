@@ -17,6 +17,7 @@ if(localStorage.user){
 
 const auth = (state = initialAuthState, action) => {
   switch (action.type) {
+    case types.POST_GOOGLE_USER_REQUEST:
     case types.POST_USER_REQUEST:
       return {
         ...state,
@@ -32,6 +33,7 @@ const auth = (state = initialAuthState, action) => {
         ...state,
         isSubmitting: true,
       };
+    case types.POST_GOOGLE_USER_SUCCESS:
     case types.POST_USER_SUCCESS:
       return {
         ...state,
@@ -39,6 +41,7 @@ const auth = (state = initialAuthState, action) => {
         isError: false,
         isSubmitting: false,
       };
+    case types.POST_GOOGLE_USER_FAILURE:
     case types.POST_USER_FAILURE:
       return {
         ...state,

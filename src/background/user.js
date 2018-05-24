@@ -20,7 +20,7 @@ export function checkUserToken(callback) {
   });
 }
 
-export function login(callback) {
+export function loginWithGoogle(callback) {
   chrome.identity.getAuthToken({
     interactive: true
   }, function (token) {
@@ -35,6 +35,10 @@ export function login(callback) {
 
     handleToken(token, callback);
   });
+}
+
+export function register(callback) {
+// registration logic
 }
 
 export function logout(callback) {
@@ -114,7 +118,7 @@ export function handleToken(token, callback) {
           {'token': token},
           () => {
             console.log("try to relogin");
-            return login(callback);
+            return loginWithGoogle(callback);
           }
         );
       } else {

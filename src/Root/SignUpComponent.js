@@ -33,15 +33,11 @@ const styles = theme => ({
 });
 
 class SubmitValidationForm extends Component {
-  state = { email: '', password: '' };
+  state = { email: '', password: '', confirmedPassword: '' };
 
   submit = e => {
     e.preventDefault();
-    //this.props.loginUser();
-  };
-
-  loginUserWithGoogle = () => {
-    this.props.loginUserWithGoogle();
+    this.props.registerUser();
   };
 
   render() {
@@ -94,6 +90,17 @@ class SubmitValidationForm extends Component {
                     this.setState({ password: event.target.value })}
                   value={this.state.password}
                 />
+                <br />
+                <br />
+                <TextField
+                  label="Confirm Password"
+                  type="password"
+                  id="confirm-password"
+                  fullWidth
+                  onChange={event =>
+                    this.setState({ confirmedPassword: event.target.value })}
+                  value={this.state.confirmedPassword}
+                />
                 {error && <strong>{error}</strong>}
                 <div className={classes.buttonsContainer}>
                   <Button
@@ -101,32 +108,23 @@ class SubmitValidationForm extends Component {
                     type="submit"
                     disabled={auth.isSubmitting}
                     color="primary"
-                    raised
-                  >
-                    {'Log In'}
-                  </Button>
-                  <Button
-                    onClick={this.loginUserWithGoogle}
-                    className={classes.button}
-                    disabled={auth.isSubmitting}
-                    color="primary"
-                  >
-                    {'Log In with Google'}
-                  </Button>
-                  <Button
-                    href="#signup"
-                    className={classes.button}
-                    disabled={auth.isSubmitting}
-                    color="primary"
                   >
                     {'Sign Up'}
+                  </Button>
+                  <Button
+                    href="#login"
+                    className={classes.button}
+                    disabled={auth.isSubmitting}
+                    color="primary"
+                  >
+                    {'Go to Login Page'}
                   </Button>
                 </div>
                 <div className={classes.messages}>
                   {auth.isSubmitting ? <Loader /> : ''}
                   {!auth.isSubmitting && auth.isError ? (
                     <Typography type="headline" component="h3">
-                      {'Login Failed.'}
+                      {'Sign Up Failed.'}
                     </Typography>
                   ) : (
                     ''

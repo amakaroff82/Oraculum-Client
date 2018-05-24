@@ -4,11 +4,12 @@ import {
   cmdGetUserData,
   cmdGetPagesByUrls,
   cmdGetPageByUrl,
-  cmdLoginUser,
+  cmdLoginUserWithGoogle,
+  cmdRegisterUser,
   cmdLogoutUser
 } from '../Shared/types';
 import {createOrUpdatePage, getPagesByUrls, getPageByUrl, createComment} from './graphQLClient';
-import {login, logout, getUserData} from './user'
+import {loginWithGoogle, logout, getUserData, register} from './user'
 
 
 export function contentHandler(msg, sender, sendResponse) {
@@ -38,8 +39,13 @@ export function contentHandler(msg, sender, sendResponse) {
         break;
       }
 
-      case cmdLoginUser: {
-        login(sendResponse);
+      case cmdLoginUserWithGoogle: {
+        loginWithGoogle(sendResponse);
+        break;
+      }
+
+      case cmdRegisterUser: {
+        register(sendResponse);
         break;
       }
 
