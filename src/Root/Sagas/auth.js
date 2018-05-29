@@ -16,11 +16,10 @@ export function* postGoogleUser() {
     }
 }
 
-// worker Saga: will be fired on POST_GOOGLE_USER_REQUEST actions
-export function* postUser() {
+export function* postUser(action) {
     try {
-        const data = yield call(registerUser);
-        yield put({ type: types.POST_USER_SUCCESS, user: data });
+        const res = yield call(registerUser, action.data);
+        yield put({ type: types.POST_USER_SUCCESS, data: res });
         window.location.reload();
     } catch (e) {
         yield put({ type: types.POST_USER_FAILURE });

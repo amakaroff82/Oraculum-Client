@@ -32,6 +32,7 @@ export const logoutUser = () => ({
   type: types.POST_LOGOUT_USER_REQUEST,
 });
 
-export const registerUser = () => ({
+export const registerUser = data => ({
   type: types.POST_USER_REQUEST,
+  data: data,
 });

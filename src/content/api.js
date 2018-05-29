@@ -59,10 +59,11 @@ export function loginUserWithGoogle() {
   });
 }
 
-export function registerUser() {
+export function registerUser(data) {
   return new Promise(function (resolve, reject) {
     sendMessage({
-      oraculumCommand: cmdRegisterUser
+      oraculumCommand: cmdRegisterUser,
+      oraculumData: data
     }, function (userData) {
       localStorage.user = JSON.stringify(userData);
       Oraculum.user = userData;

@@ -33,11 +33,15 @@ const styles = theme => ({
 });
 
 class SubmitValidationForm extends Component {
-  state = { email: '', password: '', confirmedPassword: '' };
+  state = { name: '', email: '', password: '', confirmedPassword: '' };
 
   submit = e => {
     e.preventDefault();
-    this.props.registerUser();
+    this.props.registerUser({
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+    });
   };
 
   render() {
@@ -70,6 +74,17 @@ class SubmitValidationForm extends Component {
                 <Typography className={classes.title} type="headline" component="h3">
                   {'Oraculum'}
                 </Typography>
+                <TextField
+                  label="Name"
+                  type="text"
+                  fullWidth
+                  id="name"
+                  onChange={event =>
+                    this.setState({ name: event.target.value })}
+                  value={this.state.name}
+                />
+                <br />
+                <br />
                 <TextField
                   label="Email"
                   type="email"
@@ -108,6 +123,7 @@ class SubmitValidationForm extends Component {
                     type="submit"
                     disabled={auth.isSubmitting}
                     color="primary"
+                    raised
                   >
                     {'Sign Up'}
                   </Button>

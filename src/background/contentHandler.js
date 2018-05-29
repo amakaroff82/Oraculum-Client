@@ -45,7 +45,7 @@ export function contentHandler(msg, sender, sendResponse) {
       }
 
       case cmdRegisterUser: {
-        register(sendResponse);
+        register(msg.oraculumData, sendResponse);
         break;
       }
 

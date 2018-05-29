@@ -1,4 +1,4 @@
-import {createOrUpdateUsers} from './graphQLClient';
+import {createOrUpdateUsers, registerUser} from './graphQLClient';
 
 const INVALID_CREDENTIALS = "Invalid Credentials";
 const chrome = window.chrome;
@@ -37,8 +37,17 @@ export function loginWithGoogle(callback) {
   });
 }
 
-export function register(callback) {
-// registration logic
+export function register(data, callback) {
+  registerUser(data).then(function({auth, token, user}) {
+    if (auth) {
+      console.log('registered user:', user);
+      userData = user;
+    } else {
+      console.log('can\'t register user');
+    }
+
+    callback();
+  });
 }
 
 export function logout(callback) {
