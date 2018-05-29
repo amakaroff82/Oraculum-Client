@@ -7,6 +7,7 @@ import Typography from 'material-ui/Typography';
 import { TextField } from 'material-ui';
 
 import Loader from '../Shared/Loader';
+import {loginUser} from "./Actions/auth";
 
 const styles = theme => ({
   root: {
@@ -37,7 +38,10 @@ class SubmitValidationForm extends Component {
 
   submit = e => {
     e.preventDefault();
-    //this.props.loginUser();
+    this.props.loginUser({
+      email: this.state.email,
+      password: this.state.password,
+    });
   };
 
   loginUserWithGoogle = () => {

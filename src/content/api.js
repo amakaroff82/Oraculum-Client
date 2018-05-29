@@ -7,6 +7,7 @@ import {
   cmdGetPageByUrl,
   cmdLoginUserWithGoogle,
   cmdRegisterUser,
+  cmdLoginUser,
   cmdLogoutUser,
   cmdAddComment
 } from '../Shared/types';
@@ -51,6 +52,19 @@ export function loginUserWithGoogle() {
   return new Promise(function (resolve, reject) {
     sendMessage({
       oraculumCommand: cmdLoginUserWithGoogle
+    }, function (userData) {
+      localStorage.user = JSON.stringify(userData);
+      Oraculum.user = userData;
+      resolve(Oraculum.user);
+    });
+  });
+}
+
+export function login(data) {
+  return new Promise(function (resolve, reject) {
+    sendMessage({
+      oraculumCommand: cmdLoginUser,
+      oraculumData: data
     }, function (userData) {
       localStorage.user = JSON.stringify(userData);
       Oraculum.user = userData;

@@ -4,7 +4,8 @@ const BASE_URL = `${API_ROOT}/oraculum`;
 
 export const createOrUpdatePage = (data) => (graphQLMutation("createOrUpdatePage", "PageInput", data, `url tags comments { content author { name, picture } }`));
 export const createOrUpdateUsers = (data) => (graphQLMutation("createOrUpdateUser", "UserInput", data, `_id googleId email`));
-export const registerUser = (data) => (graphQLMutation("registerUser", "RegistrationInput", data, `auth token user`));
+export const registerUser = (data) => (graphQLMutation("registerUser", "RegistrationInput", data, `auth token user { _id googleId email }`));
+export const loginUser = (data) => (graphQLMutation("loginUser", "LoginInput", data, `auth token user { _id googleId email }`));
 export const createComment = (data) => (graphQLMutation("createComment", "CommentInput", data, `_id content author { name, picture }`));
 export const getPagesByUrls = (urls) => (graphQLQueryWithParams("pages", `_id url title author { _id picture name }`, 'urls', '[String]', urls));
 export const getPageByUrl = (url) => (graphQLQueryWithParams("pageByUrl", `_id url title author { _id picture name } comments`, 'url', 'String', url));

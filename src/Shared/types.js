@@ -15,3 +15,4 @@ export const cmdAddComment                  = _cmdBase + 7;
 export const cmdLoginUserWithGoogle         = _cmdBase + 100;
 export const cmdLogoutUser                  = _cmdBase + 101;
 export const cmdRegisterUser                = _cmdBase + 102;
+export const cmdLoginUser                   = _cmdBase + 103;

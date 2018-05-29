@@ -11,6 +11,10 @@ export const types = {
 
   POST_LOGOUT_USER_REQUEST: 'POST_LOGOUT_USER_REQUEST',
 
+  LOGIN_USER_REQUEST: 'LOGIN_USER_REQUEST',
+  LOGIN_USER_SUCCESS: 'LOGIN_USER_SUCCESS',
+  LOGIN_USER_FAILURE: 'LOGIN_USER_FAILURE',
+
   POST_USER_REQUEST: 'POST_USER_REQUEST',
   POST_USER_SUCCESS: 'POST_USER_SUCCESS',
   POST_USER_FAILURE: 'POST_USER_FAILURE',
@@ -22,6 +26,11 @@ export const types = {
 
 export const loginUserWithGoogle = () => ({
   type: types.POST_GOOGLE_USER_REQUEST,
+});
+
+export const loginUser = data => ({
+  type: types.LOGIN_USER_REQUEST,
+  data: data,
 });
 
 export const loginCachedUser = () => ({

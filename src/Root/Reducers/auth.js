@@ -22,6 +22,12 @@ const auth = (state = initialAuthState, action) => {
         ...state,
         isSubmitting: true,
       };
+    case types.LOGIN_USER_REQUEST:
+      return {
+        ...state,
+        data: action.data,
+        isSubmitting: true,
+      };
     case types.POST_USER_REQUEST:
       return {
         ...state,
@@ -46,6 +52,7 @@ const auth = (state = initialAuthState, action) => {
         isSubmitting: false,
       };
     case types.POST_USER_SUCCESS:
+    case types.LOGIN_USER_SUCCESS:
       return {
         ...state,
         data: action.data,
@@ -54,6 +61,7 @@ const auth = (state = initialAuthState, action) => {
       };
     case types.POST_GOOGLE_USER_FAILURE:
     case types.POST_USER_FAILURE:
+    case types.LOGIN_USER_FAILURE:
       return {
         ...state,
         isError: true,
