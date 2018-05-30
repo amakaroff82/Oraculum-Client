@@ -83,6 +83,7 @@ class SubmitValidationForm extends Component {
                   type="email"
                   fullWidth
                   id="email"
+                  required
                   onChange={event =>
                     this.setState({ email: event.target.value })}
                   value={this.state.email}
@@ -94,6 +95,8 @@ class SubmitValidationForm extends Component {
                   type="password"
                   id="password"
                   fullWidth
+                  inputProps={{minLength: 6}}
+                  required
                   onChange={event =>
                     this.setState({ password: event.target.value })}
                   value={this.state.password}

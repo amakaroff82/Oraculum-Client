@@ -65,38 +65,47 @@ export function login(data, callback) {
 
 export function logout(callback) {
   console.log(">>> Call logout")
-  chrome.storage.sync.get("token", function (data) {
-    console.log(">>> Get token", data.token)
+  if (userData) {
+    if (userData.googleId) {
+      chrome.storage.sync.get("token", function (data) {
+        console.log(">>> Get token", data.token)
 
-    if (data.token) {
-      chrome.storage.sync.set({"token": null});
-      chrome.identity.removeCachedAuthToken({
-        'token': data.token
-      }, function () {
-        console.log(">>> removeCachedAuthToken")
+        if (data.token) {
+          chrome.storage.sync.set({"token": null});
+          chrome.identity.removeCachedAuthToken({
+            'token': data.token
+          }, function () {
+            console.log(">>> removeCachedAuthToken")
 
-        window.fetch(`https://accounts.google.com/o/oauth2/revoke?token=${data.token}`).then(function (response) {
-          console.log(">>> google revoked token", response)
-          //console.log(response)
-          userData = null;
+            window.fetch(`https://accounts.google.com/o/oauth2/revoke?token=${data.token}`).then(function (response) {
+              console.log(">>> google revoked token", response)
+              //console.log(response)
+              userData = null;
 
-          if (callback) {
-            console.log(">>> start callback")
+              if (callback) {
+                console.log(">>> start callback")
 
-            callback();
-          }
-        }).catch(function (err) {
-          console.log(">>> ERROR: ", err)
-          userData = null;
+                callback();
+              }
+            }).catch(function (err) {
+              console.log(">>> ERROR: ", err)
+              userData = null;
 
-          if (callback) {
-            console.log(">>> start callback")
-            callback();
-          }
-        })
+              if (callback) {
+                console.log(">>> start callback")
+                callback();
+              }
+            })
+          });
+        }
       });
+    } else {
+      userData = null;
+      if (callback) {
+        callback();
+      }
     }
-  });
+  }
 }
 
 export function handleToken(token, callback) {
