@@ -16,7 +16,7 @@ const styles = theme => ({
     'text-align': 'center',
   },
   container: {
-    height: 400,
+    //height: 400,
   },
   messages: {
     'padding-top': 50,
@@ -144,9 +144,16 @@ class SubmitValidationForm extends Component {
                 </div>
                 <div className={classes.messages}>
                   {auth.isSubmitting ? <Loader /> : ''}
-                  {!auth.isSubmitting && auth.isError ? (
+                  {!auth.isSubmitting && auth.errors ? (
                     <Typography type="headline" component="h3">
                       {'Sign Up Failed.'}
+                      {auth.errors.map((error, i) => (
+                        <pre key={i}>
+                          {Object.keys(error.state).map((key, i) => (
+                            <span key={i}>{error.state[key]}</span>
+                          ))}
+                        </pre>
+                      ))}
                     </Typography>
                   ) : (
                     ''

@@ -7,7 +7,6 @@ import Typography from 'material-ui/Typography';
 import { TextField } from 'material-ui';
 
 import Loader from '../Shared/Loader';
-import {loginUser} from "./Actions/auth";
 
 const styles = theme => ({
   root: {
@@ -17,7 +16,7 @@ const styles = theme => ({
     'text-align': 'center',
   },
   container: {
-    height: 400,
+    // height: 400,
   },
   messages: {
     'padding-top': 50,
@@ -131,9 +130,16 @@ class SubmitValidationForm extends Component {
                 </div>
                 <div className={classes.messages}>
                   {auth.isSubmitting ? <Loader /> : ''}
-                  {!auth.isSubmitting && auth.isError ? (
+                  {!auth.isSubmitting && auth.errors ? (
                     <Typography type="headline" component="h3">
                       {'Login Failed.'}
+                      {auth.errors.map((error, i) => (
+                        <pre key={i}>
+                          {Object.keys(error.state).map((key, i) => (
+                            <span key={i}>{error.state[key]}</span>
+                          ))}
+                        </pre>
+                      ))}
                     </Typography>
                   ) : (
                     ''

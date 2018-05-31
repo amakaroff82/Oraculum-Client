@@ -18,9 +18,8 @@ export function* postGoogleUser() {
 
 export function* loginUser(action) {
   try {
-    const res = yield call(login, action.data);
-    yield put({ type: types.LOGIN_USER_SUCCESS, data: res });
-    window.location.reload();
+    const data = yield call(login, action.data);
+    yield put({ type: types.LOGIN_USER_SUCCESS, data: data });
   } catch (e) {
     yield put({ type: types.LOGIN_USER_FAILURE });
   }
@@ -28,9 +27,8 @@ export function* loginUser(action) {
 
 export function* postUser(action) {
     try {
-        const res = yield call(registerUser, action.data);
-        yield put({ type: types.POST_USER_SUCCESS, data: res });
-        window.location.reload();
+        const data = yield call(registerUser, action.data);
+        yield put({ type: types.POST_USER_SUCCESS, data: data });
     } catch (e) {
         yield put({ type: types.POST_USER_FAILURE });
     }

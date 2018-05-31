@@ -38,28 +38,24 @@ export function loginWithGoogle(callback) {
 }
 
 export function register(data, callback) {
-  registerUser(data).then(function({auth, token, user}) {
-    if (auth) {
-      console.log('registered user:', user);
+  registerUser(data).then(function(res) {
+    if (res.data) {
+      const {token, user} = res.data;
       userData = user;
-    } else {
-      console.log('can\'t register user');
     }
 
-    callback();
+    callback(res);
   });
 }
 
 export function login(data, callback) {
-  loginUser(data).then(function({auth, token, user}) {
-    if (auth) {
-      console.log('login user:', user);
+  loginUser(data).then(function(res) {
+    if (res.data) {
+      const {token, user} = res.data;
       userData = user;
-    } else {
-      console.log('can\'t login user');
     }
 
-    callback();
+    callback(res);
   });
 }
 
@@ -132,7 +128,8 @@ export function handleToken(token, callback) {
         hd
       };
 
-      createOrUpdateUsers(user).then(function ({_id}) {
+      createOrUpdateUsers(user).then(function (res) {
+        const {_id} = res.data;
         console.log("load user:", user);
         user._id = _id;
         userData = user;

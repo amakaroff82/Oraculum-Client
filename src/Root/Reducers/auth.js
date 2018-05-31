@@ -2,7 +2,8 @@ import { types } from '../Actions/auth';
 
 export const initialAuthState = {
   user: null,
-  isError: false,
+  data: null,
+  errors: null,
   isSubmitting: false,
 };
 
@@ -23,11 +24,6 @@ const auth = (state = initialAuthState, action) => {
         isSubmitting: true,
       };
     case types.LOGIN_USER_REQUEST:
-      return {
-        ...state,
-        data: action.data,
-        isSubmitting: true,
-      };
     case types.POST_USER_REQUEST:
       return {
         ...state,
@@ -48,15 +44,14 @@ const auth = (state = initialAuthState, action) => {
       return {
         ...state,
         user: action.user,
-        isError: false,
         isSubmitting: false,
       };
     case types.POST_USER_SUCCESS:
     case types.LOGIN_USER_SUCCESS:
       return {
         ...state,
-        data: action.data,
-        isError: false,
+        user: action.data.data ? action.data.data.user : null,
+        errors: action.data.errors,
         isSubmitting: false,
       };
     case types.POST_GOOGLE_USER_FAILURE:
@@ -64,7 +59,6 @@ const auth = (state = initialAuthState, action) => {
     case types.LOGIN_USER_FAILURE:
       return {
         ...state,
-        isError: true,
         isSubmitting: false,
       };
     default:
