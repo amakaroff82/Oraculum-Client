@@ -33,15 +33,31 @@ const styles = theme => ({
 });
 
 class SubmitValidationForm extends Component {
-  state = { name: '', email: '', password: '', confirmedPassword: '' };
+  state = {
+    name: '',
+    email: '',
+    password: '',
+    confirmedPassword: '',
+    errors: null,
+  };
 
   submit = e => {
     e.preventDefault();
-    this.props.registerUser({
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-    });
+    if (this.state.password === this.state.confirmedPassword) {
+      this.props.registerUser({
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+      });
+    } else {
+      this.setState({
+        errors: [{
+          state: {
+            confirmedPassword: ['Passwords doesn\'t match']
+          },
+        }],
+      });
+    }
   };
 
   render() {
@@ -49,6 +65,11 @@ class SubmitValidationForm extends Component {
     const { from } = this.props.location.state || {
       from: { pathname: '/' },
     };
+    if (auth.errors) {
+      this.setState({ errors: auth.errors });
+      auth.errors = null;
+    }
+
     if (auth.user && auth.user._id) {
       if (window.App) {
         window.App.user = auth.user;
@@ -144,10 +165,10 @@ class SubmitValidationForm extends Component {
                 </div>
                 <div className={classes.messages}>
                   {auth.isSubmitting ? <Loader /> : ''}
-                  {!auth.isSubmitting && auth.errors ? (
+                  {!auth.isSubmitting && this.state.errors ? (
                     <Typography type="headline" component="h3">
                       {'Sign Up Failed.'}
-                      {auth.errors.map((error, i) => (
+                      {this.state.errors.map((error, i) => (
                         <pre key={i}>
                           {Object.keys(error.state).map((key, i) => (
                             <span key={i}>{error.state[key]}</span>

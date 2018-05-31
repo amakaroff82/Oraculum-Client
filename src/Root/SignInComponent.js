@@ -33,7 +33,11 @@ const styles = theme => ({
 });
 
 class SubmitValidationForm extends Component {
-  state = { email: '', password: '' };
+  state = {
+    email: '',
+    password: '',
+    errors: null,
+  };
 
   submit = e => {
     e.preventDefault();
@@ -52,6 +56,11 @@ class SubmitValidationForm extends Component {
     const { from } = this.props.location.state || {
       from: { pathname: '/' },
     };
+    if (auth.errors) {
+      this.setState({ errors: auth.errors });
+      auth.errors = null;
+    }
+
     if (auth.user && auth.user._id) {
       if (window.App) {
         window.App.user = auth.user;
@@ -130,10 +139,10 @@ class SubmitValidationForm extends Component {
                 </div>
                 <div className={classes.messages}>
                   {auth.isSubmitting ? <Loader /> : ''}
-                  {!auth.isSubmitting && auth.errors ? (
+                  {!auth.isSubmitting && this.state.errors ? (
                     <Typography type="headline" component="h3">
                       {'Login Failed.'}
-                      {auth.errors.map((error, i) => (
+                      {this.state.errors.map((error, i) => (
                         <pre key={i}>
                           {Object.keys(error.state).map((key, i) => (
                             <span key={i}>{error.state[key]}</span>

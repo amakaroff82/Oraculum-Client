@@ -57,12 +57,3 @@ export const checkUrl = value => {
     return "formValidation_invalidUrl";
   }
 };
-
-export const checkEmail = value => {
-  const test = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-    value
-  );
-  if (!test) {
-    return "formValidation_invalidEmail";
-  }
-};
