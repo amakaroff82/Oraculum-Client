@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import Grid from 'material-ui/Grid';
 import {compose, lifecycle} from "recompose";
 import {connect} from "react-redux";
@@ -6,6 +7,11 @@ import { logoutUser } from './Actions/auth';
 
 class LogoutForm extends Component {
   render() {
+    const { auth } = this.props;
+
+    if (!auth.user) {
+      return <Redirect to={'/login'} />;
+    }
     return (
       <Grid />
     );
