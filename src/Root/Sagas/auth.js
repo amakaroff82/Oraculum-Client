@@ -51,6 +51,7 @@ export function* postLogoutUser() {
     try {
         yield call(logoutUser);
         yield put({ type: types.POST_GOOGLE_USER_SUCCESS, user: null });
+        window.location.reload(); //temporary solution
     } catch (e) {
         yield put({ type: types.POST_GOOGLE_USER_FAILURE });
     }

@@ -10,7 +10,7 @@ class LogoutForm extends Component {
     const { auth } = this.props;
 
     if (!auth.user) {
-      return <Redirect to={'/login'} />;
+      return <Redirect to="/" />;
     }
     return (
       <Grid />
