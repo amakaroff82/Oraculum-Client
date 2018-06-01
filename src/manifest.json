@@ -22,6 +22,7 @@
     "web_accessible_resources": [
       "/oauth2/*",
       "assets/logo.png",
+      "assets/images/avatar1.jpg",
       "content.html",
       "css/content.css"
     ],
