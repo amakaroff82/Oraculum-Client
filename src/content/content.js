@@ -33,6 +33,7 @@ function getSourceTags() {
 
 export function initContentPanel() {
   loadPanel();
+  addListeners();
 }
 
 function loadPanel() {
@@ -82,6 +83,16 @@ function loadPanel() {
       }
     }, 1000);
   });
+}
+
+function addListeners() {
+  chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+      if (request.type === 'extension_logout') {
+        document.getElementById('oraculum-coresearch-main-badge').remove();
+        document.getElementById('oraculum-coresearch-main-panel').remove();
+      }
+    });
 }
 
 

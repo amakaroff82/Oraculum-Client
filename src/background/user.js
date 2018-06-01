@@ -77,6 +77,7 @@ export function logout(callback) {
               console.log(">>> google revoked token", response)
               //console.log(response)
               userData = null;
+              broadcastLogoutMessage();
 
               if (callback) {
                 console.log(">>> start callback")
@@ -97,6 +98,7 @@ export function logout(callback) {
       });
     } else {
       userData = null;
+      broadcastLogoutMessage();
       if (callback) {
         callback();
       }
@@ -183,3 +185,18 @@ export function loadUserData(token) {
   });
 }
 
+function broadcastLogoutMessage() {
+  chrome.tabs.query({}, function(tabs) {
+      tabs.forEach(function (tab) {
+        chrome.tabs.sendMessage(
+          tab.id,
+          {
+            type: 'extension_logout'
+          },
+          function (response) {
+          }
+        );
+      });
+    }
+  );
+}
