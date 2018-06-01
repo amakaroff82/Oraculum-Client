@@ -16,7 +16,7 @@ const styles = theme => ({
     'text-align': 'center',
   },
   container: {
-    // height: 400,
+    //height: 400,
   },
   messages: {
     'padding-top': 50,
@@ -34,21 +34,30 @@ const styles = theme => ({
 
 class SubmitValidationForm extends Component {
   state = {
+    name: '',
     email: '',
     password: '',
+    confirmedPassword: '',
     errors: null,
   };
 
   submit = e => {
     e.preventDefault();
-    this.props.loginUser({
-      email: this.state.email,
-      password: this.state.password,
-    });
-  };
-
-  loginUserWithGoogle = () => {
-    this.props.loginUserWithGoogle();
+    if (this.state.password === this.state.confirmedPassword) {
+      this.props.registerUser({
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+      });
+    } else {
+      this.setState({
+        errors: [{
+          state: {
+            confirmedPassword: ['Passwords doesn\'t match']
+          },
+        }],
+      });
+    }
   };
 
   render() {
@@ -87,6 +96,18 @@ class SubmitValidationForm extends Component {
                   {'Oraculum'}
                 </Typography>
                 <TextField
+                  label="Name"
+                  type="text"
+                  fullWidth
+                  id="name"
+                  required
+                  onChange={event =>
+                    this.setState({ name: event.target.value })}
+                  value={this.state.name}
+                />
+                <br />
+                <br />
+                <TextField
                   label="Email"
                   type="email"
                   fullWidth
@@ -109,6 +130,19 @@ class SubmitValidationForm extends Component {
                     this.setState({ password: event.target.value })}
                   value={this.state.password}
                 />
+                <br />
+                <br />
+                <TextField
+                  label="Confirm Password"
+                  type="password"
+                  id="confirm-password"
+                  fullWidth
+                  inputProps={{minLength: 6}}
+                  required
+                  onChange={event =>
+                    this.setState({ confirmedPassword: event.target.value })}
+                  value={this.state.confirmedPassword}
+                />
                 {error && <strong>{error}</strong>}
                 <div className={classes.buttonsContainer}>
                   <Button
@@ -118,30 +152,22 @@ class SubmitValidationForm extends Component {
                     color="primary"
                     raised
                   >
-                    {'Log In'}
-                  </Button>
-                  <Button
-                    onClick={this.loginUserWithGoogle}
-                    className={classes.button}
-                    disabled={auth.isSubmitting}
-                    color="primary"
-                  >
-                    {'Log In with Google'}
-                  </Button>
-                  <Button
-                    href="#signup"
-                    className={classes.button}
-                    disabled={auth.isSubmitting}
-                    color="primary"
-                  >
                     {'Sign Up'}
+                  </Button>
+                  <Button
+                    href="#login"
+                    className={classes.button}
+                    disabled={auth.isSubmitting}
+                    color="primary"
+                  >
+                    {'Go to Login Page'}
                   </Button>
                 </div>
                 <div className={classes.messages}>
                   {auth.isSubmitting ? <Loader /> : ''}
                   {!auth.isSubmitting && this.state.errors ? (
                     <Typography type="headline" component="h3">
-                      {'Login Failed.'}
+                      {'Sign Up Failed.'}
                       {this.state.errors.map((error, i) => (
                         <pre key={i}>
                           {Object.keys(error.state).map((key, i) => (

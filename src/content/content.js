@@ -55,7 +55,8 @@ function loadPanel() {
       title: document.title,
       content: document.body.innerText,
       sourceTags: getSourceTags()
-    }).then(function (page) {
+    }).then(function (res) {
+      const page = res.data;
       addPanelHandlers(page, mainPanel);
       displayComments(page, mainPanel);
       renderUserTags(page, mainPanel);
@@ -121,7 +122,8 @@ function addPanelHandlers(page, mainPanel) {
     addComment({
       content: comment.value,
       pageId: page._id,
-    }).then(newComment => {
+    }).then(res => {
+      const newComment = res.data;
       const listComments = mainPanel.querySelector("#oraculum_list_comments");
       const comment = renderComment(newComment);
       listComments.append(comment);

@@ -13,6 +13,7 @@ import PrivateRoute from '../Shared/PrivateRoute';
 import SignInContainer from '../Root/SignInContainer';
 import SignOutContainer from '../Root/SignOutContainer';
 import ConfirmNavigationDialogContainer from '../Root/ConfirmNavigationDialogContainer';
+import SignUpContainer from '../Root/SignUpContainer';
 
 const subComponents = {};
 subComponents[COMPONENT_NAMES.PAGES_AREA] = withHostContext(PagesArea);
@@ -57,6 +58,7 @@ const Root = ({ store, userConfirmationHandler, classes, auth }) => {
                   />
                 ))}
                   <Route exact path="/login" component={SignInContainer} />
+                  <Route exact path="/signup" component={SignUpContainer} />
                   <Route exact={false} path="/logout" component={SignOutContainer} />
               </Switch>
             </div>

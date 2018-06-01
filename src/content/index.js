@@ -18,7 +18,7 @@ export function bootstrap(force) {
   if (!inIframe()) {
     getUserData().then(function (user) {
       Oraculum.user = user;
-      if (!user || !user.id) {
+      if (!user || !user._id) {
         return;
       }
       initTemplates().then(function (templates) {

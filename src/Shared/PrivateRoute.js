@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 function isLoggedIn(auth) {
     //alert(JSON.stringify(auth))
 
-  return auth.user && auth.user.id;
+  return auth.user && auth.user._id;
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => {

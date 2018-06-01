@@ -4,11 +4,13 @@ import {
   cmdGetUserData,
   cmdGetPagesByUrls,
   cmdGetPageByUrl,
+  cmdLoginUserWithGoogle,
+  cmdRegisterUser,
   cmdLoginUser,
   cmdLogoutUser
 } from '../Shared/types';
 import {createOrUpdatePage, getPagesByUrls, getPageByUrl, createComment} from './graphQLClient';
-import {login, logout, getUserData} from './user'
+import {loginWithGoogle, logout, getUserData, register, login} from './user'
 
 
 export function contentHandler(msg, sender, sendResponse) {
@@ -17,7 +19,7 @@ export function contentHandler(msg, sender, sendResponse) {
     switch (msg.oraculumCommand) {
       case cmdAddUpdatePage: {
         let user = getUserData();
-        msg.oraculumData.authorId = user.id;
+        msg.oraculumData.authorId = user._id;
         createOrUpdatePage(msg.oraculumData).then((result) =>
           sendResponse(result)
         );
@@ -26,7 +28,7 @@ export function contentHandler(msg, sender, sendResponse) {
 
       case cmdAddComment: {
         let user = getUserData();
-        msg.oraculumData.authorId = user.id;
+        msg.oraculumData.authorId = user._id;
         createComment(msg.oraculumData).then((result) =>
           sendResponse(result)
         );
@@ -38,8 +40,18 @@ export function contentHandler(msg, sender, sendResponse) {
         break;
       }
 
+      case cmdLoginUserWithGoogle: {
+        loginWithGoogle(sendResponse);
+        break;
+      }
+
+      case cmdRegisterUser: {
+        register(msg.oraculumData, sendResponse);
+        break;
+      }
+
       case cmdLoginUser: {
-        login(sendResponse);
+        login(msg.oraculumData, sendResponse);
         break;
       }
 

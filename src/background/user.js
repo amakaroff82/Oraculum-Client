@@ -1,4 +1,4 @@
-import {createOrUpdateUsers} from './graphQLClient';
+import {createOrUpdateUsers, registerUser, loginUser} from './graphQLClient';
 
 const INVALID_CREDENTIALS = "Invalid Credentials";
 const chrome = window.chrome;
@@ -20,7 +20,7 @@ export function checkUserToken(callback) {
   });
 }
 
-export function login(callback) {
+export function loginWithGoogle(callback) {
   chrome.identity.getAuthToken({
     interactive: true
   }, function (token) {
@@ -37,40 +37,71 @@ export function login(callback) {
   });
 }
 
+export function register(data, callback) {
+  registerUser(data).then(function(res) {
+    if (res.data) {
+      const {token, user} = res.data;
+      userData = user;
+    }
+
+    callback(res);
+  });
+}
+
+export function login(data, callback) {
+  loginUser(data).then(function(res) {
+    if (res.data) {
+      const {token, user} = res.data;
+      userData = user;
+    }
+
+    callback(res);
+  });
+}
+
 export function logout(callback) {
   console.log(">>> Call logout")
-  chrome.storage.sync.get("token", function (data) {
-    console.log(">>> Get token", data.token)
+  if (userData) {
+    if (userData.googleId) {
+      chrome.storage.sync.get("token", function (data) {
+        console.log(">>> Get token", data.token)
 
-    if (data.token) {
-      chrome.storage.sync.set({"token": null});
-      chrome.identity.removeCachedAuthToken({
-        'token': data.token
-      }, function () {
-        console.log(">>> removeCachedAuthToken")
+        if (data.token) {
+          chrome.storage.sync.set({"token": null});
+          chrome.identity.removeCachedAuthToken({
+            'token': data.token
+          }, function () {
+            console.log(">>> removeCachedAuthToken")
 
-        window.fetch(`https://accounts.google.com/o/oauth2/revoke?token=${data.token}`).then(function (response) {
-          console.log(">>> google revoked token", response)
-          //console.log(response)
-          userData = null;
+            window.fetch(`https://accounts.google.com/o/oauth2/revoke?token=${data.token}`).then(function (response) {
+              console.log(">>> google revoked token", response)
+              //console.log(response)
+              userData = null;
 
-          if (callback) {
-            console.log(">>> start callback")
+              if (callback) {
+                console.log(">>> start callback")
 
-            callback();
-          }
-        }).catch(function (err) {
-          console.log(">>> ERROR: ", err)
-          userData = null;
+                callback();
+              }
+            }).catch(function (err) {
+              console.log(">>> ERROR: ", err)
+              userData = null;
 
-          if (callback) {
-            console.log(">>> start callback")
-            callback();
-          }
-        })
+              if (callback) {
+                console.log(">>> start callback")
+                callback();
+              }
+            })
+          });
+        }
       });
+    } else {
+      userData = null;
+      if (callback) {
+        callback();
+      }
     }
-  });
+  }
 }
 
 export function handleToken(token, callback) {
@@ -87,7 +118,7 @@ export function handleToken(token, callback) {
               }) {
 
       const user = {
-        id,
+        googleId: id,
         name,
         given_name,
         family_name,
@@ -98,7 +129,9 @@ export function handleToken(token, callback) {
       };
 
       createOrUpdateUsers(user).then(function (res) {
+        const {_id} = res.data;
         console.log("load user:", user);
+        user._id = _id;
         userData = user;
         callback();
         //startApp();
@@ -113,7 +146,7 @@ export function handleToken(token, callback) {
           {'token': token},
           () => {
             console.log("try to relogin");
-            return login(callback);
+            return loginWithGoogle(callback);
           }
         );
       } else {
