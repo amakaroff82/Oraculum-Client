@@ -6,8 +6,9 @@ export function initTagInput(tagComponent, tags, onChange) {
     appendTag(tagText);
   });
 
-  tagInput.onkeyup = function(e) {
+  tagInput.onkeypress = function(e) {
     if (e.which === 13 && tagInput.value) {
+      e.preventDefault();
       appendTag(tagInput.value);
       tagInput.value = '';
       onTagsUpdate();
