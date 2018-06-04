@@ -12,6 +12,7 @@ import {toggleEditModal, updateTableSorting} from "./actions";
 //import GotoIcon from '../Shared/Icons/GotoIcon';
 
 export const PagesTableComponent = ({   pages,
+                                        table,
                                         toggleEditModal,
                                         updateTableSorting}) => {
     // Set up columns for ReactTable
@@ -177,14 +178,16 @@ export const PagesTableComponent = ({   pages,
             data={pages.data}
             columns={columns}
             loading={pages.isLoading}
+            sorting={table.sorting}
             onSortedChange={updateTableSorting}
+            filterable={table.isFilterable}
         />
     );
 };
 
 PagesTableComponent.propTypes = {
     pages: PropTypes.object.isRequired,
-    //table: PropTypes.object.isRequired,
+    table: PropTypes.object.isRequired,
 };
 
 export default PagesTableComponent;
