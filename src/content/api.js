@@ -9,10 +9,12 @@ import {
   cmdRegisterUser,
   cmdLoginUser,
   cmdLogoutUser,
-  cmdAddComment
+  cmdAddComment,
+  cmdEditUser
 } from '../Shared/types';
 import {Oraculum} from './base';
 import {APP_CONSTANTS} from '../app-constants';
+import { updateUser as updateUserTmp, getUser } from '../background/graphQLClient';
 
 const chrome = window.chrome;
 const localStorage = window.localStorage;
@@ -129,6 +131,21 @@ export function getPageByUrl(url) {
     }, function (page) {
       console.log("Page: ", page);
       resolve(page);
+    });
+  });
+}
+
+export const requestUser = userId => getUser(userId);
+
+export function updateUser(data) {
+  return new Promise(function (resolve, reject) {
+    sendMessage({
+      oraculumCommand: cmdEditUser,
+      oraculumData: data
+    }, function (userData) {
+      localStorage.user = JSON.stringify(userData);
+      Oraculum.user = userData;
+      resolve(Oraculum.user);
     });
   });
 }

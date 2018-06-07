@@ -45,7 +45,7 @@ function loadPanel() {
   if (Oraculum.user.picture) {
     loadImage(Oraculum.user.picture, "oracle_user_avatar", true);
   } else {
-    loadImage("assets/images/avatar1.jpg", "oracle_user_avatar");
+    loadImage("assets/user-icon.png", "oracle_user_avatar");
   }
 
   let badge = renderTemplate("badge", {
@@ -113,7 +113,7 @@ function renderComment(item) {
   content.innerHTML = item.content;
 
   const img = comment.querySelector(".oraculum-user-comment-avatar");
-  img.src = item.author.picture || chrome.extension.getURL("assets/images/avatar1.jpg");
+  img.src = item.author.picture || chrome.extension.getURL("assets/user-icon.png");
 
   return comment;
 }

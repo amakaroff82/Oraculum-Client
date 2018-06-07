@@ -1,4 +1,4 @@
-import {createOrUpdateUsers, registerUser, loginUser} from './graphQLClient';
+import {registerGoogleUser, registerUser, loginUser, updateUser, getUserByGoogleId} from './graphQLClient';
 
 const INVALID_CREDENTIALS = "Invalid Credentials";
 const chrome = window.chrome;
@@ -53,6 +53,16 @@ export function login(data, callback) {
     if (res.data) {
       const {token, user} = res.data;
       userData = user;
+    }
+
+    callback(res);
+  });
+}
+
+export function editUser(data, callback) {
+  updateUser(data).then(function(res) {
+    if (res.data) {
+      userData = res.data;
     }
 
     callback(res);
@@ -119,24 +129,25 @@ export function handleToken(token, callback) {
                 hd
               }) {
 
-      const user = {
-        googleId: id,
-        name,
-        given_name,
-        family_name,
-        email,
-        verified_email,
-        picture,
-        hd
-      };
-
-      createOrUpdateUsers(user).then(function (res) {
-        const {_id} = res.data;
-        console.log("load user:", user);
-        user._id = _id;
-        userData = user;
-        callback();
-        //startApp();
+      getUserByGoogleId(id).then(function (user) {
+        if (user) {
+          userData = user;
+          callback();
+        } else {
+          registerGoogleUser({
+            googleId: id,
+            name,
+            given_name,
+            family_name,
+            email,
+            verified_email,
+            picture,
+            hd
+          }).then(function (res) {
+            userData = res.data;
+            callback();
+          })
+        }
       });
     },
     function (err) {

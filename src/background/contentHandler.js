@@ -7,10 +7,11 @@ import {
   cmdLoginUserWithGoogle,
   cmdRegisterUser,
   cmdLoginUser,
-  cmdLogoutUser
+  cmdLogoutUser,
+  cmdEditUser
 } from '../Shared/types';
 import {createOrUpdatePage, getPagesByUrls, getPageByUrl, createComment} from './graphQLClient';
-import {loginWithGoogle, logout, getUserData, register, login} from './user'
+import {loginWithGoogle, logout, getUserData, register, login, editUser} from './user'
 
 
 export function contentHandler(msg, sender, sendResponse) {
@@ -52,6 +53,11 @@ export function contentHandler(msg, sender, sendResponse) {
 
       case cmdLoginUser: {
         login(msg.oraculumData, sendResponse);
+        break;
+      }
+
+      case cmdEditUser: {
+        editUser(msg.oraculumData, sendResponse);
         break;
       }
 
