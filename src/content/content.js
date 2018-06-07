@@ -7,9 +7,13 @@ import {initTagInput} from './tag-component';
 const chrome = window.chrome;
 let _mouseLeave = false;
 
-function loadImage(path, elementId, ignoreExtention) {
-  var imgURL = (!ignoreExtention && chrome.extension) ? chrome.extension.getURL(path) : path;
+function loadImage(path, elementId, ignoreExtension) {
+  var imgURL = (!ignoreExtension && chrome.extension) ? getExtensionUrl(path) : path;
   document.getElementById(elementId).src = imgURL;
+}
+
+export function getExtensionUrl(path) {
+  return chrome.extension.getURL(path);
 }
 
 function getSourceTags() {

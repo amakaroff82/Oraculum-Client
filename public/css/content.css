@@ -181,24 +181,35 @@
 .oraculum-link {
     position: absolute;
     top: 0px;
-    left: -120px;
-    height: 100px;
-    width: 100px;
-    opacity: 0;
-    transition: .3s opacity ease;
+    left: -60px;
 }
 
-.bkWMgd .g:hover .oraculum-link {
-    opacity: 1;
+.oraculum-link .oraculum-image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
 }
 
-.oraculum-link .oraculum-link-author {
-    height: auto;
-    width: 90px;
+.oraculum-link .oraculum-app-image {
+    z-index: 4;
 }
 
-.oraculum-link .oraculum-link-icon {
+.oraculum-link .oraculum-author-image {
+    margin-left: -10px;
+    position: relative;
+}
 
+.oraculum-link .oraculum-author-image:nth-child(2) {
+    z-index: 3;
+}
+
+.oraculum-link .oraculum-author-image:nth-child(3) {
+    z-index: 2;
+}
+
+.oraculum-link .oraculum-author-image:nth-child(4) {
+    z-index: 1;
 }
 
 .oraculum_list_comments {

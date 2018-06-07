@@ -23,6 +23,7 @@
       "/oauth2/*",
       "assets/logo.png",
       "assets/user-icon.png",
+      "assets/corevalue-icon.jpg",
       "content.html",
       "css/content.css"
     ],

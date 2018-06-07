@@ -8,7 +8,7 @@ export const updateUser = (data) => (graphQLMutation("updateUser", "UpdateUserIn
 export const registerUser = (data) => (graphQLMutation("registerUser", "RegistrationInput", data, `token user { _id googleId email name }`));
 export const loginUser = (data) => (graphQLMutation("loginUser", "LoginInput", data, `token user { _id googleId email name }`));
 export const createComment = (data) => (graphQLMutation("createComment", "CommentInput", data, `_id content author { name, picture }`));
-export const getPagesByUrls = (urls) => (graphQLQueryWithParams("pages", `_id url title author { _id picture name }`, 'urls', '[String]', urls));
+export const getPagesByUrls = (urls) => (graphQLQueryWithParams("pages", `_id url title author { _id picture name } comments { author { _id picture name } }`, 'urls', '[String]', urls));
 export const getPageByUrl = (url) => (graphQLQueryWithParams("pageByUrl", `_id url title author { _id picture name } comments`, 'url', 'String', url));
 export const getMyPages = (authorId) => (graphQLQueryWithParams("getMyPages", `_id url title author { _id picture name email }`, 'authorId', 'String', authorId));
 export const getAllPages = () => (graphQLQuery("getAllPages", `_id url title author { _id picture name email }`));
