@@ -9,55 +9,39 @@
 
 <script id="main" type="text/template">
     <div class="oraculum-bookmark">
-        <div class="oraculum-user-data">
-            <img id="oracle_user_avatar" src="">
-        </div>
-        <div class="oraculum-fileds">
-            <!--<div class="oraculum-field">
-                <div class="oraculum-title">Type</div>
-                <div class="oraculum-input">
-                    <select id="oraculum_info_type">
-                        <option>Tutorial</option>
-                        <option>Bug/Issue/Solution</option>
-                        <option>Helpful resource</option>
-                        <option>Other</option>
-                    </select>
-                </div>
+        <div class="info-panel">
+            <div class="user-info">
+                <img id="oracle_user_avatar" src="">
+                <span id="oracle_user_name"></span>
             </div>
-            <div class="oraculum-field">
-                <div class="oraculum-title">Rate</div>
-                <div class="oraculum-input">
-                    <div>***Stars***</div>
+            <div class="page-info">
+                <div class="form-group">
+                    <div class="title">Tags</div>
+                    <div id="tag-component" class="oraculum-tag-component">
+                        <input type="text" size="1" />
+                    </div>
                 </div>
-            </div>-->
-            <div class="oraculum-field">
-                <div class="oraculum-title">Tags</div>
-                <div id="tag-component" class="oraculum-tag-component">
-                    <input type="text" size="1" />
+                <div class="form-group">
+                    <div class="title">Comment</div>
+                    <textarea id="oraculum_comment" class="control"></textarea>
                 </div>
-            </div>
-            <div class="oraculum-field">
-                <div class="oraculum-title">Comment</div>
-                <div class="oraculum-input">
-                    <textarea id="oraculum_comment"></textarea>
-                </div>
-                <button class="oraculum-add-comment" id="oraculum_add_comment">
+                <button class="btn btn-success" id="oraculum_add_comment">
                     Add comment
                 </button>
             </div>
-            <br>
-            <br>
-            <div id="oraculum_list_comments">
-                <!-- list of comments -->
-            </div>
+        </div>
+        <div class="comments" id="oraculum_list_comments">
+
         </div>
     </div>
 </script>
 
-<script id="comments" type="text/template">
+<script id="comment" type="text/template">
     <img class="oraculum-user-comment-avatar" src="">
-    <div class="comment-content">
-
+    <div class="comment-info">
+        <div class="user-name"></div>
+        <div class="comment-content">
+        </div>
     </div>
 </script>
 

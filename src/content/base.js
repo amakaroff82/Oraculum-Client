@@ -3,7 +3,7 @@
 export const Oraculum = {
   contentId: "oraculum-coresearch-main-panel",
   badgeId: "oraculum-coresearch-main-badge",
-  commentsId: "oraculum-list-comments",
+  commentId: "oraculum-comment",
   //currentPanel: "addBookmark",
   googleLinks: [],
   globalTemplates: {},
