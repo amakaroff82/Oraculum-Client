@@ -78,8 +78,8 @@ const auth = (state = initialAuthState, action) => {
     case types.FETCH_USER_SUCCESS:
       return {
         ...state,
-        user: action.data,
-        errors: null,
+        user: action.data.data,
+        errors: action.data.errors,
         isSubmitting: false,
       };
     case types.POST_GOOGLE_USER_FAILURE:

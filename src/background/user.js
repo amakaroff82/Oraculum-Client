@@ -129,7 +129,8 @@ export function handleToken(token, callback) {
                 hd
               }) {
 
-      getUserByGoogleId(id).then(function (user) {
+      getUserByGoogleId(id).then(function (response) {
+        const user = response.data;
         if (user) {
           userData = user;
           callback();

@@ -68,9 +68,10 @@ function graphQLQuery(queryName, queryResult) {
                 }
             }`,
     variables: {}
-  })).then(response => {
-    return response.data[queryName]
-  });
+  })).then(response => ({
+    data: response.data[queryName],
+    errors: response.errors
+  }));
 }
 
 function graphQLQueryWithParams(queryName, queryResult, inputName, inputType, data) {
@@ -84,7 +85,8 @@ function graphQLQueryWithParams(queryName, queryResult, inputName, inputType, da
     variables: {
       data: data
     }
-  })).then(response => {
-    return response.data[queryName]
-  });
+  })).then(response => ({
+    data: response.data[queryName],
+    errors: response.errors
+  }));
 }

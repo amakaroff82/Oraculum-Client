@@ -116,7 +116,8 @@ export function getPagesByUrls(urls) {
     sendMessage({
       oraculumCommand: cmdGetPagesByUrls,
       oraculumData: urls
-    }, function (pages) {
+    }, function (response) {
+      const pages = response.data;
       console.log("Pages: ", pages);
       resolve(pages);
     });
@@ -128,7 +129,8 @@ export function getPageByUrl(url) {
     sendMessage({
       oraculumCommand: cmdGetPageByUrl,
       oraculumData: url
-    }, function (page) {
+    }, function (response) {
+      const page = response.data;
       console.log("Page: ", page);
       resolve(page);
     });
