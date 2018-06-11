@@ -3,7 +3,7 @@
 import {Oraculum} from './base';
 
 import {getPagesByUrls} from './api'
-import {renderTemplate} from './content'
+import {renderTemplate, getExtensionUrl} from './content'
 
 let timer = null;
 
@@ -67,9 +67,30 @@ function checkLinks() {
 }
 
 function initLink(link, pageData) {
-  link.elementRef.parentElement.style.backgroundColor = "lightgreen";
   const template = renderTemplate("link");
+  const linkContainer = template.querySelector(".oraculum-link");
+
+  const applicationImage = document.createElement("img");
+  applicationImage.src = getExtensionUrl("assets/corevalue-icon.jpg");
+  applicationImage.classList.add("oraculum-app-image");
+  applicationImage.classList.add("oraculum-image");
+  linkContainer.appendChild(applicationImage);
+
+  const commentsAuthorPictures = pageData.comments.map(function(comment) {
+    return comment.author.picture;
+  });
+
+  const uniqCommentsAuthorPictures = commentsAuthorPictures.filter(function(item, i, ar){
+    return ar.indexOf(item) === i;
+  }).slice(0, 3);
+
+  uniqCommentsAuthorPictures.forEach(function(authorPicture) {
+    const authorImage = document.createElement("img");
+    authorImage.src = authorPicture || getExtensionUrl("assets/user-icon.png");
+    authorImage.classList.add("oraculum-author-image");
+    authorImage.classList.add("oraculum-image");
+    linkContainer.appendChild(authorImage);
+  });
   const linkPanel = link.elementRef.parentElement.appendChild(template);
-  linkPanel.querySelector(".oraculum-link-author").src = pageData.author.picture;
 }
 

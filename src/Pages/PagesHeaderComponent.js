@@ -21,9 +21,9 @@ const renderLeftButtons = (toggleCreateModal, disabled) => {
 };
 
 const renderRightButtons = (toggleFilterable, loadPages) => [
-    /*<IconButton key="toolbar_filter" onClick={toggleFilterable}>
+    <IconButton key="toolbar_filter" onClick={toggleFilterable}>
         <FilterIcon />
-    </IconButton>,*/
+    </IconButton>,
     <IconButton key="toolbar_refresh" onClick={loadPages}>
         <ReloadIcon />
     </IconButton>,

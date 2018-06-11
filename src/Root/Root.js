@@ -14,10 +14,12 @@ import SignInContainer from '../Root/SignInContainer';
 import SignOutContainer from '../Root/SignOutContainer';
 import ConfirmNavigationDialogContainer from '../Root/ConfirmNavigationDialogContainer';
 import SignUpContainer from '../Root/SignUpContainer';
+import AccountArea from '../Account';
 
 const subComponents = {};
 subComponents[COMPONENT_NAMES.PAGES_AREA] = withHostContext(PagesArea);
 subComponents[COMPONENT_NAMES.ALL_PAGES_AREA] = withHostContext(AllPagesArea);
+subComponents[COMPONENT_NAMES.ACCOUNT_AREA] = withHostContext(AccountArea);
 
 const styles = theme => ({
   '@global': {

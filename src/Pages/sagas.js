@@ -10,16 +10,16 @@ import {
 // worker Saga: will be fired on FETCH_PAGES_REQUEST actions
 export function* fetchPages(action) {
   try {
-    const data = yield call(requestPages, action.userId);
+    const response = yield call(requestPages, action.userId);
 
     // Initial data sort by last modified date.
-    const sortedData = yield data.sort((a, b) => {
+    const sortedPages = yield response.data.sort((a, b) => {
       return new Date(b.dateLastModified) - new Date(a.dateLastModified);
     });
 
     yield put({
       type: actionTypes.FETCH_PAGES_SUCCESS,
-      pages: sortedData,
+      pages: sortedPages,
     });
   } catch (error) {
     yield put({
@@ -32,16 +32,16 @@ export function* fetchPages(action) {
 // worker Saga: will be fired on FETCH_ALL_PAGES_REQUEST actions
 export function* fetchAllPages(action) {
   try {
-    const data = yield call(requestAllPages);
+    const response = yield call(requestAllPages);
 
     // Initial data sort by last modified date.
-    const sortedData = yield data.sort((a, b) => {
+    const sortedPages = yield response.data.sort((a, b) => {
       return new Date(b.dateLastModified) - new Date(a.dateLastModified);
     });
 
     yield put({
       type: actionTypes.FETCH_PAGES_SUCCESS,
-      pages: sortedData,
+      pages: sortedPages,
     });
   } catch (error) {
     yield put({

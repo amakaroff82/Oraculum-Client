@@ -18,6 +18,14 @@ export const types = {
   POST_USER_REQUEST: 'POST_USER_REQUEST',
   POST_USER_SUCCESS: 'POST_USER_SUCCESS',
   POST_USER_FAILURE: 'POST_USER_FAILURE',
+
+  FETCH_USER_REQUEST: 'FETCH_USER_REQUEST',
+  FETCH_USER_SUCCESS: 'FETCH_USER_SUCCESS',
+  FETCH_USER_FAILURE: 'FETCH_USER_FAILURE',
+
+  EDIT_USER_REQUEST: 'EDIT_USER_REQUEST',
+  EDIT_USER_SUCCESS: 'EDIT_USER_SUCCESS',
+  EDIT_USER_FAILURE: 'EDIT_USER_FAILURE',
 };
 
 // ----------------
@@ -44,4 +52,14 @@ export const logoutUser = () => ({
 export const registerUser = data => ({
   type: types.POST_USER_REQUEST,
   data: data,
+});
+
+export const loadUser = userId => ({
+  type: types.FETCH_USER_REQUEST,
+  userId: userId,
+});
+
+export const editUser = userParams => ({
+  type: types.EDIT_USER_REQUEST,
+  data: userParams,
 });

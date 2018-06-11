@@ -1,6 +1,6 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { types } from '../Actions/auth';
-import { loginUserWithGoogle, logoutUser, getUserData, registerUser, login } from '../../content/api'
+import { loginUserWithGoogle, logoutUser, getUserData, registerUser, login, requestUser, updateUser } from '../../content/api'
 import {initialAuthState} from "../Reducers/auth";
 
 const localStorage = window.localStorage;
@@ -57,6 +57,38 @@ export function* postLogoutUser() {
     }
 }
 
+export function* fetchUser(action) {
+  try {
+    const data = yield call(requestUser, action.userId);
+
+    yield put({
+      type: types.FETCH_USER_SUCCESS,
+      data: data,
+    });
+  } catch (error) {
+    yield put({
+      type: types.FETCH_USER_FAILURE,
+      error: error,
+    });
+  }
+}
+
+export function* editUser(action) {
+  try {
+    const data = yield call(updateUser, action.data);
+
+    yield put({
+      type: types.EDIT_USER_SUCCESS,
+      data: data,
+    });
+  } catch (error) {
+    yield put({
+      type: types.EDIT_USER_FAILURE,
+      error: error,
+    });
+  }
+}
+
 export function* watchPostGoogleUser() {
     yield takeLatest(types.POST_GOOGLE_USER_REQUEST, postGoogleUser);
 }
@@ -78,6 +110,14 @@ export function* watchPostCachedUser() {
     yield takeLatest(types.POST_CACHED_USER_REQUEST, postCachedUser);
 }
 
+export function* watchFetchUser() {
+  yield takeLatest(types.FETCH_USER_REQUEST, fetchUser);
+}
+
+export function* watchEditUser() {
+  yield takeLatest(types.EDIT_USER_REQUEST, editUser);
+}
+
 export default function* rootSaga() {
   yield all([
       watchPostGoogleUser(),
@@ -85,5 +125,7 @@ export default function* rootSaga() {
       watchLoginUser(),
       watchPostCachedUser(),
       watchPostLogoutUser(),
+      watchFetchUser(),
+      watchEditUser(),
   ]);
 }

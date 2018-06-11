@@ -7,9 +7,13 @@ import {initTagInput} from './tag-component';
 const chrome = window.chrome;
 let _mouseLeave = false;
 
-function loadImage(path, elementId, ignoreExtention) {
-  var imgURL = (!ignoreExtention && chrome.extension) ? chrome.extension.getURL(path) : path;
+function loadImage(path, elementId, ignoreExtension) {
+  var imgURL = (!ignoreExtension && chrome.extension) ? getExtensionUrl(path) : path;
   document.getElementById(elementId).src = imgURL;
+}
+
+export function getExtensionUrl(path) {
+  return chrome.extension.getURL(path);
 }
 
 function getSourceTags() {
@@ -45,8 +49,10 @@ function loadPanel() {
   if (Oraculum.user.picture) {
     loadImage(Oraculum.user.picture, "oracle_user_avatar", true);
   } else {
-    loadImage("assets/images/avatar1.jpg", "oracle_user_avatar");
+    loadImage("assets/user-icon.png", "oracle_user_avatar");
   }
+
+  document.getElementById("oracle_user_name").innerHTML = Oraculum.user.name || Oraculum.user.email;
 
   let badge = renderTemplate("badge", {
     id: Oraculum.badgeId
@@ -105,15 +111,19 @@ function renderComment(item) {
 
   //console.log(item)
 
-  const comment = renderTemplate("comments", {
-    id: Oraculum.commentsId
+  const comment = renderTemplate("comment", {
+    id: Oraculum.commentId,
+    class: 'comment'
   });
 
   const content = comment.querySelector(".comment-content");
   content.innerHTML = item.content;
 
+  const userName = comment.querySelector(".user-name");
+  userName.innerHTML = item.author.name || item.author.email;
+
   const img = comment.querySelector(".oraculum-user-comment-avatar");
-  img.src = item.author.picture || chrome.extension.getURL("assets/images/avatar1.jpg");
+  img.src = item.author.picture || chrome.extension.getURL("assets/user-icon.png");
 
   return comment;
 }
@@ -132,17 +142,20 @@ function displayComments(page, mainPanel) {
 function addPanelHandlers(page, mainPanel) {
   let addCommentButton = mainPanel.querySelector("#oraculum_add_comment");
   addCommentButton.onclick = function () {
-    const comment = mainPanel.querySelector("#oraculum_comment");
+    const commentInput = mainPanel.querySelector("#oraculum_comment");
 
-    addComment({
-      content: comment.value,
-      pageId: page._id,
-    }).then(res => {
-      const newComment = res.data;
-      const listComments = mainPanel.querySelector("#oraculum_list_comments");
-      const comment = renderComment(newComment);
-      listComments.append(comment);
-    });
+    if (commentInput.value) {
+      addComment({
+        content: commentInput.value,
+        pageId: page._id,
+      }).then(res => {
+        const newComment = res.data;
+        const listComments = mainPanel.querySelector("#oraculum_list_comments");
+        const comment = renderComment(newComment);
+        listComments.append(comment);
+        commentInput.value = '';
+      });
+    }
   };
 }
 
