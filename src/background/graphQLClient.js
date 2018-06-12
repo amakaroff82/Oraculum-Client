@@ -10,6 +10,7 @@ export const loginUser = (data) => (graphQLMutation("loginUser", "LoginInput", d
 export const createComment = (data) => (graphQLMutation("createComment", "CommentInput", data, `_id content author { name, picture }`));
 export const getPagesByUrls = (urls) => (graphQLQueryWithParams("pages", `_id url title author { _id picture name } comments { author { _id picture name } }`, 'urls', '[String]', urls));
 export const getPageByUrl = (url) => (graphQLQueryWithParams("pageByUrl", `_id url title author { _id picture name } comments`, 'url', 'String', url));
+export const getPage = id => (graphQLQueryWithParams("page", `_id url title content parsedContent author { _id picture name }`, '_id', 'String', id));
 export const getMyPages = (authorId) => (graphQLQueryWithParams("getMyPages", `_id url title author { _id picture name email }`, 'authorId', 'String', authorId));
 export const getAllPages = () => (graphQLQuery("getAllPages", `_id url title author { _id picture name email }`));
 export const getUser = userId => (graphQLQueryWithParams("user", `_id googleId email name picture`, '_id', 'String', userId));

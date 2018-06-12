@@ -5,6 +5,7 @@ export const COMPONENT_NAMES = {
     JOURNEYS_AREA: 'JourneysArea',
   PAGES_AREA: 'PagesArea',
   ALL_PAGES_AREA: 'AllPagesArea',
+  PAGE_AREA: 'PageArea',
   ACCOUNT_AREA: 'AccountArea',
   /*SEGMENTS_AREA: 'SegmentsArea',*/
   //INSIGHTS_AREA: 'InsightsArea',
@@ -33,6 +34,11 @@ export const ROUTES_LIST = [
     exact: true,
     path: '/allpages',
     componentName: COMPONENT_NAMES.ALL_PAGES_AREA,
+  },
+  {
+    exact: false,
+    path: '/page/:id',
+    componentName: COMPONENT_NAMES.PAGE_AREA,
   },
   {
     exact: true,
