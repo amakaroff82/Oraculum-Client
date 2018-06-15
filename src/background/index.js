@@ -11,22 +11,21 @@ chrome.runtime.onInstalled.addListener(function() {
 
 
     });
+    chrome.contextMenus.create({
+      id: 'save-text-selection',
+      title: 'Save to Oraculum',
+      contexts: ['selection']
+    });
+
+    chrome.contextMenus.onClicked.addListener(function(info, tab) {
+      if (info.menuItemId == 'save-text-selection') {
+        contextMenuHandler(info, tab);
+      }
+    });
 });
 
 chrome.browserAction.onClicked.addListener(browserActionHandler);
 chrome.runtime.onMessage.addListener(contentHandler);
-
-chrome.contextMenus.create({
-  id: 'save-text-selection',
-  title: 'Save to Oraculum',
-  contexts: ['selection']
-});
-
-chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  if (info.menuItemId == 'save-text-selection') {
-    contextMenuHandler(info, tab);
-  }
-});
 
 
 checkUserToken(function(){
