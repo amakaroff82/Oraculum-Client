@@ -70,18 +70,18 @@ export function editUser(data, callback) {
 }
 
 export function logout(callback) {
-  console.log(">>> Call logout")
+  console.log(">>> Call logout");
   if (userData) {
     if (userData.googleId) {
       chrome.storage.sync.get("token", function (data) {
-        console.log(">>> Get token", data.token)
+        console.log(">>> Get token", data.token);
 
         if (data.token) {
           chrome.storage.sync.set({"token": null});
           chrome.identity.removeCachedAuthToken({
             'token': data.token
           }, function () {
-            console.log(">>> removeCachedAuthToken")
+            console.log(">>> removeCachedAuthToken");
 
             window.fetch(`https://accounts.google.com/o/oauth2/revoke?token=${data.token}`).then(function (response) {
               console.log(">>> google revoked token", response)
@@ -90,20 +90,26 @@ export function logout(callback) {
               broadcastLogoutMessage();
 
               if (callback) {
-                console.log(">>> start callback")
-
+                console.log(">>> start callback");
                 callback();
               }
             }).catch(function (err) {
-              console.log(">>> ERROR: ", err)
+              console.log(">>> ERROR: ", err);
               userData = null;
 
               if (callback) {
-                console.log(">>> start callback")
+                console.log(">>> start callback");
                 callback();
               }
             })
           });
+        } else {
+          console.log("Token failed: ", data);
+          broadcastLogoutMessage();
+          chrome.storage.sync.set({"token": null});
+          if (callback) {
+            callback();
+          }
         }
       });
     } else {
