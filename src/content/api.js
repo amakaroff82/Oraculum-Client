@@ -55,7 +55,6 @@ export function loginUserWithGoogle() {
     sendMessage({
       oraculumCommand: cmdLoginUserWithGoogle
     }, function (userData) {
-      localStorage.user = JSON.stringify(userData);
       Oraculum.user = userData;
       resolve(Oraculum.user);
     });
@@ -68,7 +67,6 @@ export function login(data) {
       oraculumCommand: cmdLoginUser,
       oraculumData: data
     }, function (userData) {
-      localStorage.user = JSON.stringify(userData);
       Oraculum.user = userData;
       resolve(Oraculum.user);
     });
@@ -81,7 +79,6 @@ export function registerUser(data) {
       oraculumCommand: cmdRegisterUser,
       oraculumData: data
     }, function (userData) {
-      localStorage.user = JSON.stringify(userData);
       Oraculum.user = userData;
       resolve(Oraculum.user);
     });
@@ -93,7 +90,6 @@ export function logoutUser() {
     sendMessage({
         oraculumCommand: cmdLogoutUser
     }, function () {
-        localStorage.removeItem('user');
         Oraculum.user = null;
         resolve(Oraculum.user);
     });
@@ -145,7 +141,6 @@ export function updateUser(data) {
       oraculumCommand: cmdEditUser,
       oraculumData: data
     }, function (userData) {
-      localStorage.user = JSON.stringify(userData);
       Oraculum.user = userData;
       resolve(Oraculum.user);
     });

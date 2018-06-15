@@ -19,25 +19,27 @@ export function contentHandler(msg, sender, sendResponse) {
   if (msg.oraculumCommand && typeof(msg.oraculumCommand) === 'number') {
     switch (msg.oraculumCommand) {
       case cmdAddUpdatePage: {
-        let user = getUserData();
-        msg.oraculumData.authorId = user._id;
-        createOrUpdatePage(msg.oraculumData).then((result) =>
-          sendResponse(result)
-        );
+        getUserData(function(user) {
+          msg.oraculumData.authorId = user._id;
+          createOrUpdatePage(msg.oraculumData).then((result) =>
+            sendResponse(result)
+          );
+        });
         break;
       }
 
       case cmdAddComment: {
-        let user = getUserData();
-        msg.oraculumData.authorId = user._id;
-        createComment(msg.oraculumData).then((result) =>
-          sendResponse(result)
-        );
+        getUserData(function(user) {
+          msg.oraculumData.authorId = user._id;
+          createComment(msg.oraculumData).then((result) =>
+            sendResponse(result)
+          );
+        });
         break;
       }
 
       case cmdGetUserData: {
-        sendResponse(getUserData());
+        getUserData(sendResponse);
         break;
       }
 

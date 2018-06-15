@@ -37,8 +37,7 @@ export function* postUser(action) {
 // worker Saga: will be fired on POST_CACHED_USER_REQUEST actions
 export function* postCachedUser() {
     try {
-        const data = yield call(getUserData);
-      localStorage.user = JSON.stringify(data);
+      const data = yield call(getUserData);
 
       yield put({ type: types.POST_GOOGLE_USER_SUCCESS, user: data });
         //window.location.reload(); //temporary solution

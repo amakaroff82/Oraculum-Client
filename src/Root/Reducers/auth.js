@@ -7,15 +7,6 @@ export const initialAuthState = {
   isSubmitting: false,
 };
 
-const localStorage = window.localStorage;
-
-if(localStorage.user){
-  try{
-    initialAuthState.user = JSON.parse(localStorage.user);
-  }
-  catch(ex){}
-}
-
 const auth = (state = initialAuthState, action) => {
   switch (action.type) {
     case types.POST_GOOGLE_USER_REQUEST:
