@@ -1,7 +1,7 @@
 import { browserActionHandler } from './browserActionHandler';
 import { contentHandler } from './contentHandler';
 import { contextMenuHandler } from './contextMenuHandler';
-import { checkUserToken } from './user';
+import { checkUserTokens } from './user';
 
 
 const chrome = window.chrome;
@@ -26,10 +26,3 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.browserAction.onClicked.addListener(browserActionHandler);
 chrome.runtime.onMessage.addListener(contentHandler);
-
-
-checkUserToken(function(){
-    console.log("Application started");
-
-
-});

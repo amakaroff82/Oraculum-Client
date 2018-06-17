@@ -1,21 +1,35 @@
-import {registerGoogleUser, registerUser, loginUser, updateUser, getUserByGoogleId} from './graphQLClient';
+import {registerGoogleUser, registerUser, loginUser, updateUser, getUserByGoogleId, getUserByToken} from './graphQLClient';
 
 const INVALID_CREDENTIALS = "Invalid Credentials";
 const chrome = window.chrome;
 
 let userData = null;
 
-export function getUserData() {
-  return Object.assign({}, userData);
+export function getUserData(callback) {
+
+  if (userData) {
+    callback(Object.assign({}, userData));
+  } else {
+    checkUserTokens(function () {
+      callback(Object.assign({}, userData));
+    })
+  }
 };
 
-export function checkUserToken(callback) {
+export function checkUserTokens(callback) {
   chrome.storage.sync.get("token", function (data) {
     if (data.token) {
-      console.log("get token from cache", data.token);
-      handleToken(data.token, callback);
+      console.log("get googleToken from cache", data.token);
+      handleGoogleToken(data.token, callback);
     } else {
-      // nothing to do
+      chrome.storage.sync.get("applicationToken", function (data) {
+        if (data.applicationToken) {
+          console.log("get applicationToken from cache", data.applicationToken);
+          handleApplicationToken(data.applicationToken, callback);
+        } else {
+          callback();
+        }
+      });
     }
   });
 }
@@ -33,7 +47,7 @@ export function loginWithGoogle(callback) {
 
     });
 
-    handleToken(token, callback);
+    handleGoogleToken(token, callback);
   });
 }
 
@@ -42,6 +56,7 @@ export function register(data, callback) {
     if (res.data) {
       const {token, user} = res.data;
       userData = user;
+      chrome.storage.sync.set({"applicationToken": token});
     }
 
     callback(res);
@@ -53,6 +68,7 @@ export function login(data, callback) {
     if (res.data) {
       const {token, user} = res.data;
       userData = user;
+      chrome.storage.sync.set({"applicationToken": token});
     }
 
     callback(res);
@@ -74,7 +90,7 @@ export function logout(callback) {
   if (userData) {
     if (userData.googleId) {
       chrome.storage.sync.get("token", function (data) {
-        console.log(">>> Get token", data.token);
+        console.log(">>> Get googleToken", data.token);
 
         if (data.token) {
           chrome.storage.sync.set({"token": null});
@@ -84,8 +100,7 @@ export function logout(callback) {
             console.log(">>> removeCachedAuthToken");
 
             window.fetch(`https://accounts.google.com/o/oauth2/revoke?token=${data.token}`).then(function (response) {
-              console.log(">>> google revoked token", response)
-              //console.log(response)
+              console.log(">>> google revoked token", response);
               userData = null;
               broadcastLogoutMessage();
 
@@ -96,7 +111,6 @@ export function logout(callback) {
             }).catch(function (err) {
               console.log(">>> ERROR: ", err);
               userData = null;
-
               if (callback) {
                 console.log(">>> start callback");
                 callback();
@@ -114,6 +128,7 @@ export function logout(callback) {
       });
     } else {
       userData = null;
+      chrome.storage.sync.set({"applicationToken": null});
       broadcastLogoutMessage();
       if (callback) {
         callback();
@@ -122,7 +137,7 @@ export function logout(callback) {
   }
 }
 
-export function handleToken(token, callback) {
+export function handleGoogleToken(token, callback) {
   loadUserData(token).then(
     function ({
                 id,
@@ -135,10 +150,12 @@ export function handleToken(token, callback) {
                 hd
               }) {
 
+      console.log('loaded user ', id);
       getUserByGoogleId(id).then(function (response) {
         const user = response.data;
         if (user) {
           userData = user;
+
           callback();
         } else {
           registerGoogleUser({
@@ -171,9 +188,21 @@ export function handleToken(token, callback) {
         );
       } else {
         console.log("Error: ", err);
+        callback();
       }
       ;
     });
+}
+
+export function handleApplicationToken(token, callback) {
+  getUserByToken(token).then(function(res) {
+    if (res.errors) {
+      console.log("Error: ", res.errors);
+    } else {
+      userData = res.data;
+    }
+    callback();
+  });
 }
 
 export function loadUserData(token) {

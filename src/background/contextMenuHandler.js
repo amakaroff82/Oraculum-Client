@@ -4,10 +4,11 @@ import { getUserData } from './user';
 const chrome = window.chrome;
 
 export function contextMenuHandler(info, tab) {
-  let user = getUserData();
-  createOrUpdatePage({
-    url: info.pageUrl,
-    selection: info.selectionText,
-    authorId: user._id
+  getUserData(function(user) {
+    createOrUpdatePage({
+      url: info.pageUrl,
+      selection: info.selectionText,
+      authorId: user._id
+    });
   });
 }
