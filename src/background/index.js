@@ -5,9 +5,10 @@ import { checkUserTokens } from './user';
 
 
 const chrome = window.chrome;
+const chromeStorage = chrome.storage.local;
 
 chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({firstLaunch: true}, function() {
+  chromeStorage.set({firstLaunch: true}, function() {
 
 
     });
