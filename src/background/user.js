@@ -2,6 +2,7 @@ import {registerGoogleUser, registerUser, loginUser, updateUser, getUserByGoogle
 
 const INVALID_CREDENTIALS = "Invalid Credentials";
 const chrome = window.chrome;
+const chromeStorage = chrome.storage.local;
 
 let userData = null;
 
@@ -17,12 +18,12 @@ export function getUserData(callback) {
 };
 
 export function checkUserTokens(callback) {
-  chrome.storage.sync.get("token", function (data) {
+  chromeStorage.get("token", function (data) {
     if (data.token) {
       console.log("get googleToken from cache", data.token);
       handleGoogleToken(data.token, callback);
     } else {
-      chrome.storage.sync.get("applicationToken", function (data) {
+      chromeStorage.get("applicationToken", function (data) {
         if (data.applicationToken) {
           console.log("get applicationToken from cache", data.applicationToken);
           handleApplicationToken(data.applicationToken, callback);
@@ -43,7 +44,7 @@ export function loginWithGoogle(callback) {
       return;
     }
 
-    chrome.storage.sync.set({"token": token}, function () {
+    chromeStorage.set({"token": token}, function () {
 
     });
 
@@ -56,7 +57,7 @@ export function register(data, callback) {
     if (res.data) {
       const {token, user} = res.data;
       userData = user;
-      chrome.storage.sync.set({"applicationToken": token});
+      chromeStorage.set({"applicationToken": token});
     }
 
     callback(res);
@@ -68,7 +69,7 @@ export function login(data, callback) {
     if (res.data) {
       const {token, user} = res.data;
       userData = user;
-      chrome.storage.sync.set({"applicationToken": token});
+      chromeStorage.set({"applicationToken": token});
     }
 
     callback(res);
@@ -89,11 +90,11 @@ export function logout(callback) {
   console.log(">>> Call logout");
   if (userData) {
     if (userData.googleId) {
-      chrome.storage.sync.get("token", function (data) {
+      chromeStorage.get("token", function (data) {
         console.log(">>> Get googleToken", data.token);
 
         if (data.token) {
-          chrome.storage.sync.set({"token": null});
+          chromeStorage.set({"token": null});
           chrome.identity.removeCachedAuthToken({
             'token': data.token
           }, function () {
@@ -120,7 +121,7 @@ export function logout(callback) {
         } else {
           console.log("Token failed: ", data);
           broadcastLogoutMessage();
-          chrome.storage.sync.set({"token": null});
+          chromeStorage.set({"token": null});
           if (callback) {
             callback();
           }
@@ -128,7 +129,7 @@ export function logout(callback) {
       });
     } else {
       userData = null;
-      chrome.storage.sync.set({"applicationToken": null});
+      chromeStorage.set({"applicationToken": null});
       broadcastLogoutMessage();
       if (callback) {
         callback();
