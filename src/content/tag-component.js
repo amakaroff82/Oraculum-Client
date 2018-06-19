@@ -2,6 +2,7 @@ export function initTagInput(tagComponent, tags, onChange) {
   var tagInput = tagComponent.getElementsByTagName('input')[0];
   tags = tags || [];
 
+  removeAllTags();
   tags.forEach(function(tagText) {
     appendTag(tagText);
   });
@@ -46,5 +47,12 @@ export function initTagInput(tagComponent, tags, onChange) {
 
   function updateInputSize() {
     tagInput.size = tagInput.value.length || 1;
+  }
+
+  function removeAllTags() {
+    var tags = tagComponent.getElementsByClassName('tag');
+    while (tags.length) {
+      tags[0].parentNode.removeChild(tags[0]);
+    }
   }
 }
