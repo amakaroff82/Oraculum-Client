@@ -2,21 +2,21 @@ import React from 'react';
 import PagesTabPageContainer from './PagesTabPageContainer';
 import PagesStore from './PagesStore';
 import { Provider } from 'react-redux';
-import { loadPages, loadAllPages } from './actions';
+import { loadPages, loadAllPages, loadTags } from './actions';
 import connect from '../Shared/connect';
 
-const PagesComponent = ({ pagesHeaderLabel, loadPages }) => (
-  <PagesTabPageContainer pagesHeaderLabel={pagesHeaderLabel} loadPages={loadPages} />
+const PagesComponent = ({ pagesHeaderLabel, loadPages, loadTags }) => (
+  <PagesTabPageContainer pagesHeaderLabel={pagesHeaderLabel} loadPages={loadPages} loadTags={loadTags} />
 );
 
 const PagesContainer = connect(
   () => ({ pagesHeaderLabel: 'My Pages' }),
-  { loadPages }
+  { loadPages, loadTags }
 )(PagesComponent);
 
 const AllPagesContainer = connect(
   () => ({ pagesHeaderLabel: 'All Pages' }),
-  { loadPages: loadAllPages }
+  { loadPages: loadAllPages, loadTags }
 )(PagesComponent);
 
 const PagesArea = () => (

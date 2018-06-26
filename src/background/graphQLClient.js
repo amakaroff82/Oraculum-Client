@@ -16,6 +16,7 @@ export const getAllPages = () => (graphQLQuery("getAllPages", `_id url title aut
 export const getUser = userId => (graphQLQueryWithParams("user", `_id googleId email name picture`, '_id', 'String', userId));
 export const getUserByToken = token => (graphQLQueryWithParams("userByToken", `_id googleId email name picture`, '_id', 'String', token));
 export const getUserByGoogleId = googleId => (graphQLQueryWithParams("getUserByGoogleId", `_id googleId email name picture`, 'googleId', 'String', googleId));
+export const getTags = () => (graphQLQuery("tags", `_id text`));
 
 
 function apiHttp(method, url, data) {
