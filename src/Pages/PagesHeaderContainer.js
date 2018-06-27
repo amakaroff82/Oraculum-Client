@@ -4,12 +4,13 @@ import PagesHeaderComponent from './PagesHeaderComponent';
 
 // Connects to the store and injects select state and action creators into component props
 export default connect(
-    ({ pages, modals, tags }, {pagesHeaderLabel, loadPages}) => ({
+    ({ pages, modals, tags }, {pagesHeaderLabel, loadPages, onTagsChange}) => ({
         pages,
         modals,
         pagesHeaderLabel,
         loadPages,
-        tags
+        tags,
+        onTagsChange
     }),
     {
         toggleFilterable

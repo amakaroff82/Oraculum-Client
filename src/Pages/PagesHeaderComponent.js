@@ -6,10 +6,11 @@ import FilterIcon from 'material-ui-apollo-icons/Filter';
 import TableHeader from '../Shared/DataTable/TableHeader';
 import TagsInputComponent from '../Shared/TagsInputComponent';
 
-const renderLeftButtons = (tags) => {
+const renderLeftButtons = (tags, onTagsChange) => {
     return [
         <TagsInputComponent
           tags={tags}
+          onChange={onTagsChange}
         ></TagsInputComponent>
     ];
 };
@@ -28,12 +29,13 @@ export const PagesHeader = ({
                               toggleFilterable,
                               intl,
                               pagesHeaderLabel,
-                              tags
+                              tags,
+                              onTagsChange
                             }) => {
     return (
         <TableHeader
             headerLabel={pagesHeaderLabel}
-            leftButtons={renderLeftButtons(tags.data)}
+            leftButtons={renderLeftButtons(tags.data, onTagsChange)}
             rightButtons={renderRightButtons(toggleFilterable, loadPages)}
         />
     );
@@ -43,6 +45,7 @@ PagesHeader.propTypes = {
     loadPages: PropTypes.func.isRequired,
     tags: PropTypes.object.isRequired,
     toggleFilterable: PropTypes.func.isRequired,
+    onTagsChange: PropTypes.func.isRequired,
     pagesHeaderLabel: PropTypes.string.isRequired,
 };
 

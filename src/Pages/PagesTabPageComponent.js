@@ -6,11 +6,11 @@ import Paper from 'material-ui/Paper';
 import PagesHeaderContainer from './PagesHeaderContainer';
 import PagesTableContainer from './PagesTableContainer';
 
-export const PagesTabPageComponent = ({ pagesHeaderLabel, loadPages }) => {
+export const PagesTabPageComponent = ({ pagesHeaderLabel, loadPages, onTagsChange }) => {
     return (
         <Layout>
             <Paper>
-                <PagesHeaderContainer pagesHeaderLabel={pagesHeaderLabel} loadPages={loadPages} />
+                <PagesHeaderContainer pagesHeaderLabel={pagesHeaderLabel} loadPages={loadPages} onTagsChange={onTagsChange} />
                 <PagesTableContainer />
             </Paper>
         </Layout>

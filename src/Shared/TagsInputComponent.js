@@ -6,8 +6,8 @@ import { MenuItem } from 'material-ui/Menu';
 import Select from 'react-select';
 import Typography from 'material-ui/Typography';
 import Input from 'material-ui/Input';
-import ArrowDown from 'material-ui-apollo-icons/ArrowDown';
-import ArrowUp from 'material-ui-apollo-icons/ArrowUp';
+import ChevronDown from 'material-ui-apollo-icons/ChevronDown';
+import ChevronUp from 'material-ui-apollo-icons/ChevronUp';
 import Close from 'material-ui-apollo-icons/Close';
 
 class Option extends React.Component {
@@ -42,7 +42,7 @@ function SelectWrapped(props) {
       optionComponent={Option}
       noResultsText={<Typography>{'No tags found'}</Typography>}
       arrowRenderer={arrowProps => {
-        return arrowProps.isOpen ? <ArrowUp /> : <ArrowDown />;
+        return arrowProps.isOpen ? <ChevronUp /> : <ChevronDown />;
       }}
       clearRenderer={() => <Close />}
       valueComponent={valueProps => {
@@ -156,6 +156,7 @@ const styles = theme => ({
     '.Select-menu': {
       maxHeight: ITEM_HEIGHT * 4.5,
       overflowY: 'auto',
+      padding: '3px 0',
     },
     '.Select-menu div': {
       boxSizing: 'content-box',
@@ -188,9 +189,11 @@ class TagsInputComponent extends Component {
   };
 
   handleChange = value => {
+    const { onChange } = this.props;
     this.setState({
       selectedTags: value,
     });
+    onChange(value ? value.split(',') : []);
   };
 
   render() {
@@ -222,6 +225,8 @@ class TagsInputComponent extends Component {
 
 TagsInputComponent.propTypes = {
   classes: PropTypes.object.isRequired,
+  tags: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(TagsInputComponent);
