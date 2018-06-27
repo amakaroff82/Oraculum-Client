@@ -1,198 +1,227 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import TextField from 'material-ui/TextField';
-import Paper from 'material-ui/Paper';
 import Chip from 'material-ui/Chip';
 import { MenuItem } from 'material-ui/Menu';
-import keycode from 'keycode';
-import Downshift from 'downshift';
+import Select from 'react-select';
+import Typography from 'material-ui/Typography';
+import Input from 'material-ui/Input';
+import ArrowDown from 'material-ui-apollo-icons/ArrowDown';
+import ArrowUp from 'material-ui-apollo-icons/ArrowUp';
+import Close from 'material-ui-apollo-icons/Close';
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    height: 250,
-  },
-  container: {
-    flexGrow: 1,
-    position: 'relative',
-  },
-  paper: {
-    position: 'absolute',
-    zIndex: 1,
-    marginTop: theme.spacing.unit,
-    left: 0,
-    right: 0,
-  },
-  chip: {
-    margin: `${theme.spacing.unit / 2}px ${theme.spacing.unit / 4}px`,
-  },
-  inputRoot: {
-    flexWrap: 'wrap',
-    display: 'flex',
-    'flex-direction': 'row',
-    'align-items': 'center'
-  },
-});
+class Option extends React.Component {
+  handleClick = event => {
+    this.props.onSelect(this.props.option, event);
+  };
 
-function renderInput(inputProps) {
-  const { InputProps, classes, ref, ...other } = inputProps;
+  render() {
+    const { children, isFocused, isSelected, onFocus } = this.props;
+
+    return (
+      <MenuItem
+        onFocus={onFocus}
+        selected={isFocused}
+        onClick={this.handleClick}
+        component="div"
+        style={{
+          fontWeight: isSelected ? 500 : 400,
+        }}
+      >
+        {children}
+      </MenuItem>
+    );
+  }
+}
+
+function SelectWrapped(props) {
+  const { classes, ...other } = props;
 
   return (
-    <TextField
-      InputProps={{
-        inputRef: ref,
-        classes: {
-          root: classes.inputRoot,
-        },
-        ...InputProps,
+    <Select
+      optionComponent={Option}
+      noResultsText={<Typography>{'No tags found'}</Typography>}
+      arrowRenderer={arrowProps => {
+        return arrowProps.isOpen ? <ArrowUp /> : <ArrowDown />;
+      }}
+      clearRenderer={() => <Close />}
+      valueComponent={valueProps => {
+        const { value, children, onRemove } = valueProps;
+
+        const onDelete = event => {
+          event.preventDefault();
+          event.stopPropagation();
+          onRemove(value);
+        };
+
+        if (onRemove) {
+          return (
+            <Chip
+              tabIndex={-1}
+              label={children}
+              className={classes.chip}
+              deleteIcon={<Close onTouchEnd={onDelete} />}
+              onDelete={onDelete}
+            />
+          );
+        }
+
+        return <div className="Select-value">{children}</div>;
       }}
       {...other}
     />
   );
 }
 
-function renderSuggestion({ suggestion, index, itemProps, highlightedIndex, selectedItem }) {
-  const isHighlighted = highlightedIndex === index;
-  const isSelected = (selectedItem || '').indexOf(suggestion.text) > -1;
+const ITEM_HEIGHT = 48;
 
-  return (
-    <MenuItem
-      {...itemProps}
-      key={suggestion.text}
-      selected={isHighlighted}
-      component="div"
-      style={{
-        fontWeight: isSelected ? 500 : 400,
-      }}
-    >
-      {suggestion.text}
-    </MenuItem>
-  );
-}
-renderSuggestion.propTypes = {
-  highlightedIndex: PropTypes.number,
-  index: PropTypes.number,
-  itemProps: PropTypes.object,
-  selectedItem: PropTypes.string,
-  suggestion: PropTypes.shape({ text: PropTypes.string }).isRequired,
-};
-
-function getSuggestions(inputValue, tags) {
-  let count = 0;
-
-  return tags.filter(tag => {
-    const keep =
-      (!inputValue || tag.text.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1) &&
-      count < 5;
-
-    if (keep) {
-      count += 1;
+const styles = theme => ({
+  chip: {
+    margin: theme.spacing.unit / 4,
+  },
+  '@global': {
+    '.Select-control': {
+      display: 'flex',
+      alignItems: 'center',
+      minWidth: '200px',
+      border: 0,
+      height: 'auto',
+      background: 'transparent',
+      '&:hover': {
+        boxShadow: 'none',
+      },
+    },
+    '.Select-multi-value-wrapper': {
+      flexGrow: 1,
+      display: 'flex',
+      flexWrap: 'wrap',
+      maxHeight: '36px',
+      overflow: 'auto',
+    },
+    '.Select--multi .Select-input': {
+      margin: 0,
+    },
+    '.Select.has-value.is-clearable.Select--single > .Select-control .Select-value': {
+      padding: 0,
+    },
+    '.Select-noresults': {
+      padding: theme.spacing.unit * 2,
+    },
+    '.Select-input': {
+      display: 'inline-flex !important',
+      padding: 0,
+      height: 'auto',
+    },
+    '.Select-input input': {
+      background: 'transparent',
+      border: 0,
+      padding: 0,
+      cursor: 'default',
+      display: 'inline-block',
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+      margin: 0,
+      outline: 0,
+    },
+    '.Select-placeholder, .Select--single .Select-value': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      display: 'flex',
+      alignItems: 'center',
+      fontFamily: theme.typography.fontFamily,
+      fontSize: '16px',
+      //fontSize: theme.typography.pxToRem(16),
+      padding: 0,
+    },
+    '.Select-placeholder': {
+      opacity: 0.42,
+      color: theme.palette.common.black,
+    },
+    '.Select-menu-outer': {
+      backgroundColor: theme.palette.background.paper,
+      boxShadow: theme.shadows[2],
+      position: 'absolute',
+      left: 0,
+      top: `calc(100% + ${theme.spacing.unit}px)`,
+      width: '100%',
+      zIndex: 2,
+      maxHeight: ITEM_HEIGHT * 4.5,
+    },
+    '.Select.is-focused:not(.is-open) > .Select-control': {
+      boxShadow: 'none',
+    },
+    '.Select-menu': {
+      maxHeight: ITEM_HEIGHT * 4.5,
+      overflowY: 'auto',
+    },
+    '.Select-menu div': {
+      boxSizing: 'content-box',
+    },
+    '.Select-arrow-zone, .Select-clear-zone': {
+      color: theme.palette.action.active,
+      cursor: 'pointer',
+      height: 21,
+      width: 21,
+      zIndex: 1,
+    },
+    // Only for screen readers. We can't use display none.
+    '.Select-aria-only': {
+      position: 'absolute',
+      overflow: 'hidden',
+      clip: 'rect(0 0 0 0)',
+      height: 1,
+      width: 1,
+      margin: -1,
+    },
+    '.Select': {
+      height: 'auto',
     }
-
-    return keep;
-  });
-}
+  },
+});
 
 class TagsInputComponent extends Component {
-
-  constructor(props) {
-    super(props);
-    const { tags } = props;
-    this.state = {
-      tags: tags,
-      inputValue: '',
-      selectedTags: [],
-      errors: null,
-    };
-  }
-
-  handleKeyDown = event => {
-    const { inputValue, selectedTags } = this.state;
-    if (selectedTags.length && !inputValue.length && keycode(event) === 'backspace') {
-      this.setState({
-        selectedTags: selectedTags.slice(0, selectedTags.length - 1),
-      });
-    }
+  state = {
+    selectedTags: null,
   };
 
-  handleInputChange = event => {
-    this.setState({ inputValue: event.target.value });
-  };
-
-  handleChange = item => {
-    let { selectedTags } = this.state;
-
-    if (selectedTags.indexOf(item) === -1) {
-      selectedTags = [...selectedTags, item];
-    }
-
+  handleChange = value => {
     this.setState({
-      inputValue: '',
-      selectedTags,
+      selectedTags: value,
     });
   };
 
-  handleDelete = item => () => {
-    const selectedTags = [...this.state.selectedTags];
-    selectedTags.splice(selectedTags.indexOf(item), 1);
-
-    this.setState({ selectedTags });
-  };
-
-
   render() {
-    const {classes, tags} = this.props;
-    const { inputValue, selectedTags } = this.state;
+    const { classes, tags } = this.props;
 
     return (
-      <Downshift inputValue={inputValue} onChange={this.handleChange} selectedItem={selectedTags}>
-        {({
-            getInputProps,
-            getItemProps,
-            isOpen,
-            inputValue: inputValue2,
-            selectedItem: selectedItem2,
-            highlightedIndex,
-          }) => (
-          <div className={classes.container}>
-            {renderInput({
-              fullWidth: true,
-              classes,
-              InputProps: getInputProps({
-                startAdornment: selectedTags.map(item => (
-                  <Chip
-                    key={item}
-                    tabIndex={-1}
-                    label={item}
-                    className={classes.chip}
-                    onDelete={this.handleDelete(item)}
-                  />
-                )),
-                onChange: this.handleInputChange,
-                onKeyDown: this.handleKeyDown,
-                placeholder: 'Select multiple countries',
-                id: 'integration-downshift-multiple',
-              }),
-            })}
-            {isOpen ? (
-              <Paper className={classes.paper} square>
-                {getSuggestions(inputValue2, tags).map((suggestion, index) =>
-                  renderSuggestion({
-                    suggestion,
-                    index,
-                    itemProps: getItemProps({ item: suggestion.text }),
-                    highlightedIndex,
-                    selectedItem: selectedItem2,
-                  }),
-                )}
-              </Paper>
-            ) : null}
-          </div>
-        )}
-      </Downshift>
-    )
+      <Input
+        fullWidth
+        inputComponent={SelectWrapped}
+        value={this.state.selectedTags}
+        onChange={this.handleChange}
+        placeholder="Select multiple tags"
+        name="react-select-chip"
+        inputProps={{
+          classes,
+          multi: true,
+          instanceId: 'react-select-chip',
+          id: 'react-select-chip',
+          simpleValue: true,
+          options: tags.map(tag => ({
+            value: tag.text,
+            label: tag.text,
+          })),
+        }}
+      />
+    );
   }
 }
 
-export default withStyles(styles, { name: 'TagsInput' })(TagsInputComponent);
+TagsInputComponent.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(TagsInputComponent);
