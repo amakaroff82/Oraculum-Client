@@ -8,6 +8,7 @@ export const initialTableState = {
     'url',
     'email',
   ]),
+  selectedTags: []
 };
 
 // TODO: OCEMCM-272 -- Manage the column names in a single place
@@ -28,6 +29,11 @@ export const table = (state = initialTableState, action) => {
       return {
         ...state,
         columns: action.columns,
+      };
+    case actionTypes.UPDATE_SELECTED_TAGS:
+      return {
+        ...state,
+        selectedTags: action.selectedTags
       };
     default:
   }

@@ -26,6 +26,7 @@ export const TOGGLE_EDIT_MODAL = 'TOGGLE_EDIT_MODAL';
 export const UPDATE_SORTING = 'UPDATE_SORTING';
 export const TOGGLE_FILTERABLE = 'TOGGLE_FILTERABLE';
 export const UPDATE_SHOWN_COLUMNS = 'UPDATE_SHOWN_COLUMNS';
+export const UPDATE_SELECTED_TAGS = 'UPDATE_SELECTED_TAGS';
 
 // ----------------
 // ACTION CREATORS - These are functions exposed to UI components that will trigger a state transition.
@@ -81,4 +82,9 @@ export const updateTableSorting = sorting => ({
 export const updateShownColumns = columns => ({
     type: UPDATE_SHOWN_COLUMNS,
     columns: columns,
+});
+
+export const updateSelectedTags = selectedTags=> ({
+    type: UPDATE_SELECTED_TAGS,
+    selectedTags: selectedTags,
 });

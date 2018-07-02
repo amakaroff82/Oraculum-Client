@@ -56,9 +56,19 @@ export const PagesTableComponent = ({   pages,
         return <DataTableRowActions actions={actions}/>;
     };
 
+    let pagesData;
+
+    if (table.selectedTags && table.selectedTags.length) {
+      pagesData = pages.data.filter(page =>
+        page.tags && table.selectedTags.filter(value => -1 !== page.tags.indexOf(value)).length
+      );
+    } else {
+      pagesData = pages.data;
+    }
+
     return (
         <DataTable
-            data={pages.data}
+            data={pagesData}
             columns={columns}
             loading={pages.isLoading}
             sorting={table.sorting}
