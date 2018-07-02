@@ -4,19 +4,14 @@ import { Button, IconButton } from 'material-ui';
 import ReloadIcon from 'material-ui-apollo-icons/Reload';
 import FilterIcon from 'material-ui-apollo-icons/Filter';
 import TableHeader from '../Shared/DataTable/TableHeader';
+import TagsInputComponent from '../Shared/TagsInputComponent';
 
-const renderLeftButtons = (toggleCreateModal, disabled) => {
+const renderLeftButtons = (tags, onTagsChange) => {
     return [
-        /*<Button
-            className={'PagesHeaderComponent-new-page-button'}
-            raised
-            color="primary"
-            key="toolbar_new"
-            onClick={toggleCreateModal}
-            disabled={true}
-        >
-            Add New Page
-        </Button>,*/
+        <TagsInputComponent
+          tags={tags}
+          onChange={onTagsChange}
+        ></TagsInputComponent>
     ];
 };
 
@@ -30,17 +25,17 @@ const renderRightButtons = (toggleFilterable, loadPages) => [
 ];
 
 export const PagesHeader = ({
-
-                                   loadPages,
-                                   toggleCreateModal,
-                                   toggleFilterable,
-                                   intl,
-                                   pagesHeaderLabel
-                               }) => {
+                              loadPages,
+                              toggleFilterable,
+                              intl,
+                              pagesHeaderLabel,
+                              tags,
+                              onTagsChange
+                            }) => {
     return (
         <TableHeader
             headerLabel={pagesHeaderLabel}
-            leftButtons={renderLeftButtons(toggleCreateModal, false)}
+            leftButtons={renderLeftButtons(tags.data, onTagsChange)}
             rightButtons={renderRightButtons(toggleFilterable, loadPages)}
         />
     );
@@ -48,8 +43,9 @@ export const PagesHeader = ({
 
 PagesHeader.propTypes = {
     loadPages: PropTypes.func.isRequired,
-    toggleCreateModal: PropTypes.func.isRequired,
+    tags: PropTypes.object.isRequired,
     toggleFilterable: PropTypes.func.isRequired,
+    onTagsChange: PropTypes.func.isRequired,
     pagesHeaderLabel: PropTypes.string.isRequired,
 };
 

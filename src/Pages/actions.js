@@ -13,6 +13,10 @@ export const EDIT_PAGE_REQUEST = 'EDIT_PAGE_REQUEST';
 export const EDIT_PAGE_SUCCESS = 'EDIT_PAGE_SUCCESS';
 export const EDIT_PAGE_FAILURE = 'EDIT_PAGE_FAILURE';
 
+export const FETCH_TAGS_REQUEST = 'FETCH_TAGS_REQUEST';
+export const FETCH_TAGS_SUCCESS = 'FETCH_TAGS_SUCCESS';
+export const FETCH_TAGS_FAILURE = 'FETCH_TAGS_FAILURE';
+
 export const FETCH_VALUES_REQUEST = 'FETCH_VALUES_REQUEST';
 export const FETCH_VALUES_SUCCESS = 'FETCH_VALUES_SUCCESS';
 export const FETCH_VALUES_FAILURE = 'FETCH_VALUES_FAILURE';
@@ -22,12 +26,12 @@ export const TOGGLE_EDIT_MODAL = 'TOGGLE_EDIT_MODAL';
 export const UPDATE_SORTING = 'UPDATE_SORTING';
 export const TOGGLE_FILTERABLE = 'TOGGLE_FILTERABLE';
 export const UPDATE_SHOWN_COLUMNS = 'UPDATE_SHOWN_COLUMNS';
+export const UPDATE_SELECTED_TAGS = 'UPDATE_SELECTED_TAGS';
 
 // ----------------
 // ACTION CREATORS - These are functions exposed to UI components that will trigger a state transition.
 // They don't directly mutate state, but they can have external side-effects (such as loading data).
 
-// TODO: OCEMCM-280 Consider exporting actions grouped by object to facilitate imports
 // Fetches the current list of pages from HubExchangeGateway API.
 export const loadPages = (userId) => ({ type: FETCH_PAGES_REQUEST, userId: userId });
 export const loadAllPages = () => ({ type: FETCH_ALL_PAGES_REQUEST });
@@ -43,6 +47,8 @@ export const editPage = pageParams => ({
     type: EDIT_PAGE_REQUEST,
     pageParams: pageParams,
 });
+
+export const loadTags = () => ({ type: FETCH_TAGS_REQUEST });
 
 // Fetches the current list of values from HubExchangeGateway API.
 export const loadValues = () => ({ type: FETCH_VALUES_REQUEST });
@@ -76,4 +82,9 @@ export const updateTableSorting = sorting => ({
 export const updateShownColumns = columns => ({
     type: UPDATE_SHOWN_COLUMNS,
     columns: columns,
+});
+
+export const updateSelectedTags = selectedTags=> ({
+    type: UPDATE_SELECTED_TAGS,
+    selectedTags: selectedTags,
 });

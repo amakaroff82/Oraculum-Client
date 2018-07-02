@@ -8,9 +8,6 @@ import Paper from 'material-ui/Paper';
 import Layout from '../Shared/Layout';
 import {Grid, Toolbar, Avatar} from 'material-ui';
 
-import Loader from '../Shared/Loader';
-import {editUser} from "../Root/Actions/auth";
-
 const styles = theme => ({
   header: {
     height: theme.spacing.unit * 12,

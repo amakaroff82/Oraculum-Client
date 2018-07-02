@@ -2,10 +2,9 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 import * as actionTypes from './actions';
 import {
     requestPages,
-    requestAllPages
+    requestAllPages,
+    requestTags
 } from './services/api';
-
-// TODO: OCEMCM-280 -- Import named action creators to use with put calls
 
 // worker Saga: will be fired on FETCH_PAGES_REQUEST actions
 export function* fetchPages(action) {
@@ -51,6 +50,22 @@ export function* fetchAllPages(action) {
   }
 }
 
+export function* fetchTags(action) {
+  try {
+    const response = yield call(requestTags);
+
+    yield put({
+      type: actionTypes.FETCH_TAGS_SUCCESS,
+      tags: response.data,
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.FETCH_TAGS_FAILURE,
+      error: error,
+    });
+  }
+}
+
 export function* watchFetchPages() {
   yield takeLatest(actionTypes.FETCH_PAGES_REQUEST, fetchPages);
 }
@@ -59,10 +74,15 @@ export function* watchFetchAllPages() {
   yield takeLatest(actionTypes.FETCH_ALL_PAGES_REQUEST, fetchAllPages);
 }
 
+export function* watchFetchTags() {
+  yield takeLatest(actionTypes.FETCH_TAGS_REQUEST, fetchTags);
+}
+
 
 export default function* rootSaga() {
     yield all([
       watchFetchPages(),
       watchFetchAllPages(),
+      watchFetchTags(),
     ]);
 }
