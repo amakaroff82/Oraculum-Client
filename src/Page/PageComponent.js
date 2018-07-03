@@ -6,10 +6,14 @@ import Loader from '../Shared/Loader';
 import { Grid, Toolbar, Paper, Typography } from 'material-ui';
 import { withStyles } from 'material-ui/styles/index';
 import { compose } from 'recompose';
+import { Button } from 'material-ui';
 
 const styles = theme => ({
   header: {
     height: theme.spacing.unit * 12,
+  },
+  title: {
+    flex: 1,
   },
   body: {
     padding: 20,
@@ -32,7 +36,12 @@ export const PageComponent = ({ page, classes }) => {
           <Grid container alignItems="center" wrap="nowrap" className={classes.header}>
             <Grid item xs={12}>
               <Toolbar>
-                <Typography type="title">{page.data.title}</Typography>
+                <Typography type="title" className={classes.title}>{page.data.title}</Typography>
+                <Button
+                  href={page.data.url}
+                  target="_blank"
+                  color="primary"
+                >View original</Button>
               </Toolbar>
             </Grid>
           </Grid>
