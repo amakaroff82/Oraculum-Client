@@ -1,7 +1,7 @@
 //'use strict';
 
 import {Oraculum} from './base';
-import {addPage, addComment} from './api';
+import {addPage, addComment, getTags} from './api';
 import {initTagInput} from './tag-component';
 
 const chrome = window.chrome;
@@ -44,7 +44,8 @@ function loadPanel() {
   // TODO: need to remove
   const mainPanel = renderTemplate("main", {
     id: Oraculum.contentId
-  })
+  });
+  var allTags = [];
   document.body.prepend(mainPanel);
   if (Oraculum.user.picture) {
     loadImage(Oraculum.user.picture, "oracle_user_avatar", true);
@@ -60,6 +61,13 @@ function loadPanel() {
   document.body.prepend(badge);
   loadImage("assets/logo.png", "oraculum-logo");
 
+  getTags().then(function (tags) {
+    allTags = tags.map(function (tag) {
+      return tag.text;
+    });
+  });
+
+
   badge.onclick = function () {
     addPage({
       url: document.location.href,
@@ -70,10 +78,10 @@ function loadPanel() {
       const page = res.data;
       addPanelHandlers(page, mainPanel);
       displayComments(page, mainPanel);
-      renderUserTags(page, mainPanel);
+      renderUserTags(page, allTags, mainPanel);
       mainPanel.className = "opened";
     });
-  }
+  };
 
   const bookmark = mainPanel.querySelector(".oraculum-bookmark");
   bookmark.addEventListener("mouseenter", function () {
@@ -159,9 +167,9 @@ function addPanelHandlers(page, mainPanel) {
   };
 }
 
-function renderUserTags(page, mainPanel) {
+function renderUserTags(page, allTags, mainPanel) {
   const tagComponent = mainPanel.querySelector('#tag-component');
-  initTagInput(tagComponent, page.tags, function(tags) {
+  initTagInput(tagComponent, page.tags, allTags, function(tags) {
     addPage({
       url: document.location.href,
       tags: tags

@@ -217,6 +217,7 @@
 }
 
 #oraculum-coresearch-main-panel .oraculum-tag-component {
+    position: relative;
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -266,4 +267,30 @@
     width: auto;
     max-width: inherit;
     min-width: auto;
+}
+
+#oraculum-coresearch-main-panel .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    box-shadow: 0 3px 3px #ccc;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+#oraculum-coresearch-main-panel .autocomplete-items div {
+    font-size: 14px;
+    padding: 4px 6px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+#oraculum-coresearch-main-panel .autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+#oraculum-coresearch-main-panel .autocomplete-active {
+    background-color: #28a745 !important;
+    color: #ffffff;
 }

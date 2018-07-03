@@ -11,6 +11,7 @@ export const cmdGetUserData                 = _cmdBase + 4;
 export const cmdGetPagesByUrls              = _cmdBase + 5;
 export const cmdGetPageByUrl                = _cmdBase + 6;
 export const cmdAddComment                  = _cmdBase + 7;
+export const cmdGetTags                     = _cmdBase + 8;
 
 export const cmdLoginUserWithGoogle         = _cmdBase + 100;
 export const cmdLogoutUser                  = _cmdBase + 101;
