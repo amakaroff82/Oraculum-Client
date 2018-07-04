@@ -46,7 +46,10 @@ export const PageComponent = ({ page, classes }) => {
             </Grid>
           </Grid>
           <Grid container alignItems="center" wrap="nowrap" className={classes.body}>
-            <div dangerouslySetInnerHTML={{__html: (page.data.parsedContent || page.data.content)}}></div>
+            <div
+              ref="content"
+              dangerouslySetInnerHTML={{__html: (page.data.parsedContent || page.data.content)}}
+            ></div>
           </Grid>
         </Paper>
       }
@@ -61,6 +64,15 @@ const enhance = compose(
       const { loadPage, match } = this.props;
       loadPage(match.params.id);
     },
+    componentDidUpdate() {
+      if (this.refs.content) {
+        const links = this.refs.content.getElementsByTagName('a');
+
+        for (let i = 0; i < links.length; i++) {
+          links[i].setAttribute('target', '_blank');
+        }
+      }
+    }
   })
 );
 
