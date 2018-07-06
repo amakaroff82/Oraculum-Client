@@ -48,7 +48,7 @@ export const PageComponent = ({ page, classes }) => {
           <Grid container alignItems="center" wrap="nowrap" className={classes.body}>
             <div
               ref="content"
-              dangerouslySetInnerHTML={{__html: (page.data.parsedContent || page.data.content)}}
+              dangerouslySetInnerHTML={{__html: (page.data.selection || page.data.parsedContent || page.data.content)}}
             ></div>
           </Grid>
         </Paper>
