@@ -5,6 +5,7 @@ import {
   cmdGetUserData,
   cmdGetPagesByUrls,
   cmdGetPageByUrl,
+  cmdGetTags,
   cmdLoginUserWithGoogle,
   cmdRegisterUser,
   cmdLoginUser,
@@ -129,6 +130,17 @@ export function getPageByUrl(url) {
       const page = response.data;
       console.log("Page: ", page);
       resolve(page);
+    });
+  });
+}
+
+export function getTags() {
+  return new Promise(function (resolve, reject) {
+    sendMessage({
+      oraculumCommand: cmdGetTags
+    }, function (response) {
+      const tags = response.data;
+      resolve(tags);
     });
   });
 }

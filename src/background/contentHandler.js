@@ -4,13 +4,14 @@ import {
   cmdGetUserData,
   cmdGetPagesByUrls,
   cmdGetPageByUrl,
+  cmdGetTags,
   cmdLoginUserWithGoogle,
   cmdRegisterUser,
   cmdLoginUser,
   cmdLogoutUser,
   cmdEditUser
 } from '../Shared/types';
-import {createOrUpdatePage, getPagesByUrls, getPageByUrl, createComment} from './graphQLClient';
+import {createOrUpdatePage, getPagesByUrls, getPageByUrl, createComment, getTags} from './graphQLClient';
 import {loginWithGoogle, logout, getUserData, register, login, editUser} from './user'
 
 
@@ -80,6 +81,10 @@ export function contentHandler(msg, sender, sendResponse) {
       }
       case cmdGetPageByUrl: {
         getPageByUrl(msg.oraculumData).then(sendResponse);
+        break;
+      }
+      case cmdGetTags: {
+        getTags().then(sendResponse);
         break;
       }
 
