@@ -15,11 +15,11 @@ const renderLeftButtons = (tags, onTagsChange) => {
     ];
 };
 
-const renderRightButtons = (toggleFilterable, loadPages) => [
+const renderRightButtons = (toggleFilterable, onRefresh) => [
     <IconButton key="toolbar_filter" onClick={toggleFilterable}>
         <FilterIcon />
     </IconButton>,
-    <IconButton key="toolbar_refresh" onClick={loadPages}>
+    <IconButton key="toolbar_refresh" onClick={onRefresh}>
         <ReloadIcon />
     </IconButton>,
 ];
@@ -30,13 +30,19 @@ export const PagesHeader = ({
                               intl,
                               pagesHeaderLabel,
                               tags,
-                              onTagsChange
+                              onTagsChange,
+                              auth
                             }) => {
+
+    let onRefresh = () => {
+      loadPages(auth.user._id);
+    };
+
     return (
         <TableHeader
             headerLabel={pagesHeaderLabel}
             leftButtons={renderLeftButtons(tags.data, onTagsChange)}
-            rightButtons={renderRightButtons(toggleFilterable, loadPages)}
+            rightButtons={renderRightButtons(toggleFilterable, onRefresh)}
         />
     );
 };
